@@ -114,7 +114,7 @@ _HARDCODED_FNO_STOCKS: List[str] = [
     "TECHM", "TIINDIA", "TITAN", "TORNTPHARM", "TRENT",
     "TVSMOTOR", "UBL", "ULTRACEMCO", "UNIONBANK", "UPL",
     "VEDL", "VOLTAS", "WIPRO", "YESBANK", "ZOMATO", "ZYDUSLIFE",
-    "ADANIENSOL", "APOLLOTYRE", "MAZDOCK", "IREDA", "HUDCO",
+    "ADANIENSOL", "APOLLOTYRE", "MAZDOCK", "IREDA", "HUDCO", "ETERNAL",
 ]
 
 # ── In-memory cache ───────────────────────────────────────────────────────────
@@ -122,38 +122,77 @@ _fno_master_cache: Optional[List[Dict]] = None
 
 
 def load_fno_master() -> List[Dict]:
+    """
+    Load NSE F&O master from data/fno_master.json.
+    All returned entries are guaranteed to have exchange == "NSE".
+    Falls back to NSE live API, then hardcoded list.
+    BSE stocks are never included.
+    """
     global _fno_master_cache
     if _fno_master_cache is not None:
         return _fno_master_cache
+
     if os.path.exists(_FNO_MASTER_FILE):
         try:
             with open(_FNO_MASTER_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
             if isinstance(data, list) and len(data) > 50:
-                _fno_master_cache = data
-                logger.info(f"F&O master loaded from cache: {len(data)} stocks")
+                # ── NSE-only guard: drop any non-NSE entries ──────────────
+                nse_only = [e for e in data if str(e.get("exchange", "NSE")).upper() == "NSE"]
+                dropped = len(data) - len(nse_only)
+                if dropped:
+                    logger.warning(
+                        f"Dropped {dropped} non-NSE entries from fno_master.json. "
+                        "Re-run scripts/refresh_fno_master.py to fix the master."
+                    )
+                _fno_master_cache = nse_only
+                logger.info(
+                    f"F&O master loaded: {len(nse_only)} NSE stocks "
+                    f"(from {_FNO_MASTER_FILE})"
+                )
                 return _fno_master_cache
         except Exception as exc:
             logger.warning(f"Failed to load fno_master.json: {exc}")
-    try:
-        r = requests.get(
-            "https://www.nseindia.com/api/master-quote",
-            headers=_NSE_HEADERS, timeout=8,
-        )
-        if r.status_code == 200 and r.text.strip().startswith("["):
-            symbols = r.json()
-            if isinstance(symbols, list) and len(symbols) > 50:
+
+    # ── Live fallback: NSE Securities-in-F&O index ────────────────────────
+    _nse_fo_url = (
+        "https://www.nseindia.com/api/equity-stockIndices"
+        "?index=SECURITIES%20IN%20F%26O"
+    )
+    for url in [_nse_fo_url, "https://www.nseindia.com/api/master-quote"]:
+        try:
+            r = requests.get(url, headers=_NSE_HEADERS, timeout=8)
+            if r.status_code != 200:
+                continue
+            payload = r.json()
+            # Securities-in-F&O returns {data: [{symbol:...}, ...]}
+            # master-quote returns ["SYM1", "SYM2", ...]
+            if isinstance(payload, dict) and "data" in payload:
+                symbols = sorted({
+                    str(d["symbol"]).strip().upper()
+                    for d in payload["data"]
+                    if d.get("symbol") and d["symbol"] != "SECURITIES IN F&O"
+                })
+            elif isinstance(payload, list):
+                symbols = sorted({str(s).strip().upper() for s in payload if s})
+            else:
+                continue
+            if len(symbols) > 50:
                 _fno_master_cache = [
                     {"symbol": s, "name": s, "lot_size": 0, "exchange": "NSE"}
-                    for s in sorted(symbols)
+                    for s in symbols
                 ]
+                logger.info(f"F&O master from live NSE API: {len(symbols)} stocks")
                 return _fno_master_cache
-    except Exception:
-        pass
+        except Exception:
+            continue
+
+    # ── Ultimate hardcoded fallback ───────────────────────────────────────
     _fno_master_cache = [
         {"symbol": s, "name": s, "lot_size": 0, "exchange": "NSE"}
         for s in _HARDCODED_FNO_STOCKS
     ]
+    logger.warning("F&O master using hardcoded fallback list")
     return _fno_master_cache
 
 
