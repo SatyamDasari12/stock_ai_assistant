@@ -40,7 +40,7 @@ import math
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 import requests
@@ -228,23 +228,23 @@ def get_month_options() -> List[Tuple[str, int, int]]:
     return result
 
 
-def _find_month_expiry(ticker: yf.Ticker, year: int, month: int) -> Optional[str]:
-    try:
-        all_opts = ticker.options
-        if all_opts:
-            matches = [
-                e for e in all_opts
-                if datetime.strptime(e, "%Y-%m-%d").year == year
-                and datetime.strptime(e, "%Y-%m-%d").month == month
-            ]
-            if matches:
-                return min(matches)
-    except Exception:
-        pass
-    approx = _last_thursday_of_month(year, month)
-    if approx.date() >= datetime.now().date():
-        return approx.strftime("%Y-%m-%d")
-    return None
+def _find_month_expiry(ticker: Optional[Any], year: int, month: int) -> Optional[str]:
+    """
+    Return the NSE F&O expiry date for the given month.
+
+    NSE stock options expire on the LAST THURSDAY of the expiry month.
+    We use this as the definitive formula — yfinance option dates are NOT
+    used because they reflect Yahoo Finance's cache which can be BSE-aligned
+    or stale for Indian F&O contracts.
+
+    If the computed Thursday is in the past (month already expired), return None.
+    """
+    expiry_dt = _last_thursday_of_month(year, month)
+    today = datetime.now().date()
+    # Allow the expiry day itself (last day to trade)
+    if expiry_dt.date() < today:
+        return None
+    return expiry_dt.strftime("%Y-%m-%d")
 
 
 # ── Strike / contract ─────────────────────────────────────────────────────────
@@ -361,6 +361,11 @@ _NEGATIVE_WORDS = {
 
 
 def _get_news_sentiment(symbol: str) -> Tuple[float, str]:
+    """
+    Fetch news for the NSE symbol and score sentiment.
+    BSE-specific articles (containing 'bom:', '.bo', 'bse:', 'sensex') are
+    filtered out so only NSE-relevant news influences the score.
+    """
     try:
         ticker = yf.Ticker(f"{symbol}.NS")
         news = ticker.news
@@ -368,7 +373,11 @@ def _get_news_sentiment(symbol: str) -> Tuple[float, str]:
             return 0.0, ""
         scores = []
         headlines = []
-        for article in news[:5]:
+
+        # Keywords that identify BSE-specific content (not relevant for NSE analysis)
+        _BSE_MARKERS = ("bom:", "bse:", ".bo ", "(bse", "sensex", "bombay stock")
+
+        for article in news[:8]:   # scan more articles to find NSE-relevant ones
             content = article.get("content", article)
             title = (
                 content.get("title", "") if isinstance(content, dict)
@@ -376,10 +385,19 @@ def _get_news_sentiment(symbol: str) -> Tuple[float, str]:
             ).lower()
             if not title:
                 continue
+
+            # Skip articles that are BSE-specific
+            if any(marker in title for marker in _BSE_MARKERS):
+                continue
+
             headlines.append(title[:80])
             pos = sum(1 for w in _POSITIVE_WORDS if w in title)
             neg = sum(1 for w in _NEGATIVE_WORDS if w in title)
             scores.append(1.0 if pos > neg else (-1.0 if neg > pos else 0.0))
+
+            if len(scores) >= 5:   # enough articles scored
+                break
+
         avg = (sum(scores) / len(scores)) if scores else 0.0
         return round(avg, 2), headlines[0] if headlines else ""
     except Exception:
@@ -393,10 +411,18 @@ _nse_session_warmed = False
 
 
 def _warm_nse_session() -> None:
+    """Warm NSE session by hitting homepage first (required for cookies), then the API."""
     global _nse_session_warmed
     if _nse_session_warmed:
         return
     try:
+        # Step 1: Get NSE homepage to set initial cookies
+        _nse_session.get(
+            "https://www.nseindia.com",
+            headers={**_NSE_HEADERS, "Accept": "text/html,application/xhtml+xml"},
+            timeout=6,
+        )
+        # Step 2: Hit the API to finalise session tokens
         _nse_session.get(
             "https://www.nseindia.com/api/master-quote",
             headers=_NSE_HEADERS, timeout=6,
@@ -805,10 +831,12 @@ def _scan_symbol_for_month(
     Full 6-layer analysis for one F&O stock.
     Returns a single result dict for the optimal contract, or None if filtered out.
     """
+    # All data is fetched exclusively from NSE via the .NS yfinance suffix.
+    # Expiry date is computed from NSE's last-Thursday-of-month rule (not yfinance).
     ns_sym = f"{symbol}.NS"
     try:
-        ticker = yf.Ticker(ns_sym)
-        expiry_str = _find_month_expiry(ticker, year, month)
+        # NSE expiry = last Thursday of the month (formula-based, not from yfinance)
+        expiry_str = _find_month_expiry(None, year, month)
         if not expiry_str:
             return None
 
@@ -816,6 +844,8 @@ def _scan_symbol_for_month(
         T = max((expiry_dt - datetime.now()).days / 365.0, 1 / 365.0)
         days_left = max((expiry_dt - datetime.now()).days, 1)
 
+        # Fetch NSE price history via .NS suffix (Yahoo Finance → NSE exchange)
+        ticker = yf.Ticker(ns_sym)
         hist = ticker.history(period="90d", auto_adjust=False)
         if hist is None or hist.empty or len(hist) < 10:
             return None
