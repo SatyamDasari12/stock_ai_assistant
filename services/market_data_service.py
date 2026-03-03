@@ -39,8 +39,12 @@ def resolve_symbol(raw_symbol: str) -> Tuple[str, str]:
     if raw.endswith(".BO"):
         return raw, "BSE"
 
-    # Try NSE first (broader listing), then BSE
-    for suffix, exchange in [(".NS", "NSE"), (".BO", "BSE")]:
+    # If it's a numeric scrip code (BSE style), try BSE first
+    probes = [(".NS", "NSE"), (".BO", "BSE")]
+    if raw.isdigit():
+        probes = [(".BO", "BSE"), (".NS", "NSE")]
+
+    for suffix, exchange in probes:
         candidate = raw + suffix
         try:
             ticker = yf.Ticker(candidate)
@@ -51,9 +55,11 @@ def resolve_symbol(raw_symbol: str) -> Tuple[str, str]:
         except Exception as exc:
             logger.debug(f"Symbol probe failed for {candidate}: {exc}")
 
-    # Default fallback to NSE
-    logger.warning(f"Could not validate '{raw}' on NSE or BSE; defaulting to NSE.")
-    return raw + ".NS", "NSE"
+    # Default fallback: NSE for alphabetic, BSE for numeric
+    default_suffix = ".BO" if raw.isdigit() else ".NS"
+    default_exch = "BSE" if raw.isdigit() else "NSE"
+    logger.warning(f"Could not validate '{raw}' on NSE or BSE; defaulting to {default_exch}.")
+    return raw + default_suffix, default_exch
 
 
 # ---------------------------------------------------------------------------

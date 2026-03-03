@@ -213,12 +213,14 @@ details[data-testid="stExpander"] > div {
 /* ── Divider ── */
 hr { border-color: #21262d !important; }
 
-/* ── Selectbox dropdown list: dark-slate background + light text for readability ── */
-.stSelectbox div[data-baseweb="select"] > div { background-color: #1e242d !important; color: #e6edf3 !important; }
-.stSelectbox ul[role="listbox"] { background-color: #2d333b !important; color: #e6edf3 !important; border: 1px solid #444c56 !important; }
-.stSelectbox ul[role="listbox"] li { color: #e6edf3 !important; background-color: #2d333b !important; }
-.stSelectbox ul[role="listbox"] li:hover { background-color: #373e47 !important; color: #ffffff !important; }
-.stSelectbox ul[role="listbox"] li[aria-selected="true"] { background-color: #1f6feb33 !important; color: #58a6ff !important; }
+/* ── Selectbox dropdown list — BaseWebUI portal-level selectors ── */
+/* The dropdown renders in a portal OUTSIDE .stSelectbox, so must target globally */
+[data-baseweb="popover"] { background-color: #2d333b !important; }
+[data-baseweb="popover"] ul { background-color: #2d333b !important; }
+ul[role="listbox"] { background-color: #2d333b !important; color: #e6edf3 !important; border: 1px solid #444c56 !important; border-radius: 8px !important; }
+li[role="option"] { background-color: #2d333b !important; color: #e6edf3 !important; }
+li[role="option"]:hover, [data-highlighted] { background-color: #373e47 !important; color: #ffffff !important; }
+li[role="option"][aria-selected="true"] { background-color: #1f6feb44 !important; color: #58a6ff !important; font-weight: 600; }
 </style>
 """
 

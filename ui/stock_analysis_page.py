@@ -16,7 +16,7 @@ from services.market_data_service import (
     resolve_symbol,
 )
 from rag.news_rag_service import get_symbol_news_summaries
-from features.tickers import VALID_TICKERS, TICKER_NAMES
+from features.stock_master import load_combined_stock_master, build_all_labels, load_nse_stock_master
 
 
 # ---------------------------------------------------------------------------
@@ -30,20 +30,52 @@ def render_stock_analysis_page() -> None:
     # ── Inputs ────────────────────────────────────────────────────────────
     col1, col2, col3 = st.columns([2, 1, 1])
 
+
+    # ── Load combined NSE + BSE equity list (cached 24 h) ────────────────
+    _entries   = load_combined_stock_master()
+    _all_labels = build_all_labels(_entries)
+    # Quick name-lookup: {symbol: name} from the combined list
+    _name_map  = {sym: name for sym, name, _ in _entries}
+
     with col1:
-        selected_ticker = st.selectbox(
-            "Stock symbol",
-            options=VALID_TICKERS + ["Custom..."],
+        # ── Typeahead selectbox — Google-style search ─────────────────
+        _selected_label = st.selectbox(
+            "Search Stock",
+            options=_all_labels,
             index=None,
-            format_func=lambda x: f"{x} — {TICKER_NAMES.get(x, x)}" if x in TICKER_NAMES else x,
-            help="Select a symbol or choose 'Custom...' to enter a different one.",
+            placeholder="Type symbol or company name: BEL, Bharat Elec, DLINKINDIA…",
+            help=(
+                "Cross-listed stocks appear as separate [NSE] and [BSE] entries. "
+                "Start typing — suggestions update live."
+            ),
+            key="stock_search_selectbox",
         )
-        if selected_ticker == "Custom...":
-            raw_symbol = st.text_input("Enter Custom Symbol", value="")
-        elif selected_ticker is None:
-            raw_symbol = ""
+
+        if _selected_label:
+            # Parse: 'SYMBOL — Company Name [NSE]'
+            raw_symbol   = _selected_label.split(" — ")[0].strip()
+            _exch_tag    = "NSE" if "[NSE]" in _selected_label else "BSE"
+            _full_name   = _name_map.get(raw_symbol, raw_symbol)
+            # Save to session state so button-click rerun has the right values
+            st.session_state["_confirmed_symbol"] = raw_symbol
+            st.session_state["_confirmed_exchange"] = _exch_tag
+            # Color-coded exchange badge
+            _badge_color = "#1a7f37" if _exch_tag == "NSE" else "#b45309"
+            _badge_bg    = "#1a7f3722" if _exch_tag == "NSE" else "#b4530922"
+            st.markdown(
+                f"<div style='margin-top:4px; font-size:0.88rem; color:#c9d1d9;'>"
+                f"<b>{raw_symbol}</b> &mdash; {_full_name} &nbsp;"
+                f"<span style='background:{_badge_bg}; color:{_badge_color}; "
+                f"border:1px solid {_badge_color}88; padding:2px 9px; "
+                f"border-radius:12px; font-size:0.76rem; font-weight:700;'>{_exch_tag}</span>"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
         else:
-            raw_symbol = selected_ticker
+            # On button-click rerun, selectbox momentarily returns None
+            raw_symbol = st.session_state.get("_confirmed_symbol", "")
+            _exch_tag  = st.session_state.get("_confirmed_exchange", "NSE")
+
 
     # Default range = last 2 months
     default_start = date.today() - timedelta(days=60)
@@ -64,11 +96,13 @@ def render_stock_analysis_page() -> None:
     if st.button("🔍 Run Analysis", type="primary"):
 
         # ── Resolve exchange ────────────────────────────────────────────
-        with st.spinner("Detecting exchange…"):
-            resolved_symbol, exchange = resolve_symbol(raw_symbol)
+        # Since we use a curated list with [NSE]/[BSE] tags, we don't need to probe.
+        suffix = ".NS" if _exch_tag == "NSE" else ".BO"
+        resolved_symbol = raw_symbol.upper() + suffix
+        exchange = _exch_tag
 
-        # Full display name (no .NS / .BO suffix shown to user)
-        display_name = TICKER_NAMES.get(raw_symbol.upper(), raw_symbol.upper())
+        # Full display name — use combined name map
+        display_name = _name_map.get(raw_symbol.upper(), raw_symbol.upper())
 
         # ── Dynamic interval ────────────────────────────────────────────
         interval, interval_label = get_dynamic_interval(start_date, end_date)
