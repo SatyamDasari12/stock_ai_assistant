@@ -169,7 +169,6 @@ All conditions must be satisfied:
                 min_score=float(min_score),
             )
             st.session_state["options_scan_results"] = df
-            st.session_state["opt_analyses"] = {}
 
     df = st.session_state.get("options_scan_results")
 
@@ -408,19 +407,11 @@ All conditions must be satisfied:
 </div>
 """.format(profit=profit), unsafe_allow_html=True)
 
-        st.session_state.setdefault("opt_analyses", {})
-        has_analysis = contract in st.session_state["opt_analyses"]
-        
-        with st.expander(f"🤖 AI Trade Analysis for {contract}", expanded=has_analysis):
-            if has_analysis:
-                st.info(st.session_state["opt_analyses"][contract])
-            else:
-                if st.button(f"Generate Analysis", key=f"gen_ai_{rank}_{contract}"):
-                    from services.llm_service import explain_option_contract
-                    with st.spinner(f"Analyzing {contract} setup..."):
-                        ans = explain_option_contract(row.to_dict())
-                        st.session_state["opt_analyses"][contract] = ans
-                        st.rerun()
+        if st.button(f"🤖 AI Trade Analysis for {contract}", key=f"ai_btn_{rank}_{contract}"):
+            from services.llm_service import explain_option_contract
+            with st.spinner(f"Analyzing {contract} setup..."):
+                analysis = explain_option_contract(row.to_dict())
+                st.info(analysis)
 
         st.markdown("---")
 
