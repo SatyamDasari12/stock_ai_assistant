@@ -974,14 +974,15 @@ def _scan_symbol_for_month(
         # _fetch_live_option_ltp returns (price, source_label)
         # source_label = "NSE Live"  → market hours price from NSE API
         #               "NSE Close" → last close from yfinance (after hours)
-        #               ""          → both failed, fall back to BS model
+        #               ""          → both failed, fall back to computed model
         live_ltp, ltp_source = _fetch_live_option_ltp(symbol, expiry_str, strike, "CE")
         if live_ltp and live_ltp > 0.01:
             current_premium = live_ltp
             price_source = ltp_source   # "NSE Live" or "NSE Close"
         else:
             current_premium = bs_price
-            price_source = "BS Model"
+            price_source = "Computed EOD"
+
 
         # Skip near-zero premiums
         min_premium = max(spot * 0.001, 0.50)
