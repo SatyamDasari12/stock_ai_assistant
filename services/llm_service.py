@@ -233,3 +233,63 @@ def explain_portfolio_advice(
     except Exception as exc:
         logger.exception(f"Portfolio LLM explanation failed: {exc}")
         return None
+
+# ---------------------------------------------------------------------------
+# Options Scanner explanation
+# ---------------------------------------------------------------------------
+
+def explain_option_contract(row_data: dict[str, Any]) -> str:
+    """Generate LLM-enhanced explanation for a scanned option contract."""
+    cfg = get_app_config().groq
+    if not cfg.api_key:
+        return "LLM API Key not configured. Please add GROQ_API_KEY in settings."
+
+    contract = row_data.get("Contract", "")
+    spot = row_data.get("Underlying Spot (₹)", 0)
+    strike = row_data.get("Strike (₹)", 0)
+    cur_prem = row_data.get("Current Premium (₹)", 0)
+    exp_prem = row_data.get("Expected Premium @ Target (₹)", 0)
+    target = row_data.get("Target Spot Price (₹)", 0)
+    profit = row_data.get("Est Profit / Lot (₹)", 0)
+    ret_pct = row_data.get("Return%", 0)
+    score = row_data.get("Final Score (0-100)", 0)
+    news = row_data.get("Latest News", "")
+
+    user_content = (
+        "You are an expert Indian derivatives and options trading analyst.\n"
+        "Provide a concise, extremely punchy 5-point analysis for this specific option trade setup based on the data below.\n"
+        f"Contract: {contract}\n"
+        f"Underlying Spot: ₹{spot} | Strike: ₹{strike}\n"
+        f"Current Premium: ₹{cur_prem} | Expected Target Premium: ₹{exp_prem}\n"
+        f"Target Spot Price: ₹{target}\n"
+        f"Estimated Profit per Lot: ₹{profit} ({ret_pct}% Return on Premium)\n"
+        f"Strategy Quant Score: {score}/100\n"
+        f"Relevant News: {news}\n\n"
+        "Format as 5 short, insightful bullet points covering:\n"
+        "1) 🎯 **The Trade Setup**: (Why this strike? ATM vs OTM context)\n"
+        "2) 📈 **The Target & Profitability**: (Risk/Reward summary)\n"
+        "3) 🚀 **What Needs to Happen**: (Momentum / Price action needed to hit target)\n"
+        "4) ⚠️ **Key Risks**: (Time decay, volatility crush, technical failure bounds)\n"
+        "5) 📰 **News Catalyst**: (Is the trend supported by recent news?)\n"
+    )
+
+    try:
+        from groq import Groq
+        client = Groq(api_key=cfg.api_key)
+        resp = client.chat.completions.create(
+            model=cfg.model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are an options market expert providing direct, highly actionable summaries for retail traders.",
+                },
+                {"role": "user", "content": user_content},
+            ],
+            temperature=0.4,
+            max_tokens=350,
+        )
+        return resp.choices[0].message.content or "Failed to generate AI analysis."
+    except Exception as exc:
+        logger.exception(f"Option LLM explanation failed: {exc}")
+        return "Failed to generate AI analysis. Please try again."
+
