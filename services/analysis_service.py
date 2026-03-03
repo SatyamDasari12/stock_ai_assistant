@@ -18,8 +18,9 @@ def get_stock_history_with_indicators(
     symbol: str,
     start: date,
     end: date,
+    interval: str = "1d",
 ) -> Optional[pd.DataFrame]:
-    return get_history_with_indicators(symbol, start, end)
+    return get_history_with_indicators(symbol, start, end, interval=interval)
 
 
 def build_stock_scorecard(df: pd.DataFrame) -> Optional[StockScorecard]:
@@ -59,4 +60,3 @@ def analyze_stock_for_week(
 
     base_pred.reasoning = explanation
     return base_pred
-

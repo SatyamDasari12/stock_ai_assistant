@@ -9,6 +9,7 @@ def build_portfolio_recommendation(
     quantity: int,
     latest_price: float,
     scorecard: StockScorecard | None,
+    atr: float | None = None,
 ) -> PortfolioRecommendation:
     pnl_pct = (latest_price - buy_price) / buy_price * 100 if buy_price > 0 else 0.0
     total_score = scorecard.total_score if scorecard else 0
@@ -61,11 +62,25 @@ def build_portfolio_recommendation(
         stop = latest_price * 0.95
         horizon = "Short-term only; reconsider if technicals improve."
 
+    # Simple risk engine: risk/reward and ATR‑based volatility
+    risk_reward = None
+    if latest_price > 0 and stop is not None and target is not None:
+        risk = max(latest_price - stop, 0.0)
+        reward = max(target - latest_price, 0.0)
+        if risk > 0:
+            risk_reward = reward / risk if reward > 0 else 0.0
+
+    atr_percent = None
+    if atr is not None and latest_price > 0:
+        atr_percent = atr / latest_price * 100.0
+
     return PortfolioRecommendation(
         action=action,
         reason=reason,
         target_price=target,
         stop_loss=stop,
         holding_period=horizon,
+        risk_reward=risk_reward,
+        atr_percent=atr_percent,
     )
 

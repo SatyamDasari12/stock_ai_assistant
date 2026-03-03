@@ -53,4 +53,6 @@ class PortfolioRecommendation:
     target_price: Optional[float] = None
     stop_loss: Optional[float] = None
     holding_period: Optional[str] = None
+    risk_reward: Optional[float] = None
+    atr_percent: Optional[float] = None
 

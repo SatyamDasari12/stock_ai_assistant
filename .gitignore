@@ -78,5 +78,6 @@ dmypy.json
 
 # Data and cache (optional: uncomment if you don't want to track generated data)
 # data/cache/
+data/chroma_news/
 # *.csv
 # *.parquet

@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+from typing import Optional
 
 import plotly.graph_objs as go
 import streamlit as st
@@ -8,51 +9,185 @@ from services.analysis_service import (
     build_stock_scorecard,
     get_stock_history_with_indicators,
 )
+from services.market_data_service import (
+    compute_support_resistance,
+    get_dynamic_interval,
+    get_rangebreaks,
+    resolve_symbol,
+)
+from rag.news_rag_service import get_symbol_news_summaries
+from features.tickers import VALID_TICKERS, TICKER_NAMES
 
+
+# ---------------------------------------------------------------------------
+# Page entry point
+# ---------------------------------------------------------------------------
 
 def render_stock_analysis_page() -> None:
     st.title("📈 Stock Analysis")
-    st.caption("Weekly trend, indicators, news sentiment, and AI explanation")
+    st.caption("Weekly trend prediction, technical indicators, news sentiment, and AI reasoning")
 
+    # ── Inputs ────────────────────────────────────────────────────────────
     col1, col2, col3 = st.columns([2, 1, 1])
 
     with col1:
-        symbol = st.text_input("Stock symbol (NSE, e.g. BEL.NS)", value="BEL.NS")
-    with col2:
-        start_date = st.date_input(
-            "From",
-            value=date.today() - timedelta(days=180),
+        selected_ticker = st.selectbox(
+            "Stock symbol",
+            options=VALID_TICKERS + ["Custom..."],
+            index=None,
+            format_func=lambda x: f"{x} — {TICKER_NAMES.get(x, x)}" if x in TICKER_NAMES else x,
+            help="Select a symbol or choose 'Custom...' to enter a different one.",
         )
+        if selected_ticker == "Custom...":
+            raw_symbol = st.text_input("Enter Custom Symbol", value="")
+        elif selected_ticker is None:
+            raw_symbol = ""
+        else:
+            raw_symbol = selected_ticker
+
+    # Default range = last 2 months
+    default_start = date.today() - timedelta(days=60)
+    with col2:
+        start_date = st.date_input("From", value=default_start)
     with col3:
         end_date = st.date_input("To", value=date.today())
 
-    if not symbol:
-        st.info("Enter a stock symbol to begin (e.g. **BEL.NS**, **TCS.NS**).")
+    # Chart options
+    opt_col1, opt_col2 = st.columns(2)
+    show_bb   = opt_col1.checkbox("Show Bollinger Bands", value=True)
+    show_vwap = opt_col2.checkbox("Show VWAP", value=True)
+
+    if not raw_symbol or not raw_symbol.strip():
+        st.info("Enter a stock symbol to begin (e.g. **BEL**, **TCS**, **RELIANCE**).")
         return
 
-    if st.button("Run Analysis", type="primary"):
-        with st.spinner("Fetching data and running analysis..."):
+    if st.button("🔍 Run Analysis", type="primary"):
+
+        # ── Resolve exchange ────────────────────────────────────────────
+        with st.spinner("Detecting exchange…"):
+            resolved_symbol, exchange = resolve_symbol(raw_symbol)
+
+        # Full display name (no .NS / .BO suffix shown to user)
+        display_name = TICKER_NAMES.get(raw_symbol.upper(), raw_symbol.upper())
+
+        # ── Dynamic interval ────────────────────────────────────────────
+        interval, interval_label = get_dynamic_interval(start_date, end_date)
+        range_days = (end_date - start_date).days
+
+        # Warn if intraday but date is too old for yfinance limits
+        start_age  = (date.today() - start_date).days
+        interval_warning = None
+        if interval in ("5m", "15m") and start_age > 59:
+            interval_warning = (
+                "⚠️ **Intraday (5m/15m) data is only available for the last 60 days.** "
+                "Falling back to daily bars for this date range."
+            )
+            interval = "1d"
+            interval_label = "Daily"
+        elif interval == "1h" and start_age > 729:
+            interval_warning = (
+                "⚠️ **1-hour data is only available for the last 730 days.** "
+                "Falling back to weekly bars."
+            )
+            interval = "1wk"
+            interval_label = "Weekly"
+
+        if interval_warning:
+            st.warning(interval_warning)
+
+        rangebreaks = get_rangebreaks(interval)
+
+        st.caption(
+            f"📊 Chart resolution: **{interval_label}** bars | "
+            f"Range: **{range_days} days** | Interval: `{interval}`"
+        )
+
+        # ── Fetch data ───────────────────────────────────────────────────
+        with st.spinner(f"Fetching {interval_label} data and running analysis…"):
             history_df = get_stock_history_with_indicators(
-                symbol=symbol,
+                symbol=resolved_symbol,
                 start=start_date,
                 end=end_date,
+                interval=interval,
             )
 
             if history_df is None or history_df.empty:
-                st.error("Could not fetch price history for this symbol.")
+                st.error(
+                    f"Could not fetch price data for **{display_name}**. "
+                    "The symbol may not exist or no data is available for this range/interval."
+                )
                 return
 
-            prediction = analyze_stock_for_week(symbol, history_df)
-            scorecard = build_stock_scorecard(history_df)
+            prediction     = analyze_stock_for_week(resolved_symbol, history_df)
+            scorecard      = build_stock_scorecard(history_df)
+            sr_levels      = compute_support_resistance(history_df)
 
-        _render_price_chart(history_df, symbol)
+            # Fetch News for LLM Summary context
+            news_summaries = get_symbol_news_summaries(raw_symbol)
+
+        # ── 1) Top Level AI Summary ────────────────────────────────────
+        st.subheader("🔮 AI Summary & Prediction")
+        if prediction:
+            p_col1, p_col2, p_col3 = st.columns(3)
+            p_col1.metric("Predicted Trend", prediction.trend)
+            p_col2.metric("Probability", f"{prediction.probability:.1%}")
+            p_col3.metric("Expected Range", f"₹{prediction.expected_low:.1f} - ₹{prediction.expected_high:.1f}")
+
+            from services.llm_service import explain_weekly_outlook
+            with st.spinner("Generating AI explanation..."):
+                weekly_summary = explain_weekly_outlook(
+                    symbol=display_name,
+                    scorecard=scorecard,
+                    prediction=prediction,
+                    news_summaries=news_summaries,
+                )
+
+            with st.container(border=True):
+                st.write(weekly_summary)
+        else:
+            st.warning("Not enough data to run weekly prediction (need at least 20 bars).")
+
+        st.markdown("---")
+
+        # ── 2) Render charts ───────────────────────────────────────────────
+        st.subheader(f"Price Action | Interval: {interval}")
+        _render_price_chart(
+            history_df,
+            symbol=display_name,
+            interval=interval,
+            interval_label=interval_label,
+            show_bb=show_bb,
+            show_vwap=show_vwap,
+            rangebreaks=rangebreaks,
+        )
         _render_indicator_panels(history_df)
-        _render_scorecard_and_prediction(scorecard, prediction)
+        _render_scorecard_and_prediction(scorecard, prediction, sr_levels)
+        _render_news_section(raw_symbol, display_name)
 
 
-def _render_price_chart(history_df, symbol: str) -> None:
-    st.subheader("Price & Volume")
+# ---------------------------------------------------------------------------
+# Price chart
+# ---------------------------------------------------------------------------
+
+def _render_price_chart(
+    history_df,
+    symbol: str,
+    interval: str,
+    interval_label: str,
+    show_bb: bool = True,
+    show_vwap: bool = True,
+    rangebreaks: Optional[list] = None,
+) -> None:
+    st.subheader("📊 Price Chart")
+
     fig = go.Figure()
+
+    # Candlestick (use Bar/OHLC for very short intraday ranges with few bars)
+    n_bars = len(history_df)
+    if n_bars < 3:
+        st.warning("Not enough bars in the selected range to draw a chart.")
+        return
+
     fig.add_trace(
         go.Candlestick(
             x=history_df.index,
@@ -61,91 +196,244 @@ def _render_price_chart(history_df, symbol: str) -> None:
             low=history_df["Low"],
             close=history_df["Close"],
             name="Price",
+            increasing_line_color="#26a69a",
+            decreasing_line_color="#ef5350",
+            whiskerwidth=0.5,
         )
     )
-    if "SMA_20" in history_df.columns:
-        fig.add_trace(
-            go.Scatter(
-                x=history_df.index,
-                y=history_df["SMA_20"],
-                name="SMA 20",
-                line=dict(color="orange", width=1),
-            )
-        )
-    if "SMA_50" in history_df.columns:
-        fig.add_trace(
-            go.Scatter(
-                x=history_df.index,
-                y=history_df["SMA_50"],
-                name="SMA 50",
-                line=dict(color="blue", width=1),
-            )
-        )
-    if "SMA_200" in history_df.columns:
-        fig.add_trace(
-            go.Scatter(
-                x=history_df.index,
-                y=history_df["SMA_200"],
-                name="SMA 200",
-                line=dict(color="green", width=1),
-            )
-        )
+
+    # Moving averages — only meaningful for daily+ intervals with enough bars
+    if interval in ("1d", "1wk") and n_bars >= 20:
+        ma_styles = [
+            ("SMA_20",  "SMA 20",  "rgba(255,152,0,0.85)",   1.5),
+            ("SMA_50",  "SMA 50",  "rgba(33,150,243,0.85)",  1.5),
+            ("SMA_200", "SMA 200", "rgba(76,175,80,0.85)",   1.5),
+        ]
+        for col, name, color, lw in ma_styles:
+            if col in history_df.columns:
+                fig.add_trace(go.Scatter(
+                    x=history_df.index, y=history_df[col],
+                    name=name, line=dict(color=color, width=lw), opacity=0.9,
+                ))
+
+    # Bollinger Bands
+    if show_bb and "BB_HIGH" in history_df.columns and "BB_LOW" in history_df.columns:
+        fig.add_trace(go.Scatter(
+            x=history_df.index, y=history_df["BB_HIGH"],
+            name="BB Upper",
+            line=dict(color="rgba(156,39,176,0.5)", width=1, dash="dot"),
+        ))
+        fig.add_trace(go.Scatter(
+            x=history_df.index, y=history_df["BB_LOW"],
+            name="BB Lower",
+            line=dict(color="rgba(156,39,176,0.5)", width=1, dash="dot"),
+            fill="tonexty", fillcolor="rgba(156,39,176,0.05)",
+        ))
+
+    # VWAP
+    if show_vwap and "VWAP" in history_df.columns:
+        fig.add_trace(go.Scatter(
+            x=history_df.index, y=history_df["VWAP"],
+            name="VWAP",
+            line=dict(color="rgba(255,235,59,0.9)", width=1.5, dash="dash"),
+        ))
+
+    xaxis_cfg = dict(
+        gridcolor="rgba(128,128,128,0.12)",
+        showgrid=True,
+        zeroline=False,
+    )
+    if rangebreaks:
+        xaxis_cfg["rangebreaks"] = rangebreaks
 
     fig.update_layout(
         xaxis_rangeslider_visible=False,
-        height=500,
-        margin=dict(l=10, r=10, t=30, b=10),
-        legend=dict(orientation="h", y=-0.2),
-        title=f"{symbol} price action",
+        height=560,
+        margin=dict(l=10, r=10, t=44, b=10),
+        legend=dict(orientation="h", y=-0.14, font=dict(size=11)),
+        title=dict(
+            text=f"{symbol} — {interval_label} bars",
+            font=dict(size=15, color="#c9d1d9"),
+        ),
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
+        xaxis=xaxis_cfg,
+        yaxis=dict(gridcolor="rgba(128,128,128,0.12)", zeroline=False, side="right"),
     )
     st.plotly_chart(fig, use_container_width=True)
 
+    # Volume chart
+    if "Volume" in history_df.columns:
+        vol_colors = [
+            "#26a69a" if float(c) >= float(o) else "#ef5350"
+            for c, o in zip(history_df["Close"], history_df["Open"])
+        ]
+        fig_vol = go.Figure()
+        fig_vol.add_trace(go.Bar(
+            x=history_df.index,
+            y=history_df["Volume"],
+            name="Volume",
+            marker_color=vol_colors,
+            opacity=0.75,
+        ))
+        vol_xaxis = dict(gridcolor="rgba(128,128,128,0.12)", showgrid=False)
+        if rangebreaks:
+            vol_xaxis["rangebreaks"] = rangebreaks
+
+        fig_vol.update_layout(
+            height=160,
+            margin=dict(l=10, r=10, t=6, b=10),
+            showlegend=False,
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            xaxis=vol_xaxis,
+            yaxis=dict(
+                gridcolor="rgba(128,128,128,0.12)",
+                title="Volume",
+                side="right",
+            ),
+        )
+        st.plotly_chart(fig_vol, use_container_width=True)
+
+
+# ---------------------------------------------------------------------------
+# Indicator metrics panel
+# ---------------------------------------------------------------------------
 
 def _render_indicator_panels(history_df) -> None:
-    st.subheader("Technical Indicators")
-    latest = history_df.iloc[-1]
+    st.subheader("📉 Technical Indicators")
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
+
     with col1:
-        st.metric("RSI", f"{latest.get('RSI_14', float('nan')):.1f}")
+        rsi_val = _safe_last(history_df, "RSI_14")
+        rsi_delta = _safe_delta(history_df, "RSI_14")
+        status = "🟢" if 50 < rsi_val < 70 else ("🔴" if rsi_val >= 70 else "🟡")
+        st.metric(f"{status} RSI (14)", _fmt(rsi_val, ".1f"), delta=_fmt(rsi_delta, "+.1f") if rsi_delta is not None else None)
+
     with col2:
-        st.metric("MACD", f"{latest.get('MACD', float('nan')):.2f}")
+        macd_val   = _safe_last(history_df, "MACD")
+        macd_delta = _safe_delta(history_df, "MACD")
+        st.metric("📊 MACD", _fmt(macd_val, ".2f"), delta=_fmt(macd_delta, "+.2f") if macd_delta is not None else None)
+
     with col3:
-        st.metric("ATR", f"{latest.get('ATR_14', float('nan')):.2f}")
+        atr_val   = _safe_last(history_df, "ATR_14")
+        close_val = _safe_last(history_df, "Close")
+        atr_pct   = (atr_val / close_val * 100) if close_val > 0 else 0.0
+        st.metric("🌊 ATR (14)", _fmt(atr_val, ".2f"), delta=f"{atr_pct:.1f}% of price")
+
     with col4:
-        st.metric("Volume", f"{latest.get('Volume', 0):,.0f}")
+        vwap_val = _safe_last(history_df, "VWAP")
+        above = "↑ Above" if close_val > vwap_val else "↓ Below"
+        st.metric("📍 VWAP", _fmt(vwap_val, ".2f"), delta=above if vwap_val > 0 else None)
+
+    with col5:
+        vol_val   = _safe_last(history_df, "Volume")
+        vol_spike = bool(int(_safe_last(history_df, "VOLUME_SPIKE")))
+        st.metric("📦 Volume", f"{vol_val:,.0f}", delta="⚡ Spike!" if vol_spike else None)
+
+    with col6:
+        hist_val   = _safe_last(history_df, "MACD_HIST")
+        hist_delta = _safe_delta(history_df, "MACD_HIST")
+        st.metric("📈 MACD Hist", _fmt(hist_val, ".2f"), delta=_fmt(hist_delta, "+.2f") if hist_delta is not None else None)
 
 
-def _render_scorecard_and_prediction(scorecard, prediction) -> None:
-    st.subheader("Signal Scorecard & Weekly Outlook")
+def _safe_last(df, col: str) -> float:
+    if col in df.columns:
+        v = df[col].iloc[-1]
+        try:
+            return float(v)
+        except Exception:
+            pass
+    return 0.0
+
+
+def _safe_delta(df, col: str):
+    if col in df.columns and len(df) > 1:
+        try:
+            return float(df[col].iloc[-1]) - float(df[col].iloc[-2])
+        except Exception:
+            pass
+    return None
+
+
+def _fmt(val: float, spec: str) -> str:
+    try:
+        return format(val, spec)
+    except Exception:
+        return str(val)
+
+
+# ---------------------------------------------------------------------------
+# Scorecard & Prediction
+# ---------------------------------------------------------------------------
+
+def _render_scorecard_and_prediction(scorecard, prediction, sr_levels: dict) -> None:
+    st.subheader("🎯 Signal Scorecard & Weekly Outlook")
 
     col1, col2 = st.columns(2)
     with col1:
         if scorecard is not None:
-            st.markdown("**Technical Scores (0–10)**")
-            st.progress(scorecard.total_score / 10.0)
-            st.write(
-                f"**Trend:** {scorecard.trend_score}/3  |  "
-                f"**Momentum:** {scorecard.momentum_score}/3  |  "
-                f"**Volume:** {scorecard.volume_score}/2  |  "
-                f"**Volatility:** {scorecard.volatility_score}/2"
-            )
+            total = scorecard.total_score
+            icon  = "🟢" if total >= 7 else ("🟡" if total >= 5 else "🔴")
+            st.markdown(f"**Technical Score: {icon} {total}/10**")
+            st.progress(total / 10.0)
+            sc = st.columns(4)
+            sc[0].metric("Trend",     f"{scorecard.trend_score}/3")
+            sc[1].metric("Momentum",  f"{scorecard.momentum_score}/3")
+            sc[2].metric("Volume",    f"{scorecard.volume_score}/2")
+            sc[3].metric("Volatility",f"{scorecard.volatility_score}/2")
             st.caption(scorecard.interpretation)
         else:
             st.info("Not enough data to compute scorecard.")
 
+        if sr_levels:
+            st.markdown("**📐 Key Levels**")
+            lc = st.columns(3)
+            lc[0].metric("Support",    f"₹{sr_levels.get('support',    0):.2f}")
+            lc[1].metric("Pivot",      f"₹{sr_levels.get('pivot',      0):.2f}")
+            lc[2].metric("Resistance", f"₹{sr_levels.get('resistance', 0):.2f}")
+            pc = st.columns(2)
+            pc[0].metric("S1", f"₹{sr_levels.get('s1', 0):.2f}")
+            pc[1].metric("R1", f"₹{sr_levels.get('r1', 0):.2f}")
+
     with col2:
         if prediction is not None:
+            emojis = {"Bullish": "🚀", "Bearish": "📉", "Sideways": "↔️"}
+            colors = {"Bullish": "#3fb950", "Bearish": "#f85149", "Sideways": "#d29922"}
+            trend  = prediction.trend
+            c      = colors.get(trend, "#c9d1d9")
             st.markdown("**Weekly Prediction**")
-            st.write(
-                f"**Trend:** {prediction.trend}  \n"
-                f"**Probability:** {prediction.probability:.0%}  \n"
-                f"**Expected Range:** {prediction.expected_low:.2f} – "
-                f"{prediction.expected_high:.2f}"
+            st.markdown(
+                f"<span style='color:{c}; font-size:1.5em; font-weight:800;'>"
+                f"{emojis.get(trend,'❓')} {trend}</span>",
+                unsafe_allow_html=True,
             )
-            if prediction.reasoning:
-                with st.expander("Model rationale"):
-                    st.write(prediction.reasoning)
+            st.write(
+                f"**Probability:** {prediction.probability:.0%}  \n"
+                f"**Expected Range:** ₹{prediction.expected_low:.2f} – ₹{prediction.expected_high:.2f}"
+            )
+            # Note: AI Reasoning is already shown in the top "AI Summary & Prediction" section above.
+            # No duplicate expander here.
         else:
-            st.info("Prediction model did not return an output.")
+            st.info("Prediction model did not return an output (insufficient history).")
 
+
+# ---------------------------------------------------------------------------
+# News
+# ---------------------------------------------------------------------------
+
+def _render_news_section(symbol: str, display_name: str = "") -> None:
+    st.subheader("📰 News Sentiment")
+    label = display_name if display_name else symbol
+    with st.spinner(f"Fetching latest news for {label}…"):
+        news = get_symbol_news_summaries(symbol, top_k=5)
+
+    if not news:
+        st.info(f"No recent news found for **{label}**.")
+        return
+
+    for i, item in enumerate(news):
+        label_text = item[:90] + "…" if len(item) > 90 else item
+        with st.expander(f"📄 News {i + 1}: {label_text}"):
+            st.write(item)

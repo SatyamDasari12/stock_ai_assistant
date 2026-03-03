@@ -12,3 +12,37 @@ groq>=0.5.0,<1.0.0
 python-dotenv>=1.0.0,<2.0.0
 loguru>=0.7.0,<1.0.0
 tqdm>=4.66.0,<5.0.0
+pytz>=2024.1
+
+# Optional: Prophet (weekly range forecast). On Windows often hits path-length limits;
+# enable "Long Paths" in Windows or install in a short path, then: pip install -r requirements-prophet.txt
+# Optional: News RAG: pip install -r requirements-rag.txt
+# "Microsoft C++ Build Tools" to build chroma-hnswlib. Install with:
+#   pip install -r requirements-rag.txt
+# If skipped, the app uses RSS-only news (no vector search).
+
+# Optional News RAG stack. Requires main deps first: pip install -r requirements.txt
+# On Windows, if chroma-hnswlib fails to build, install "Build Tools for Visual Studio"
+# from https://visualstudio.microsoft.com/visual-cpp-build-tools/ or use WSL.
+chromadb>=0.5.0,<1.0.0
+sentence-transformers>=2.5.0,<3.0.0
+
+# Optional: Prophet for weekly price-range forecast.
+# On Windows, if install fails with "No such file or directory" (path too long),
+# either enable Long Paths: https://pip.pypa.io/warnings/enable-long-paths
+# or install from a short directory (e.g. C:\py\proj). App works without this
+# using volatility + ML ensemble for predictions.
+prophet>=1.1.5,<2.0.0
+
+# Optional News RAG stack. Requires main deps first: pip install -r requirements.txt
+# On Windows, if chroma-hnswlib fails to build, install "Build Tools for Visual Studio"
+# from https://visualstudio.microsoft.com/visual-cpp-build-tools/ or use WSL.
+chromadb>=0.5.0,<1.0.0
+sentence-transformers>=2.5.0,<3.0.0
+
+# Optional: Prophet for weekly price-range forecast.
+# On Windows, if install fails with "No such file or directory" (path too long),
+# either enable Long Paths: https://pip.pypa.io/warnings/enable-long-paths
+# or install from a short directory (e.g. C:\py\proj). App works without this
+# using volatility + ML ensemble for predictions.
+prophet>=1.1.5,<2.0.0
