@@ -41,11 +41,15 @@ def _score_label(score: float) -> str:
 
 
 def _src_badge(src: str) -> str:
-    return "🟢 Live LTP" if src == "Live LTP" else "⚪ BS Model"
+    if src == "NSE Live": return "🟢 NSE Live (Market)"
+    if src == "NSE Close": return "🔵 NSE Close (YF)"
+    return "⚪ BS Model"
 
 
 def _src_color(src: str) -> str:
-    return "#3fb950" if src == "Live LTP" else "#8b949e"
+    if src == "NSE Live": return "#3fb950"
+    if src == "NSE Close": return "#58a6ff"
+    return "#8b949e"
 
 
 def _pct_bar(val: float, max_val: float = 100.0, color: str = "#58a6ff") -> str:

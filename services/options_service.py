@@ -407,36 +407,55 @@ def _get_news_sentiment(symbol: str) -> Tuple[float, str]:
 # ── NSE live option LTP ───────────────────────────────────────────────────────
 
 _nse_session = requests.Session()
-_nse_session_warmed = False
+_nse_session_warmed: bool = False
+_nse_session_last_warm: float = 0.0   # epoch seconds of last successful warm
+_NSE_SESSION_TTL: float = 300.0       # re-warm every 5 minutes
 
 
-def _warm_nse_session() -> None:
-    """Warm NSE session by hitting homepage first (required for cookies), then the API."""
-    global _nse_session_warmed
-    if _nse_session_warmed:
+
+def _warm_nse_session(force: bool = False) -> None:
+    """
+    3-step NSE cookie chain:
+      1. Homepage       — sets _ga, nsit, nseappid cookies
+      2. Derivatives page — sets additional cookies for API access
+      3. master-quote API — confirms session is live
+
+    Re-warms if TTL expired (5 min) or if force=True.
+    Works both during market hours AND after hours.
+    """
+    global _nse_session_warmed, _nse_session_last_warm
+    import time
+    now = time.time()
+    if not force and _nse_session_warmed and (now - _nse_session_last_warm) < _NSE_SESSION_TTL:
         return
+    _nse_session_warmed = False
     try:
-        # Step 1: Get NSE homepage to set initial cookies
+        html_headers = {**_NSE_HEADERS, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9"}
+        # Step 1: Homepage
+        _nse_session.get("https://www.nseindia.com", headers=html_headers, timeout=8)
+        # Step 2: Derivatives page (sets more F&O-specific cookies)
         _nse_session.get(
-            "https://www.nseindia.com",
-            headers={**_NSE_HEADERS, "Accept": "text/html,application/xhtml+xml"},
-            timeout=6,
+            "https://www.nseindia.com/market-data/equity-derivatives-watch",
+            headers=html_headers, timeout=8,
         )
-        # Step 2: Hit the API to finalise session tokens
-        _nse_session.get(
+        # Step 3: API warm-up
+        r = _nse_session.get(
             "https://www.nseindia.com/api/master-quote",
-            headers=_NSE_HEADERS, timeout=6,
+            headers={**_NSE_HEADERS, "Accept": "application/json"},
+            timeout=8,
         )
-        _nse_session_warmed = True
-    except Exception:
-        pass
+        if r.status_code == 200:
+            _nse_session_warmed = True
+            _nse_session_last_warm = now
+    except Exception as ex:
+        logger.debug(f"NSE session warm failed: {ex}")
 
 
-def _fetch_live_option_ltp(
+def _fetch_nse_ltp_via_api(
     symbol: str, expiry_str: str, strike: float, opt_type: str = "CE",
 ) -> Optional[float]:
+    """Fetch option LTP from NSE live API (works during AND after market hours)."""
     try:
-        _warm_nse_session()
         h = {
             **_NSE_HEADERS,
             "Accept": "application/json",
@@ -444,8 +463,15 @@ def _fetch_live_option_ltp(
         }
         r = _nse_session.get(
             f"https://www.nseindia.com/api/quote-derivative?symbol={symbol}",
-            headers=h, timeout=6,
+            headers=h, timeout=8,
         )
+        # If blocked, re-warm and retry once
+        if r.status_code in (401, 403) or len(r.text) < 50:
+            _warm_nse_session(force=True)
+            r = _nse_session.get(
+                f"https://www.nseindia.com/api/quote-derivative?symbol={symbol}",
+                headers=h, timeout=8,
+            )
         if r.status_code != 200 or len(r.text) < 50:
             return None
         data = r.json()
@@ -453,15 +479,14 @@ def _fetch_live_option_ltp(
         if not stocks:
             return None
         expiry_dt = datetime.strptime(expiry_str, "%Y-%m-%d")
-        # Windows doesn't support %-d; use lstrip("0") instead
-        alt_expiry = expiry_dt.strftime("%d-%b-%Y")        # "27-Mar-2026"
-        nse_expiry = alt_expiry.lstrip("0")                # "27-Mar-2026" (no leading zero)
+        alt_expiry = expiry_dt.strftime("%d-%b-%Y")   # e.g. "27-Mar-2026"
+        nse_expiry = alt_expiry.lstrip("0")           # "27-Mar-2026" (no leading zero)
         for entry in stocks:
             md = entry.get("metadata", {})
             e_expiry = str(md.get("expiryDate", "")).strip()
             e_strike = float(md.get("strikePrice", 0))
-            e_type = str(md.get("optionType", "")).upper().strip()
-            e_instr = str(md.get("instrumentType", "")).upper()
+            e_type   = str(md.get("optionType", "")).upper().strip()
+            e_instr  = str(md.get("instrumentType", "")).upper()
             if (
                 "OPT" in e_instr
                 and e_type == opt_type.upper()
@@ -471,10 +496,62 @@ def _fetch_live_option_ltp(
                 ltp = md.get("lastPrice") or md.get("ltp")
                 if ltp and str(ltp) not in ("-", "", "0"):
                     return float(str(ltp).replace(",", ""))
-        return None
-    except Exception as exc:
-        logger.debug(f"NSE LTP fetch {symbol} {expiry_str} {strike}{opt_type}: {exc}")
-        return None
+    except Exception as ex:
+        logger.debug(f"NSE API LTP {symbol} {expiry_str} {strike}{opt_type}: {ex}")
+    return None
+
+
+def _fetch_ltp_via_yfinance(
+    symbol: str, expiry_str: str, strike: float, opt_type: str = "CE",
+) -> Optional[float]:
+    """
+    Fallback: fetch option LTP from yfinance option chain.
+    Yahoo Finance caches the last close price so this works 24/7,
+    including after market hours and weekends.
+    """
+    try:
+        ticker = yf.Ticker(f"{symbol}.NS")
+        chain = ticker.option_chain(expiry_str)
+        if chain is None:
+            return None
+        df = chain.calls if opt_type.upper() == "CE" else chain.puts
+        if df is None or df.empty:
+            return None
+        # Find the row closest to our target strike
+        df = df.copy()
+        df["diff"] = (df["strike"] - strike).abs()
+        row = df.nsmallest(1, "diff").iloc[0]
+        ltp = float(row.get("lastPrice", 0) or 0)
+        if ltp > 0.01:
+            return round(ltp, 2)
+    except Exception as ex:
+        logger.debug(f"yfinance LTP fallback {symbol} {expiry_str} {strike}{opt_type}: {ex}")
+    return None
+
+
+def _fetch_live_option_ltp(
+    symbol: str, expiry_str: str, strike: float, opt_type: str = "CE",
+) -> Tuple[Optional[float], str]:
+    """
+    Fetch the option LTP with a 2-source cascade:
+      1. NSE live API  (works during + after market hours — returns last close when closed)
+      2. yfinance      (fallback — 24/7, reads last closing option price from Yahoo cache)
+
+    Returns (ltp, source_label).
+    """
+    _warm_nse_session()   # no-op if session is fresh
+
+    # ── Source 1: NSE API ───────────────────────────────────────────────────
+    ltp = _fetch_nse_ltp_via_api(symbol, expiry_str, strike, opt_type)
+    if ltp and ltp > 0.01:
+        return ltp, "NSE Live"
+
+    # ── Source 2: yfinance option chain ────────────────────────────────────
+    ltp = _fetch_ltp_via_yfinance(symbol, expiry_str, strike, opt_type)
+    if ltp and ltp > 0.01:
+        return ltp, "NSE Close"
+
+    return None, ""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -893,11 +970,15 @@ def _scan_symbol_for_month(
         theta_pct       = contract_info["theta_pct"]
         rr_ratio        = contract_info["rr_ratio"]
 
-        # ── Live LTP (premium source) ─────────────────────────────────────
-        live_ltp = _fetch_live_option_ltp(symbol, expiry_str, strike, "CE")
+        # ── Live LTP / Last Close premium ─────────────────────────────────
+        # _fetch_live_option_ltp returns (price, source_label)
+        # source_label = "NSE Live"  → market hours price from NSE API
+        #               "NSE Close" → last close from yfinance (after hours)
+        #               ""          → both failed, fall back to BS model
+        live_ltp, ltp_source = _fetch_live_option_ltp(symbol, expiry_str, strike, "CE")
         if live_ltp and live_ltp > 0.01:
             current_premium = live_ltp
-            price_source = "Live LTP"
+            price_source = ltp_source   # "NSE Live" or "NSE Close"
         else:
             current_premium = bs_price
             price_source = "BS Model"
