@@ -182,6 +182,14 @@ All conditions must be satisfied:
         )
         st.markdown("---")
 
+        # Check if any result is using the BS Model
+        uses_bs_model = any(row.get("Price Source", "") == "BS Model" for _, row in df.iterrows())
+        if uses_bs_model:
+            st.warning(
+                "🌙 **After-Hours Notice:** The NSE live options feed is currently offline or returning empty option chains (typical between midnight and market open). "
+                "The app is seamlessly falling back to displaying computationally derived **Black-Scholes (BS) Model** premiums based on the closing spot price and historical volatility. Live NSE market prices will automatically resume during trading hours."
+            )
+
         # ── Ranked Cards ──────────────────────────────────────────────────
         st.subheader("🏆 Top Option Contracts (Strategy-Selected)")
 
