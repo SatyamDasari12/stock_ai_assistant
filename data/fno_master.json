@@ -1,0 +1,1238 @@
+[
+  {
+    "symbol": "360ONE",
+    "name": "360 ONE WAM LTD",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ABB",
+    "name": "ABB India Ltd",
+    "lot_size": 50,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ABCAPITAL",
+    "name": "Aditya Birla Capital Ltd",
+    "lot_size": 2200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ADANIENSOL",
+    "name": "Adani Energy Solutions Ltd",
+    "lot_size": 500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ADANIENT",
+    "name": "Adani Enterprises Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ADANIGREEN",
+    "name": "Adani Green Energy Ltd",
+    "lot_size": 250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "name": "Adani Ports and Special Economic Zone Ltd",
+    "lot_size": 400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ALKEM",
+    "name": "Alkem Laboratories Ltd",
+    "lot_size": 50,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "AMBER",
+    "name": "Amber Enterprises India Ltd",
+    "lot_size": 50,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "AMBUJACEM",
+    "name": "Ambuja Cements Ltd",
+    "lot_size": 1000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ANGELONE",
+    "name": "Angel One Ltd",
+    "lot_size": 250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "APLAPOLLO",
+    "name": "APL Apollo Tubes Ltd",
+    "lot_size": 175,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "APOLLOHOSP",
+    "name": "Apollo Hospitals Enterprise Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ASHOKLEY",
+    "name": "Ashok Leyland Ltd",
+    "lot_size": 2500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "name": "Asian Paints Ltd",
+    "lot_size": 200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ASTRAL",
+    "name": "Astral Ltd",
+    "lot_size": 200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "AUBANK",
+    "name": "AU Small Finance Bank Ltd",
+    "lot_size": 1500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "AUROPHARMA",
+    "name": "Aurobindo Pharma Ltd",
+    "lot_size": 650,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "AXISBANK",
+    "name": "AXIS Bank Ltd",
+    "lot_size": 625,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BAJAJ-AUTO",
+    "name": "Bajaj Auto Ltd",
+    "lot_size": 75,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BAJAJFINSV",
+    "name": "Bajaj Finserv Ltd",
+    "lot_size": 500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BAJAJHLDNG",
+    "name": "Bajaj Holdings & Investment Ltd",
+    "lot_size": 50,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "name": "Bajaj Finance Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BANDHANBNK",
+    "name": "Bandhan Bank Ltd",
+    "lot_size": 3600,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BANKBARODA",
+    "name": "Bank of Baroda",
+    "lot_size": 5850,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BANKINDIA",
+    "name": "Bank of India",
+    "lot_size": 3000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BDL",
+    "name": "Bharat Dynamics Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BEL",
+    "name": "Bharat Electronics Ltd",
+    "lot_size": 2250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BHARATFORG",
+    "name": "Bharat Forge Ltd",
+    "lot_size": 575,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "name": "Bharti Airtel Ltd",
+    "lot_size": 475,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BHEL",
+    "name": "Bharat Heavy Electricals Ltd",
+    "lot_size": 2700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BIOCON",
+    "name": "Biocon Ltd",
+    "lot_size": 2200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BLUESTARCO",
+    "name": "Blue Star Ltd",
+    "lot_size": 200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BOSCHLTD",
+    "name": "Bosch Ltd",
+    "lot_size": 25,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BPCL",
+    "name": "Bharat Petroleum Corporation Ltd",
+    "lot_size": 1800,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BRITANNIA",
+    "name": "Britannia Industries Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "BSE",
+    "name": "BSE Limited",
+    "lot_size": 400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CAMS",
+    "name": "Computer Age Management Services Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CANBK",
+    "name": "Canara Bank",
+    "lot_size": 3600,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CDSL",
+    "name": "Central Depository Services India Limited",
+    "lot_size": 1250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CGPOWER",
+    "name": "CG Power and Industrial Solutions Ltd",
+    "lot_size": 750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CHOLAFIN",
+    "name": "Cholamandalam Investment and Finance Company Ltd",
+    "lot_size": 500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CIPLA",
+    "name": "Cipla Ltd",
+    "lot_size": 650,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "COALINDIA",
+    "name": "Coal India Ltd",
+    "lot_size": 2100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "COFORGE",
+    "name": "Coforge Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "COLPAL",
+    "name": "Colgate Palmolive India Ltd",
+    "lot_size": 700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CONCOR",
+    "name": "Container Corporation of India Ltd",
+    "lot_size": 800,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CROMPTON",
+    "name": "Crompton Greaves Consumer Electricals Ltd",
+    "lot_size": 1500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "CUMMINSIND",
+    "name": "Cummins India Ltd",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DABUR",
+    "name": "Dabur India Ltd",
+    "lot_size": 1250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DALBHARAT",
+    "name": "Dalmia Bharat Ltd",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DELHIVERY",
+    "name": "Delhivery Ltd",
+    "lot_size": 2150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DIVISLAB",
+    "name": "Divis Laboratories Ltd",
+    "lot_size": 200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DIXON",
+    "name": "Dixon Technologies India Ltd",
+    "lot_size": 70,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DLF",
+    "name": "DLF Ltd",
+    "lot_size": 1650,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DMART",
+    "name": "Avenue Supermarts Ltd",
+    "lot_size": 75,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "DRREDDY",
+    "name": "Dr Reddys Laboratories Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "EICHERMOT",
+    "name": "Eicher Motors Ltd",
+    "lot_size": 175,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ETERNAL",
+    "name": "Eternal Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "EXIDEIND",
+    "name": "Exide Industries Ltd",
+    "lot_size": 2900,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "FEDERALBNK",
+    "name": "Federal Bank Ltd",
+    "lot_size": 5000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "FORTIS",
+    "name": "Fortis Healthcare Ltd",
+    "lot_size": 2000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GAIL",
+    "name": "Gail India Ltd",
+    "lot_size": 3825,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GLENMARK",
+    "name": "Glenmark Pharmaceuticals Ltd",
+    "lot_size": 575,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GMRAIRPORT",
+    "name": "GMR Airports Ltd",
+    "lot_size": 5250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GODREJCP",
+    "name": "Godrej Consumer Products Ltd",
+    "lot_size": 500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GODREJPROP",
+    "name": "Godrej Properties Ltd",
+    "lot_size": 375,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GRASIM",
+    "name": "Grasim Industries Ltd",
+    "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HAL",
+    "name": "Hindustan Aeronautics Ltd",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HAVELLS",
+    "name": "Havells India Ltd",
+    "lot_size": 500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HCLTECH",
+    "name": "HCL Technologies Ltd",
+    "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HDFCAMC",
+    "name": "HDFC Asset Management Company Ltd",
+    "lot_size": 200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HDFCBANK",
+    "name": "HDFC Bank Ltd",
+    "lot_size": 550,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HDFCLIFE",
+    "name": "HDFC Life Insurance Company Ltd",
+    "lot_size": 1100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HEROMOTOCO",
+    "name": "Hero MotoCorp Ltd",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HINDALCO",
+    "name": "Hindalco Industries Ltd",
+    "lot_size": 1075,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HINDPETRO",
+    "name": "Hindustan Petroleum Corporation Ltd",
+    "lot_size": 1450,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "name": "Hindustan Unilever Ltd",
+    "lot_size": 300,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HINDZINC",
+    "name": "Hindustan Zinc Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "HUDCO",
+    "name": "Housing & Urban Development Corporation Ltd",
+    "lot_size": 3250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ICICIBANK",
+    "name": "ICICI Bank Ltd",
+    "lot_size": 700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ICICIGI",
+    "name": "ICICI Lombard General Insurance Company Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ICICIPRULI",
+    "name": "ICICI Prudential Life Insurance Company Ltd",
+    "lot_size": 1000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "IDEA",
+    "name": "Vodafone Idea Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "IDFCFIRSTB",
+    "name": "IDFC First Bank Ltd",
+    "lot_size": 11250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "IEX",
+    "name": "Indian Energy Exchange Ltd",
+    "lot_size": 3750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INDHOTEL",
+    "name": "Indian Hotels Company Ltd",
+    "lot_size": 1400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INDIANB",
+    "name": "Indian Bank",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INDIGO",
+    "name": "InterGlobe Aviation Ltd",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INDUSINDBK",
+    "name": "Indusind Bank Ltd",
+    "lot_size": 600,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INDUSTOWER",
+    "name": "Indus Towers Ltd",
+    "lot_size": 1400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INFY",
+    "name": "Infosys Ltd",
+    "lot_size": 400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "INOXWIND",
+    "name": "Inox Wind Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "IOC",
+    "name": "Indian Oil Corporation Ltd",
+    "lot_size": 5000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "IREDA",
+    "name": "Indian Renewable Energy Development Agency Ltd",
+    "lot_size": 2500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "IRFC",
+    "name": "Indian Railway Finance Corporation Ltd",
+    "lot_size": 4800,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ITC",
+    "name": "ITC Ltd",
+    "lot_size": 1600,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "JINDALSTEL",
+    "name": "Jindal Steel Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "JIOFIN",
+    "name": "Jio Financial Services Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "JSWENERGY",
+    "name": "JSW Energy Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "JSWSTEEL",
+    "name": "JSW Steel Ltd",
+    "lot_size": 600,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "JUBLFOOD",
+    "name": "Jubilant FoodWorks Ltd",
+    "lot_size": 250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "KALYANKJIL",
+    "name": "Kalyan Jewellers India Ltd",
+    "lot_size": 833,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "KAYNES",
+    "name": "Kaynes Technology India Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "KEI",
+    "name": "KEI Industries Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "KFINTECH",
+    "name": "KFin Technologies Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "name": "Kotak Mahindra Bank Ltd",
+    "lot_size": 400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "KPITTECH",
+    "name": "KPIT Technologies Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LAURUSLABS",
+    "name": "Laurus Labs Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LICHSGFIN",
+    "name": "LIC Housing Finance Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LICI",
+    "name": "Life Insurance Corporation of India",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LODHA",
+    "name": "Lodha Developers Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LT",
+    "name": "Larsen & Toubro Ltd",
+    "lot_size": 175,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LTF",
+    "name": "L&T Finance Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LTM",
+    "name": "LTIMindtree Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "LUPIN",
+    "name": "Lupin Ltd",
+    "lot_size": 300,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "M&M",
+    "name": "Mahindra & Mahindra Ltd",
+    "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MANAPPURAM",
+    "name": "Manappuram Finance Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MANKIND",
+    "name": "Mankind Pharma Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MARICO",
+    "name": "Marico Ltd",
+    "lot_size": 1200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MARUTI",
+    "name": "Maruti Suzuki India Ltd",
+    "lot_size": 75,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MAXHEALTH",
+    "name": "Max Healthcare Institute Ltd",
+    "lot_size": 700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MAZDOCK",
+    "name": "Mazagon Dock Shipbuilders Ltd",
+    "lot_size": 50,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MCX",
+    "name": "Multi Commodity Exchange of India Ltd",
+    "lot_size": 200,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MFSL",
+    "name": "Max Financial Services Ltd",
+    "lot_size": 700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MOTHERSON",
+    "name": "Samvardhana Motherson International Ltd",
+    "lot_size": 4350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MPHASIS",
+    "name": "Mphasis Ltd",
+    "lot_size": 175,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "MUTHOOTFIN",
+    "name": "Muthoot Finance Ltd",
+    "lot_size": 375,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NATIONALUM",
+    "name": "National Aluminium Company Ltd",
+    "lot_size": 3500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NAUKRI",
+    "name": "Info Edge India Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NBCC",
+    "name": "NBCC India Ltd",
+    "lot_size": 5000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NESTLEIND",
+    "name": "Nestle India Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NHPC",
+    "name": "NHPC Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NMDC",
+    "name": "NMDC Ltd",
+    "lot_size": 3750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NTPC",
+    "name": "NTPC Ltd",
+    "lot_size": 2250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NUVAMA",
+    "name": "Nuvama Wealth Management Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NYKAA",
+    "name": "FSN E-Commerce Ventures Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "OBEROIRLTY",
+    "name": "Oberoi Realty Ltd",
+    "lot_size": 500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "OFSS",
+    "name": "Oracle Financial Services Software Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "OIL",
+    "name": "Oil India Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ONGC",
+    "name": "Oil and Natural Gas Corporation Ltd",
+    "lot_size": 1925,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PAGEIND",
+    "name": "Page Industries Ltd",
+    "lot_size": 15,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PATANJALI",
+    "name": "Patanjali Foods Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PAYTM",
+    "name": "One 97 Communications Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PERSISTENT",
+    "name": "Persistent Systems Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PETRONET",
+    "name": "Petronet LNG Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PFC",
+    "name": "Power Finance Corporation Ltd",
+    "lot_size": 2250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PGEL",
+    "name": "PG Electroplast Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PHOENIXLTD",
+    "name": "The Phoenix Mills Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PIDILITIND",
+    "name": "Pidilite Industries Ltd",
+    "lot_size": 250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PIIND",
+    "name": "PI Industries Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PNB",
+    "name": "Punjab National Bank",
+    "lot_size": 8000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PNBHOUSING",
+    "name": "PNB Housing Finance Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "POLICYBZR",
+    "name": "PB Fintech Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "POLYCAB",
+    "name": "Polycab India Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "POWERGRID",
+    "name": "Power Grid Corporation of India Ltd",
+    "lot_size": 2900,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "POWERINDIA",
+    "name": "Hitachi Energy India Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PPLPHARMA",
+    "name": "Piramal Pharma Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PREMIERENE",
+    "name": "Premier Energies Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "PRESTIGE",
+    "name": "Prestige Estates Projects Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "RBLBANK",
+    "name": "RBL Bank Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "RECLTD",
+    "name": "REC Ltd",
+    "lot_size": 1500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "RELIANCE",
+    "name": "Reliance Industries Ltd",
+    "lot_size": 250,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "RVNL",
+    "name": "Rail Vikas Nigam Ltd",
+    "lot_size": 1900,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SAIL",
+    "name": "Steel Authority of India Ltd",
+    "lot_size": 7100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SAMMAANCAP",
+    "name": "Sammaan Capital Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SBICARD",
+    "name": "SBI Cards and Payment Services Ltd",
+    "lot_size": 750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SBILIFE",
+    "name": "SBI Life Insurance Company Ltd",
+    "lot_size": 375,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SBIN",
+    "name": "State Bank of India",
+    "lot_size": 750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SHREECEM",
+    "name": "Shree Cement Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SHRIRAMFIN",
+    "name": "Shriram Finance Ltd",
+    "lot_size": 300,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SIEMENS",
+    "name": "Siemens Ltd",
+    "lot_size": 175,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SOLARINDS",
+    "name": "Solar Industries India Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SONACOMS",
+    "name": "Sona BLW Precision Forgings Ltd",
+    "lot_size": 750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SRF",
+    "name": "SRF Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "name": "Sun Pharmaceutical Industries Ltd",
+    "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SUPREMEIND",
+    "name": "Supreme Industries Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SUZLON",
+    "name": "Suzlon Energy Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SWIGGY",
+    "name": "Swiggy Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "SYNGENE",
+    "name": "Syngene International Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TATACONSUM",
+    "name": "Tata Consumer Products Ltd",
+    "lot_size": 900,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TATAELXSI",
+    "name": "Tata Elxsi Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TATAPOWER",
+    "name": "Tata Power Company Ltd",
+    "lot_size": 2700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TATASTEEL",
+    "name": "Tata Steel Ltd",
+    "lot_size": 2850,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TATATECH",
+    "name": "Tata Technologies Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TCS",
+    "name": "Tata Consultancy Services Ltd",
+    "lot_size": 175,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TECHM",
+    "name": "Tech Mahindra Ltd",
+    "lot_size": 400,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TIINDIA",
+    "name": "Tube Investments of India Ltd",
+    "lot_size": 125,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TITAN",
+    "name": "Titan Company Ltd",
+    "lot_size": 375,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TMPV",
+    "name": "Tata Motors Passenger Vehicles Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TORNTPHARM",
+    "name": "Torrent Pharmaceuticals Ltd",
+    "lot_size": 150,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TORNTPOWER",
+    "name": "Torrent Power Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TRENT",
+    "name": "Trent Ltd",
+    "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "TVSMOTOR",
+    "name": "TVS Motor Company Ltd",
+    "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "name": "UltraTech Cement Ltd",
+    "lot_size": 100,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "UNIONBANK",
+    "name": "Union Bank of India",
+    "lot_size": 5700,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "UNITDSPR",
+    "name": "United Spirits Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "UNOMINDA",
+    "name": "UNO Minda Ltd-",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "UPL",
+    "name": "UPL Ltd",
+    "lot_size": 1300,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "VBL",
+    "name": "Varun Beverages Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "VEDL",
+    "name": "Vedanta Ltd",
+    "lot_size": 1750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "VOLTAS",
+    "name": "Voltas Ltd",
+    "lot_size": 375,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "WAAREEENER",
+    "name": "Waaree Energies Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "WIPRO",
+    "name": "Wipro Ltd",
+    "lot_size": 1500,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "YESBANK",
+    "name": "Yes Bank Ltd",
+    "lot_size": 40000,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "ZYDUSLIFE",
+    "name": "Zydus Lifesciences Ltd",
+    "lot_size": 700,
+    "exchange": "NSE"
+  }
+]
