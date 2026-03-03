@@ -168,8 +168,12 @@ All conditions must be satisfied:
                 top_n=top_n,
                 min_score=float(min_score),
             )
+            st.session_state["options_scan_results"] = df
 
-        if df is None or df.empty:
+    df = st.session_state.get("options_scan_results")
+
+    if df is not None:
+        if df.empty:
             st.warning(
                 f"No stocks passed the strategy filters for **{selected_month_label}**. "
                 "Try lowering Min Score or selecting a future month."
