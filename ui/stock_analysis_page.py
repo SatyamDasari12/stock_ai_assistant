@@ -28,7 +28,7 @@ def render_stock_analysis_page() -> None:
     st.caption("Weekly trend prediction, technical indicators, news sentiment, and AI reasoning")
 
     # ── Inputs ────────────────────────────────────────────────────────────
-    col1, col2, col3 = st.columns([2, 1, 1])
+    col1, col2, col3, col4 = st.columns([2.5, 1, 1, 1])
 
 
     # ── Load combined NSE + BSE equity list (cached 24 h) ────────────────
@@ -84,10 +84,10 @@ def render_stock_analysis_page() -> None:
     with col3:
         end_date = st.date_input("To", value=date.today())
 
-    # Chart options
-    opt_col1, opt_col2 = st.columns(2)
-    show_bb   = opt_col1.checkbox("Show Bollinger Bands", value=True)
-    show_vwap = opt_col2.checkbox("Show VWAP", value=True)
+    with col4:
+        st.markdown("<div style='margin-bottom: -5px;'><small style='color:#8b949e; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;'>Chart Indicators</small></div>", unsafe_allow_html=True)
+        show_vwap = st.checkbox("VWAP", value=True)
+        show_bb   = st.checkbox("Bollinger", value=True)
 
     if not raw_symbol or not raw_symbol.strip():
         st.info("Enter a stock symbol to begin (e.g. **BEL**, **TCS**, **RELIANCE**).")
@@ -195,7 +195,7 @@ def render_stock_analysis_page() -> None:
             rangebreaks=rangebreaks,
         )
         _render_indicator_panels(history_df)
-        _render_scorecard_and_prediction(scorecard, prediction, sr_levels)
+        _render_scorecard(scorecard, sr_levels)
         _render_news_section(raw_symbol, display_name)
 
 
@@ -399,11 +399,11 @@ def _fmt(val: float, spec: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Scorecard & Prediction
+# Scorecard
 # ---------------------------------------------------------------------------
 
-def _render_scorecard_and_prediction(scorecard, prediction, sr_levels: dict) -> None:
-    st.subheader("🎯 Signal Scorecard & Weekly Outlook")
+def _render_scorecard(scorecard, sr_levels: dict) -> None:
+    st.subheader("🎯 Signal Scorecard & Key Levels")
 
     col1, col2 = st.columns(2)
     with col1:
@@ -421,6 +421,7 @@ def _render_scorecard_and_prediction(scorecard, prediction, sr_levels: dict) -> 
         else:
             st.info("Not enough data to compute scorecard.")
 
+    with col2:
         if sr_levels:
             st.markdown("**📐 Key Levels**")
             lc = st.columns(3)
@@ -430,27 +431,6 @@ def _render_scorecard_and_prediction(scorecard, prediction, sr_levels: dict) -> 
             pc = st.columns(2)
             pc[0].metric("S1", f"₹{sr_levels.get('s1', 0):.2f}")
             pc[1].metric("R1", f"₹{sr_levels.get('r1', 0):.2f}")
-
-    with col2:
-        if prediction is not None:
-            emojis = {"Bullish": "🚀", "Bearish": "📉", "Sideways": "↔️"}
-            colors = {"Bullish": "#3fb950", "Bearish": "#f85149", "Sideways": "#d29922"}
-            trend  = prediction.trend
-            c      = colors.get(trend, "#c9d1d9")
-            st.markdown("**Weekly Prediction**")
-            st.markdown(
-                f"<span style='color:{c}; font-size:1.5em; font-weight:800;'>"
-                f"{emojis.get(trend,'❓')} {trend}</span>",
-                unsafe_allow_html=True,
-            )
-            st.write(
-                f"**Probability:** {prediction.probability:.0%}  \n"
-                f"**Expected Range:** ₹{prediction.expected_low:.2f} – ₹{prediction.expected_high:.2f}"
-            )
-            # Note: AI Reasoning is already shown in the top "AI Summary & Prediction" section above.
-            # No duplicate expander here.
-        else:
-            st.info("Prediction model did not return an output (insufficient history).")
 
 
 # ---------------------------------------------------------------------------

@@ -407,12 +407,6 @@ All conditions must be satisfied:
 </div>
 """.format(profit=profit), unsafe_allow_html=True)
 
-        if st.button(f"🤖 AI Trade Analysis for {contract}", key=f"ai_btn_{rank}_{contract}"):
-            from services.llm_service import explain_option_contract
-            with st.spinner(f"Analyzing {contract} setup..."):
-                analysis = explain_option_contract(row.to_dict())
-                st.info(analysis)
-
         st.markdown("---")
 
         # ── Score Radar / Bar Chart ───────────────────────────────────────

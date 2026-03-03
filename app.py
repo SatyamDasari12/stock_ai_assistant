@@ -24,6 +24,16 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     background: #0d1117;
 }
 
+header[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+.block-container {
+    max-width: 98% !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
 /* ── Sidebar ── */
 [data-testid="stSidebar"] {
     background: #161b22;
@@ -240,7 +250,7 @@ def main() -> None:
             "<h2 style='text-align:center; color:#58a6ff !important;'>📈 AI Stock Assistant</h2>",
             unsafe_allow_html=True,
         )
-        st.caption("NSE/BSE personal trading co-pilot")
+        st.caption("Stock assistant")
         st.markdown("---")
 
         selected_page = st.radio(
