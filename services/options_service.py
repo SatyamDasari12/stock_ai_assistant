@@ -908,10 +908,16 @@ def _scan_symbol_for_month(
     Full 6-layer analysis for one F&O stock.
     Returns a single result dict for the optimal contract, or None if filtered out.
     """
+    import time
+    import random
+    
     # All data is fetched exclusively from NSE via the .NS yfinance suffix.
     # Expiry date is computed from NSE's last-Thursday-of-month rule (not yfinance).
     ns_sym = f"{symbol}.NS"
     try:
+        # Stagger API requests to prevent NSE rate-limiting blocks
+        time.sleep(random.uniform(0.1, 0.4))
+
         # NSE expiry = last Thursday of the month (formula-based, not from yfinance)
         expiry_str = _find_month_expiry(None, year, month)
         if not expiry_str:
@@ -1113,7 +1119,7 @@ def scan_fno_options_for_month(
     year: int,
     month: int,
     top_n: int = 10,
-    max_workers: int = 14,
+    max_workers: int = 3,
     min_score: float = 40.0,   # 0-100 scale
     strike_types: Optional[List[str]] = None,  # unused — kept for API compat
 ) -> pd.DataFrame:

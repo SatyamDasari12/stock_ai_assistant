@@ -348,9 +348,12 @@ def scan_intraday_momentum_stocks(
     end = datetime.now().date()
     start = end - timedelta(days=60)
 
+    import time
+
     rows = []
     for symbol in symbols:
         try:
+            time.sleep(0.3)  # Rate limit Yahoo Finance calls
             df = yf.download(
                 symbol,
                 start=start,
@@ -418,9 +421,12 @@ def compute_sector_rotation(universe: str = "NIFTY 100") -> pd.DataFrame:
     end = datetime.now().date()
     start = end - timedelta(days=15)
 
+    import time
+
     rows = []
     for symbol in symbols:
         try:
+            time.sleep(0.3)  # Rate limit Yahoo Finance calls
             df = yf.download(
                 symbol,
                 start=start,
