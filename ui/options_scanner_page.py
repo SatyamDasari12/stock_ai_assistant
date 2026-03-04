@@ -19,6 +19,7 @@ from services.options_service import (
     get_month_options,
     scan_fno_options_for_month,
 )
+from services.llm_service import explain_option_contract
 
 IST = pytz.timezone("Asia/Kolkata")
 
@@ -259,108 +260,93 @@ All conditions must be satisfied:
                 st_color  = "#58a6ff"   # blue — default
                 st_icon   = "🎯"
 
+            # ── Clickable expander: the contract name IS the expand toggle ──────
             with st.container():
-                st.markdown(f"""
+                _profit_sign = "+" if profit >= 0 else ""
+                _expander_label = (
+                    f"#{rank}  ·  **{contract}**  ·  {company}   "
+                    f"|  {_score_label(final_sc)} {final_sc:.1f}/100  "
+                    f"|  {st_icon} {strike_type}  "
+                    f"|  📅 {expiry} ({days_left}d)  "
+                    f"|  📍 {moneyness_label}  "
+                    f"|  Est ₹{_profit_sign}{abs(profit):,.0f} ({ret_pct:+.1f}%)"
+                )
+                with st.expander(_expander_label, expanded=False):
+
+                    # Full detail HTML card
+                    st.markdown(f"""
 <div style="
     background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);
     border:1px solid #21262d;
-    border-left:5px solid {bcolor};
-    border-radius:14px;
-    padding:18px 22px;
-    margin-bottom:16px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    border-radius:12px;
+    padding:16px 20px;
 ">
-  <!-- Rank + Contract + Score -->
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;">
-    <div>
-      <span style="color:#8b949e;font-size:0.75rem;font-weight:700;">#{rank}</span><br>
-      <span style="color:#58a6ff;font-size:1.3rem;font-weight:900;font-family:monospace;letter-spacing:0.5px;">{contract}</span>
-      <br><span style="color:#8b949e;font-size:0.78rem;">{company}</span>
-    </div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:4px;">
-      <span style="background:{bcolor}22;color:{bcolor};padding:5px 14px;border-radius:8px;
-                   font-weight:800;font-size:0.90rem;border:1px solid {bcolor}55;">
-        {_score_label(final_sc)} &nbsp; {final_sc:.1f}/100
-      </span>
-      <span style="background:{st_color}22;color:{st_color};padding:5px 10px;border-radius:8px;
-                   font-weight:700;font-size:0.82rem;border:1px solid {st_color}55;"
-            title="{strike_rule}">
-        {st_icon} {strike_type}
-      </span>
-      <span style="color:#8b949e;font-size:0.80rem;padding:4px 10px;border:1px solid #30363d;border-radius:6px;">
-        📅 {expiry} &nbsp;({days_left}d)
-      </span>
-      <span style="color:#8b949e;font-size:0.80rem;padding:4px 10px;border:1px solid #30363d;border-radius:6px;">
-        📍 {moneyness_label}
-      </span>
-    </div>
-  </div>
-  <!-- Strike Rule Explanation -->
-  <div style="margin-top:6px;color:{st_color};font-size:0.72rem;font-style:italic;opacity:0.85;">
+  <!-- Strike Rule -->
+  <div style="margin-bottom:6px;color:{st_color};font-size:0.66rem;font-style:italic;opacity:0.85;">
     Strike Rule: {strike_rule}
   </div>
 
   <!-- Hard Filter Row -->
-  <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;background:#010409;
-              padding:8px 14px;border-radius:8px;border:1px solid #21262d;">
-    <span style="font-size:0.74rem;color:#8b949e;">Hard Filters:</span>
-    <span style="font-size:0.74rem;">Close>20DMA {above_sma}</span>
-    <span style="font-size:0.74rem;">ATR≥1.5% {atr_flag}</span>
-    <span style="font-size:0.74rem;">3d Gain≤8% {gain3}</span>
-    <span style="font-size:0.74rem;">IV Range {iv_range}</span>
-    <span style="font-size:0.74rem;">Above 5EMA {above_5ema}</span>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;background:#010409;
+              padding:6px 12px;border-radius:8px;border:1px solid #21262d;">
+    <span style="font-size:0.68rem;color:#8b949e;">Hard Filters:</span>
+    <span style="font-size:0.68rem;">Close&gt;20DMA {above_sma}</span>
+    <span style="font-size:0.68rem;">ATR≥1.5% {atr_flag}</span>
+    <span style="font-size:0.68rem;">3d Gain≤8% {gain3}</span>
+    <span style="font-size:0.68rem;">IV Range {iv_range}</span>
+    <span style="font-size:0.68rem;">Above 5EMA {above_5ema}</span>
   </div>
 
   <!-- 7-Factor Score Bars -->
-  <div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;">
+  <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;">
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">A. Momentum <b style="color:#e6edf3;">{sc_a:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×25%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">A. Momentum <b style="color:#e6edf3;">{sc_a:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×25%</span></div>
       {_pct_bar(sc_a, 100, "#58a6ff")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">B. Breakout <b style="color:#e6edf3;">{sc_b:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×15%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">B. Breakout <b style="color:#e6edf3;">{sc_b:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×15%</span></div>
       {_pct_bar(sc_b, 100, "#26a69a")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">C. Volume <b style="color:#e6edf3;">{sc_c:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×15%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">C. Volume <b style="color:#e6edf3;">{sc_c:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×15%</span></div>
       {_pct_bar(sc_c, 100, "#7c3aed")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">D. OI Proxy <b style="color:#e6edf3;">{sc_d:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×15%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">D. OI Proxy <b style="color:#e6edf3;">{sc_d:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×15%</span></div>
       {_pct_bar(sc_d, 100, "#f59e0b")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">E. RSI Zone <b style="color:#e6edf3;">{sc_e:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×10%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">E. RSI Zone <b style="color:#e6edf3;">{sc_e:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×10%</span></div>
       {_pct_bar(sc_e, 100, "#ec4899")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">F. IV Spot <b style="color:#e6edf3;">{sc_f:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×10%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">F. IV Spot <b style="color:#e6edf3;">{sc_f:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×10%</span></div>
       {_pct_bar(sc_f, 100, "#14b8a6")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">G. Nifty <b style="color:#e6edf3;">{sc_g:.0f}</b><span style="color:#d29922;font-size:0.65rem;"> ×10%</span></div>
+      <div style="color:#8b949e;font-size:0.62rem;">G. Nifty <b style="color:#e6edf3;">{sc_g:.0f}</b><span style="color:#d29922;font-size:0.58rem;"> ×10%</span></div>
       {_pct_bar(sc_g, 100, "#84cc16")}
     </div>
     <div>
-      <div style="color:#8b949e;font-size:0.68rem;">RS Bonus <b style="color:{rs_color};">{'+' if rs_10d>0 else ''}{rs_10d:.1f}% → {'+' if rs_bonus>0 else ''}{rs_bonus:.0f}pts</b></div>
+      <div style="color:#8b949e;font-size:0.62rem;">RS Bonus <b style="color:{rs_color};">{'+' if rs_10d>0 else ''}{rs_10d:.1f}% → {'+' if rs_bonus>0 else ''}{rs_bonus:.0f}pts</b></div>
       {_pct_bar(rs_bonus, 5, rs_color)}
     </div>
   </div>
 
   <!-- Greeks Row -->
-  <div style="margin-top:10px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;">
-    <span style="color:#8b949e;font-size:0.80rem;">Δ Delta <b style="color:#58a6ff;">{delta_v:.3f}</b></span>
-    <span style="color:#8b949e;font-size:0.80rem;">Θ Theta <b style="color:#f85149;">₹{theta_v:.3f}/day</b> ({theta_pct:.3f}%) {theta_ok}</span>
-    <span style="color:#8b949e;font-size:0.80rem;">⚖️ R/R <b style="color:{'#3fb950' if rr>=1.8 else '#f85149'};">{rr:.2f}</b> {rr_ok}</span>
-    <span style="color:#8b949e;font-size:0.80rem;">RSI <b style="color:{'#3fb950' if 45<=rsi_v<=65 else '#d29922'};">{rsi_v:.1f}</b></span>
-    <span style="color:#8b949e;font-size:0.80rem;">IV Rank <b style="color:#c9d1d9;">{iv_rank:.1f}</b></span>
-    <span style="color:#8b949e;font-size:0.80rem;">σ <b style="color:#c9d1d9;">{vol_str}</b></span>
-    <span style="color:#8b949e;font-size:0.80rem;">5m% <b style="color:#c9d1d9;">{'+' if mom_pct>=0 else ''}{mom_pct:.2f}%</b></span>
-    <span style="color:#8b949e;font-size:0.80rem;">Breakout {breakout}</span>
+  <div style="margin-top:8px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+    <span style="color:#8b949e;font-size:0.74rem;">Δ Delta <b style="color:#58a6ff;">{delta_v:.3f}</b></span>
+    <span style="color:#8b949e;font-size:0.74rem;">Θ Theta <b style="color:#f85149;">₹{theta_v:.3f}/day</b> ({theta_pct:.3f}%) {theta_ok}</span>
+    <span style="color:#8b949e;font-size:0.74rem;">⚖️ R/R <b style="color:{'#3fb950' if rr>=1.8 else '#f85149'};">{{rr:.2f}}</b> {rr_ok}</span>
+    <span style="color:#8b949e;font-size:0.74rem;">RSI <b style="color:{'#3fb950' if 45<=rsi_v<=65 else '#d29922'};">{{rsi_v:.1f}}</b></span>
+    <span style="color:#8b949e;font-size:0.74rem;">IV Rank <b style="color:#c9d1d9;">{iv_rank:.1f}</b></span>
+    <span style="color:#8b949e;font-size:0.74rem;">σ <b style="color:#c9d1d9;">{vol_str}</b></span>
+    <span style="color:#8b949e;font-size:0.74rem;">5m% <b style="color:#c9d1d9;">{'+' if mom_pct>=0 else ''}{mom_pct:.2f}%</b></span>
+    <span style="color:#8b949e;font-size:0.74rem;">Breakout {breakout}</span>
   </div>
 
   <!-- News -->
-  {f'<div style="margin-top:7px;color:#8b949e;font-size:0.76rem;border-left:2px solid {news_color};padding-left:8px;font-style:italic;">"{news_head}"</div>' if news_head and news_head != "—" else ""}
+  {f'<div style="margin-top:7px;color:#8b949e;font-size:0.76rem;border-left:2px solid {news_color};padding-left:8px;font-style:italic;">&#34;{news_head}&#34;</div>' if news_head and news_head != '—' else ''}
 
   <!-- Investment / Profit Box -->
   <div style="margin-top:12px;background:#010409;border:1px solid #21262d;border-radius:10px;
@@ -380,9 +366,14 @@ All conditions must be satisfied:
       <div style="color:#ffa726;font-size:1.15rem;font-weight:900;font-family:monospace;">₹{invest:,.0f}</div>
       <div style="color:#484f58;font-size:0.64rem;">₹{cur_prem:,.2f} × {lot}</div>
     </div>
-    <div style="text-align:center;min-width:100px;">
-      <div style="color:#8b949e;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.6px;">🎯 Target (Spot)</div>
+    <div style="text-align:center;min-width:110px;">
+      <div style="color:#8b949e;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.6px;">📍 Current Price</div>
+      <div style="color:#e6edf3;font-size:1.1rem;font-weight:800;font-family:monospace;">₹{spot:,.2f}</div>
+    </div>
+    <div style="text-align:center;min-width:110px;">
+      <div style="color:#8b949e;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.6px;">🎯 Target Price</div>
       <div style="color:#58a6ff;font-size:1.1rem;font-weight:800;font-family:monospace;">₹{target:,.2f}</div>
+      <div style="color:#d29922;font-size:0.66rem;">needs {'+' if target>=spot else ''}{target-spot:+,.0f} ({(target-spot)/spot*100:+.1f}%)</div>
     </div>
     <div style="text-align:center;min-width:120px;">
       <div style="color:#8b949e;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.6px;">Exp Premium @ Target</div>
@@ -400,14 +391,55 @@ All conditions must be satisfied:
   </div>
 
   <!-- Exit Signals -->
-  <div style="margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-    <span style="color:#8b949e;font-size:0.70rem;">Exit Signals:</span>
-    <span style="color:{'#f85149' if exit_sigs!='None' else '#3fb950'};font-size:0.70rem;">{exit_sigs}</span>
+  <div style="margin-top:6px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+    <span style="color:#8b949e;font-size:0.64rem;">Exit Signals:</span>
+    <span style="color:{'#f85149' if exit_sigs!='None' else '#3fb950'};font-size:0.64rem;">{exit_sigs}</span>
   </div>
 </div>
-""".format(profit=profit), unsafe_allow_html=True)
+""".format(profit=profit, rr=rr, rsi_v=rsi_v), unsafe_allow_html=True)
 
-        st.markdown("---")
+                    # ── AI Analysis section ───────────────────────────────────
+                    st.markdown("---")
+                    st.markdown("#### 🤖 AI Analysis & Trend Summary")
+
+                    _ai_key = f"_opt_ai_{contract}"
+                    if _ai_key not in st.session_state:
+                        st.session_state[_ai_key] = None
+
+                    if st.session_state[_ai_key] is None:
+                        if st.button(
+                            "✨ Summarize",
+                            key=f"_btn_ai_{contract}",
+                            type="primary",
+                            use_container_width=False,
+                        ):
+                            with st.spinner("Asking AI analyst…"):
+                                st.session_state[_ai_key] = explain_option_contract(dict(row))
+                            st.rerun()
+                    else:
+                        st.markdown(
+                            "<div style='background:#0d1117;border:1px solid #21262d;"
+                            "border-left:4px solid #58a6ff;border-radius:10px;"
+                            "padding:14px 18px;font-size:0.88rem;color:#c9d1d9;"
+                            "white-space:pre-wrap;line-height:1.65;'>"
+                            + st.session_state[_ai_key].replace("<", "&lt;").replace(">", "&gt;")
+                            + "</div>",
+                            unsafe_allow_html=True,
+                        )
+                        if st.button(
+                            "🔄 Refresh AI",
+                            key=f"_btn_refresh_{contract}",
+                            use_container_width=False,
+                        ):
+                            st.session_state[_ai_key] = None
+                            st.rerun()
+
+            st.markdown("<div style='margin-bottom:6px;'></div>", unsafe_allow_html=True)
+
+
+
+
+
 
         # ── Score Radar / Bar Chart ───────────────────────────────────────
         st.subheader("📊 Composite Score Breakdown")
@@ -443,6 +475,7 @@ All conditions must be satisfied:
             margin=dict(l=10, r=10, t=30, b=100),
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
+            dragmode=False,
             legend=dict(
                 orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1,
                 font=dict(size=9, color="#8b949e"),
@@ -452,7 +485,7 @@ All conditions must be satisfied:
                        color="#8b949e", range=[0, 105]),
             title=dict(text="Weighted Factor Contributions (stacked)", font=dict(size=11, color="#8b949e")),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
 
         # ── R/R vs Score Scatter ──────────────────────────────────────────
         st.subheader("⚖️ Reward/Risk vs Composite Score")
@@ -477,10 +510,11 @@ All conditions must be satisfied:
         fig2.update_layout(
             height=380, margin=dict(l=10, r=10, t=10, b=40),
             plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+            dragmode=False,
             xaxis=dict(title="Composite Score (0-100)", gridcolor="rgba(128,128,128,0.12)", color="#8b949e"),
             yaxis=dict(title="Reward/Risk Ratio", gridcolor="rgba(128,128,128,0.12)", color="#8b949e"),
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
 
         # ── Full Table ────────────────────────────────────────────────────
         st.subheader("📋 Full Strategy Output")

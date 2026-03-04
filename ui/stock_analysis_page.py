@@ -284,6 +284,7 @@ def _render_price_chart(
         xaxis_rangeslider_visible=False,
         height=560,
         margin=dict(l=10, r=10, t=44, b=10),
+        dragmode=False,
         legend=dict(orientation="h", y=-0.14, font=dict(size=11)),
         title=dict(
             text=f"{symbol} — {interval_label} bars",
@@ -294,7 +295,7 @@ def _render_price_chart(
         xaxis=xaxis_cfg,
         yaxis=dict(gridcolor="rgba(128,128,128,0.12)", zeroline=False, side="right"),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
 
     # Volume chart
     if "Volume" in history_df.columns:
@@ -317,6 +318,7 @@ def _render_price_chart(
         fig_vol.update_layout(
             height=160,
             margin=dict(l=10, r=10, t=6, b=10),
+            dragmode=False,
             showlegend=False,
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
@@ -327,7 +329,7 @@ def _render_price_chart(
                 side="right",
             ),
         )
-        st.plotly_chart(fig_vol, use_container_width=True)
+        st.plotly_chart(fig_vol, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
 
 
 # ---------------------------------------------------------------------------

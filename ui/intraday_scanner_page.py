@@ -97,27 +97,27 @@ def render_intraday_scanner_page() -> None:
                         border: 1px solid #30363d;
                         border-left: 4px solid {score_color};
                         border-radius: 10px;
-                        padding: 14px 18px;
-                        margin-bottom: 10px;
+                        padding: 12px 16px;
+                        margin-bottom: 8px;
                     ">
-                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
                             <div>
-                                <span style="color:#8b949e; font-size:0.78rem; font-weight:700;">#{rank}</span>&nbsp;
-                                <span style="color:#e6edf3; font-size:1.05rem; font-weight:700;">{symbol}</span>
-                                &nbsp;<span style="background:{trend_color}22; color:{trend_color}; font-size:0.75rem; padding:2px 8px; border-radius:20px; border:1px solid {trend_color}66;">{trend_badge}</span>
+                                <span style="color:#8b949e; font-size:0.72rem; font-weight:700;">#{rank}</span>&nbsp;
+                                <span style="color:#e6edf3; font-size:0.95rem; font-weight:700;">{symbol}</span>
+                                &nbsp;<span style="background:{trend_color}22; color:{trend_color}; font-size:0.68rem; padding:2px 7px; border-radius:20px; border:1px solid {trend_color}66;">{trend_badge}</span>
                             </div>
-                            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                                <span style="background:{score_color}22; color:{score_color}; padding:3px 10px; border-radius:6px; font-weight:700; font-size:0.85rem; border:1px solid {score_color}55;">Score {score:.1f} &nbsp;{score_label}</span>
-                                <span style="color:{change_color}; font-weight:700; font-size:0.9rem;">{change_sign}{change:.2f}%</span>
+                            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                <span style="background:{score_color}22; color:{score_color}; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.78rem; border:1px solid {score_color}55;">Score {score:.1f} &nbsp;{score_label}</span>
+                                <span style="color:{change_color}; font-weight:700; font-size:0.84rem;">{change_sign}{change:.2f}%</span>
                             </div>
                         </div>
-                        <div style="margin-top:10px; display:flex; gap:24px; flex-wrap:wrap;">
-                            <span style="color:#8b949e; font-size:0.82rem;">💰 <b style="color:#c9d1d9;">₹{close:.2f}</b></span>
-                            <span style="color:#8b949e; font-size:0.82rem;">📊 RSI <b style="color:#c9d1d9;">{rsi:.1f}</b></span>
-                            <span style="color:#8b949e; font-size:0.82rem;">📈 Profit Est <b style="color:#58a6ff;">{profit_est}</b></span>
-                            <span style="color:#8b949e; font-size:0.82rem;">⚡ Vol Spike <b style="color:#c9d1d9;">{vol_spike}</b></span>
+                        <div style="margin-top:8px; display:flex; gap:20px; flex-wrap:wrap;">
+                            <span style="color:#8b949e; font-size:0.76rem;">&#x1F4B0; <b style="color:#c9d1d9;">&#x20B9;{close:.2f}</b></span>
+                            <span style="color:#8b949e; font-size:0.76rem;">&#x1F4CA; RSI <b style="color:#c9d1d9;">{rsi:.1f}</b></span>
+                            <span style="color:#8b949e; font-size:0.76rem;">&#x1F4C8; Profit Est <b style="color:#58a6ff;">{profit_est}</b></span>
+                            <span style="color:#8b949e; font-size:0.76rem;">&#x26A1; Vol Spike <b style="color:#c9d1d9;">{vol_spike}</b></span>
                         </div>
-                        {"" if news == "—" else f'<div style="margin-top:8px; color:#8b949e; font-size:0.78rem;">📰 <i>{news}</i></div>'}
+                        {"" if news == "—" else f'<div style="margin-top:6px; color:#8b949e; font-size:0.71rem;">&#x1F4F0; <i>{news}</i></div>'}
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -144,10 +144,11 @@ def render_intraday_scanner_page() -> None:
             margin=dict(l=10, r=10, t=10, b=80),
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
+            dragmode=False,
             xaxis=dict(tickangle=-45, tickfont=dict(size=9), color="#8b949e"),
             yaxis=dict(title="Score", gridcolor="rgba(128,128,128,0.15)", color="#8b949e"),
         )
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
 
         # Sector breakdown
         if "Sector" in results.columns:
@@ -172,10 +173,11 @@ def render_intraday_scanner_page() -> None:
                 margin=dict(l=10, r=10, t=10, b=40),
                 plot_bgcolor="rgba(0,0,0,0)",
                 paper_bgcolor="rgba(0,0,0,0)",
+                dragmode=False,
                 xaxis=dict(color="#8b949e"),
                 yaxis=dict(color="#8b949e"),
             )
-            st.plotly_chart(fig_sector, use_container_width=True)
+            st.plotly_chart(fig_sector, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
 
         st.caption(
             "Signals combine: RSI momentum, volume spikes, Price vs VWAP, MACD histogram, "
@@ -210,6 +212,7 @@ def render_intraday_scanner_page() -> None:
             margin=dict(l=10, r=10, t=20, b=60),
             plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)",
+            dragmode=False,
             xaxis=dict(tickangle=-30, color="#8b949e"),
             yaxis=dict(
                 title="Avg 5-day Return %",
@@ -219,6 +222,6 @@ def render_intraday_scanner_page() -> None:
                 color="#8b949e",
             ),
         )
-        st.plotly_chart(fig_rot, use_container_width=True)
+        st.plotly_chart(fig_rot, use_container_width=True, config={"scrollZoom": False, "displayModeBar": False})
         st.dataframe(sector_data.reset_index(drop=True), use_container_width=True)
         st.caption("Sector rotation is based on average 5-day price change of stocks in the selected universe.")

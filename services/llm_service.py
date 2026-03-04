@@ -256,21 +256,26 @@ def explain_option_contract(row_data: dict[str, Any]) -> str:
     news = row_data.get("Latest News", "")
 
     user_content = (
-        "You are an expert Indian derivatives and options trading analyst.\n"
-        "Provide a concise, extremely punchy 5-point analysis for this specific option trade setup based on the data below.\n"
-        f"Contract: {contract}\n"
-        f"Underlying Spot: ₹{spot} | Strike: ₹{strike}\n"
-        f"Current Premium: ₹{cur_prem} | Expected Target Premium: ₹{exp_prem}\n"
-        f"Target Spot Price: ₹{target}\n"
-        f"Estimated Profit per Lot: ₹{profit} ({ret_pct}% Return on Premium)\n"
-        f"Strategy Quant Score: {score}/100\n"
-        f"Relevant News: {news}\n\n"
-        "Format as 5 short, insightful bullet points covering:\n"
-        "1) 🎯 **The Trade Setup**: (Why this strike? ATM vs OTM context)\n"
-        "2) 📈 **The Target & Profitability**: (Risk/Reward summary)\n"
-        "3) 🚀 **What Needs to Happen**: (Momentum / Price action needed to hit target)\n"
-        "4) ⚠️ **Key Risks**: (Time decay, volatility crush, technical failure bounds)\n"
-        "5) 📰 **News Catalyst**: (Is the trend supported by recent news?)\n"
+        "You are a friendly stock market coach explaining an options trade to a complete beginner.\n"
+        "Use only plain, everyday English. Do NOT use technical words like 'theta', 'delta', 'greeks',\n"
+        "'IV', 'ATM', 'OTM', 'volatility crush', 'time decay', etc. Replace them with simple phrases:\n"
+        "  - instead of 'theta decay'  → say 'the option loses value every day it sits'\n"
+        "  - instead of 'IV' → say 'how jumpy the stock has been'\n"
+        "  - instead of 'ATM/OTM' → describe the price gap in rupees\n\n"
+        f"Stock/Contract  : {contract}\n"
+        f"Stock price now : ₹{spot}   |   Option strike (our target level) : ₹{strike}\n"
+        f"Cost to enter   : ₹{cur_prem} per share (one lot)\n"
+        f"Expected value at target : ₹{exp_prem} per share\n"
+        f"Target stock price : ₹{target}  |  Estimated profit per lot if we hit target : ₹{profit} ({ret_pct}% return)\n"
+        f"System rating for this trade : {score}/100\n"
+        f"Latest news about this stock : {news}\n\n"
+        "Write exactly 5 short bullet points (1–2 sentences each) in this order:\n"
+        "1) 🎯 **What is this trade?** — What are we doing and why does the stock look interesting right now?\n"
+        "2) 💰 **What is the potential gain?** — How much could we make, and what does it cost to try?\n"
+        "3) 📈 **What needs to happen?** — How much does the stock price need to rise (or fall) for this to work?\n"
+        "4) ⚠️ **What could go wrong?** — Explain the main risks in simple words (e.g. the stock doesn't move, time runs out, etc.)\n"
+        "5) 📰 **Does the news help or hurt?** — Based on the recent news, is this trade idea supported or not?\n"
+        "Total length: 200 words maximum. Friendly, conversational tone.\n"
     )
 
     try:
@@ -281,12 +286,12 @@ def explain_option_contract(row_data: dict[str, Any]) -> str:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are an options market expert providing direct, highly actionable summaries for retail traders.",
+                    "content": "You are a friendly stock market coach. Explain options trades in simple, plain English that anyone can understand. Avoid all technical jargon.",
                 },
                 {"role": "user", "content": user_content},
             ],
-            temperature=0.4,
-            max_tokens=350,
+            temperature=0.5,
+            max_tokens=400,
         )
         return resp.choices[0].message.content or "Failed to generate AI analysis."
     except Exception as exc:

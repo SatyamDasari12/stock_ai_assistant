@@ -5,28 +5,48 @@ from services.market_data_service import get_latest_quote, compute_support_resis
 from services.portfolio_service import build_portfolio_recommendation
 from services.llm_service import explain_portfolio_advice
 from rag.news_rag_service import get_symbol_news_summaries
-from features.tickers import VALID_TICKERS, TICKER_NAMES, TICKER_NAMES
+from features.stock_master import load_combined_stock_master, build_all_labels
 
 
 def render_portfolio_advisor_page() -> None:
     st.title("🧺 Portfolio Advisor")
     st.caption("Position-level buy / sell / hold guidance with risk metrics and AI reasoning")
 
+    # ── Load combined NSE + BSE equity list (cached 24 h) ────────────────
+    _entries    = load_combined_stock_master()
+    _all_labels = build_all_labels(_entries)
+    _name_map   = {sym: name for sym, name, _ in _entries}
+
     col1, col2, col3 = st.columns(3)
     with col1:
-        selected_ticker = st.selectbox(
-            "Stock symbol",
-            options=VALID_TICKERS + ["Custom..."],
+        _selected_label = st.selectbox(
+            "Search Stock",
+            options=_all_labels,
             index=None,
-            format_func=lambda x: f"{x} - {TICKER_NAMES.get(x, x)}" if x in TICKER_NAMES else x,
-            help="Select a symbol or choose 'Custom...' to enter a different one."
+            placeholder="Type symbol or company name: BEL, RELIANCE, HDFC…",
+            help="NSE and BSE stocks. Start typing — suggestions update live.",
+            key="portfolio_stock_search",
         )
-        if selected_ticker == "Custom...":
-            raw_symbol = st.text_input("Enter Custom Symbol", value="", help="No need to add .NS or .BO — the app detects the exchange.")
-        elif selected_ticker is None:
-            raw_symbol = ""
+        if _selected_label:
+            raw_symbol  = _selected_label.split(" — ")[0].strip()
+            _exch_tag   = "NSE" if "[NSE]" in _selected_label else "BSE"
+            _full_name  = _name_map.get(raw_symbol, raw_symbol)
+            st.session_state["_pa_confirmed_symbol"]   = raw_symbol
+            st.session_state["_pa_confirmed_exchange"] = _exch_tag
+            _badge_color = "#1a7f37" if _exch_tag == "NSE" else "#b45309"
+            _badge_bg    = "#1a7f3722" if _exch_tag == "NSE" else "#b4530922"
+            st.markdown(
+                f"<div style='margin-top:4px; font-size:0.85rem; color:#c9d1d9;'>"
+                f"<b>{raw_symbol}</b> &mdash; {_full_name} &nbsp;"
+                f"<span style='background:{_badge_bg}; color:{_badge_color}; "
+                f"border:1px solid {_badge_color}88; padding:2px 9px; "
+                f"border-radius:12px; font-size:0.74rem; font-weight:700;'>{_exch_tag}</span>"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
         else:
-            raw_symbol = selected_ticker
+            raw_symbol = st.session_state.get("_pa_confirmed_symbol", "")
+            _exch_tag  = st.session_state.get("_pa_confirmed_exchange", "NSE")
     with col2:
         buy_price = st.number_input("Buy price (₹)", min_value=0.0, value=440.0, step=0.5)
     with col3:
