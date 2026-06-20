@@ -1,10 +1,10 @@
 """
-Options Scanner Page — Advanced NSE F&O Call Buying Strategy
-=============================================================
+Options Scanner Page — Advanced F&O Options Scanner
+===================================================
 Displays the 7-factor composite score with per-factor breakdown,
 hard filter status, Greeks (Delta/Theta), Reward/Risk ratio,
 current premium (Live LTP or BS), target price, expected premium,
-and estimated profit.
+and estimated profit. Supporting both Call and Put strategies.
 """
 from __future__ import annotations
 
@@ -17,8 +17,9 @@ import streamlit as st
 from services.options_service import (
     get_fno_stock_list,
     get_month_options,
-    scan_fno_options_for_month,
+    scan_fno_options_for_month as scan_fno_calls_for_month,
 )
+import services.put_options_service as put_service
 from services.llm_service import explain_option_contract
 
 IST = pytz.timezone("Asia/Kolkata")
@@ -66,13 +67,25 @@ def _pct_bar(val: float, max_val: float = 100.0, color: str = "#58a6ff") -> str:
 def render_options_scanner_page() -> None:
     st.title("📊 Advanced F&O Options Scanner")
     st.caption(
-        f"NSE F&O Call Buying Strategy · 7-Factor Composite Score · "
+        f"NSE F&O Options Strategy · 7-Factor Composite Score · "
         f"Delta-Optimal Strike Selection | {_now_ist()}"
     )
 
+    # ── Controls ──────────────────────────────────────────────────────────
+    c_strat, c1, c2, c3 = st.columns([1.5, 1.5, 1, 1])
+
+    with c_strat:
+        strategy_mode = st.selectbox(
+            "Strategy Mode",
+            options=["Call Buying Strategy", "Put Buying Strategy"],
+            index=0,
+            help="Select whether to scan for bullish Call options or bearish Put options.",
+        )
+
     # ── Strategy Overview ─────────────────────────────────────────────────
-    with st.expander("📖 Strategy Overview — NSE F&O Advanced Call Buying", expanded=False):
-        st.markdown("""
+    if strategy_mode == "Call Buying Strategy":
+        with st.expander("📖 Strategy Overview — NSE F&O Advanced Call Buying", expanded=False):
+            st.markdown("""
 ### 🎯 Objective
 Select high-probability CALL option trades across 200+ NSE F&O stocks.
 Focus on **short-term bullish acceleration** with controlled Theta and IV risk.
@@ -122,10 +135,60 @@ All conditions must be satisfied:
 4. 5 trading days completed
 
 > ⚠️ *Live NSE option LTP used when market is open; Black-Scholes fair value otherwise.*
-        """)
+            """)
+    else:
+        with st.expander("📖 Strategy Overview — NSE F&O Advanced Put Buying", expanded=False):
+            st.markdown("""
+### 🎯 Objective
+Select high-probability PUT option trades across 200+ NSE F&O stocks.
+Focus on **short-term bearish acceleration** with controlled Theta and IV risk.
+**Holding Period: 3–7 trading days.**
 
-    # ── Controls ──────────────────────────────────────────────────────────
-    c1, c2, c3 = st.columns([2, 1, 1])
+---
+
+### Layer 1 — Hard Filters (Pre-Qualification)
+All conditions must be satisfied:
+| Condition | Rule |
+|-----------|------|
+| Trend | Close **<** 20 DMA |
+| Volume | Today ≥ **1.2×** 20-day average |
+| ATR | ATR(14)/Price ≥ **1.5%** |
+| 3-day cap | Price loss ≤ **8%** (3d return ≥ -8%) |
+| IV Range | IV Rank ≤ **40** (cheap volatility filter) |
+
+---
+
+### Layer 2 — 7-Factor Normalized Scoring (0–100 each)
+
+| Factor | Formula | Weight |
+|--------|---------|--------|
+| **A. Momentum** | `(1 - Close/Close_5d) × 100`, then `×5` capped at 100 | **25%** |
+| **B. Breakout** | 100 if Close < Lowest Low(10 days), else 0 | **15%** |
+| **C. Volume Expansion** | `min(100, (Today Vol / 20d Avg) × 50)` | **15%** |
+| **D. OI Short Buildup** | Price ↓ + Volume↑ proxy (live OI unavailable from API) | **15%** |
+| **E. RSI Zone** | 35–55 or rollover from >70 → 100, 28–35 → 60, <28 → 20, else → 40 | **10%** |
+| **F. IV Sweet Spot** | Rank ≤ 40 → 100, 40-55 → 60, else → 20 | **10%** |
+| **G. Nifty Alignment** | NIFTY50 < its 20 DMA → 100, else 40 | **10%** |
+
+**Bonus:** +5 pts if Stock 10d return < NIFTY50 10d return (Relative Weakness)
+
+---
+
+### Layer 4 — Contract Selection Rules
+- **Delta**: -0.55 ≤ Δ ≤ -0.40 (sweet spot between time value and intrinsic)
+- **Theta**: Daily theta ≤ 0.5% of premium
+- **Reward/Risk**: `(Target Move × |Delta|) / (Premium × 0.30)` ≥ **1.8**
+
+---
+
+### Layer 5 — Exit Signals (shown per contract)
+1. Stock closes above 5 EMA (bearish trend broken)
+2. Momentum Score < 50
+3. Option premium drops 30%
+4. 5 trading days completed
+
+> ⚠️ *Live NSE option LTP used when market is open; Black-Scholes fair value otherwise.*
+            """)
 
     month_opts = get_month_options()
     month_labels = [m[0] for m in month_opts]
@@ -163,15 +226,25 @@ All conditions must be satisfied:
             f"Running 6-Layer Strategy Scan for {selected_month_label}…  "
             "(60–120 seconds)"
         ):
-            df = scan_fno_options_for_month(
-                year=sel_year,
-                month=sel_month,
-                top_n=top_n,
-                min_score=float(min_score),
-            )
+            if strategy_mode == "Call Buying Strategy":
+                df = scan_fno_calls_for_month(
+                    year=sel_year,
+                    month=sel_month,
+                    top_n=top_n,
+                    min_score=float(min_score),
+                )
+            else:
+                df = put_service.scan_fno_options_for_month(
+                    year=sel_year,
+                    month=sel_month,
+                    top_n=top_n,
+                    min_score=float(min_score),
+                )
             st.session_state["options_scan_results"] = df
+            st.session_state["options_scan_mode"] = strategy_mode
 
     df = st.session_state.get("options_scan_results")
+    scan_mode = st.session_state.get("options_scan_mode", "Call Buying Strategy")
 
     if df is not None:
         if df.empty:
@@ -234,10 +307,12 @@ All conditions must be satisfied:
             breakout   = row.get("Breakout", "—")
             vol_ratio  = float(row.get("Vol Ratio", 1))
             above_sma  = row.get("Above 20DMA", "—")
+            below_sma  = row.get("Below 20DMA", "—")
             above_5ema = row.get("Above 5 EMA", "—")
             atr_flag   = row.get("ATR% ≥ 1.5", "—")
             iv_range   = row.get("IV Range OK", "—")
-            gain3      = row.get("3d Gain ≤ 8%", "—")
+            gain3_call = row.get("3d Gain ≤ 8%", "—")
+            gain3_put  = row.get("3d Gain ≥ -8", "—")
             exit_sigs  = row.get("Exit Signals", "None")
             news_score = float(row.get("News Score", 0))
             news_head  = row.get("Latest News", "—")
@@ -245,8 +320,13 @@ All conditions must be satisfied:
             bcolor = _trend_color(final_sc)
             pc = "#3fb950" if profit >= 0 else "#f85149"
             sc_src = _src_color(src)
-            rs_color = "#3fb950" if rs_10d > 0 else "#f85149"
-            moneyness_label = f"+{moneyness:.1f}% OTM" if moneyness > 0 else f"{abs(moneyness):.1f}% ITM"
+            rs_color = "#3fb950" if (rs_10d > 0 if scan_mode == "Call Buying Strategy" else rs_10d < 0) else "#f85149"
+            
+            if scan_mode == "Call Buying Strategy":
+                moneyness_label = f"+{moneyness:.1f}% OTM" if moneyness > 0 else f"{abs(moneyness):.1f}% ITM"
+            else:
+                moneyness_label = f"+{moneyness:.1f}% ITM" if moneyness > 0 else f"{abs(moneyness):.1f}% OTM"
+                
             news_color = "#3fb950" if news_score > 0.3 else ("#f85149" if news_score < -0.3 else "#8b949e")
 
             # Strike type badge style
@@ -273,6 +353,12 @@ All conditions must be satisfied:
                 )
                 with st.expander(_expander_label, expanded=False):
 
+                    sma_check_label = "Close&gt;20DMA" if scan_mode == "Call Buying Strategy" else "Close&lt;20DMA"
+                    sma_check_val = above_sma if scan_mode == "Call Buying Strategy" else below_sma
+
+                    gain3_label = "3d Gain≤8%" if scan_mode == "Call Buying Strategy" else "3d Gain≥-8%"
+                    gain3_val = gain3_call if scan_mode == "Call Buying Strategy" else gain3_put
+
                     # Full detail HTML card
                     st.markdown(f"""
 <div style="
@@ -290,12 +376,13 @@ All conditions must be satisfied:
   <div style="display:flex;gap:10px;flex-wrap:wrap;background:#010409;
               padding:6px 12px;border-radius:8px;border:1px solid #21262d;">
     <span style="font-size:0.68rem;color:#8b949e;">Hard Filters:</span>
-    <span style="font-size:0.68rem;">Close&gt;20DMA {above_sma}</span>
+    <span style="font-size:0.68rem;">{sma_check_label} {sma_check_val}</span>
     <span style="font-size:0.68rem;">ATR≥1.5% {atr_flag}</span>
-    <span style="font-size:0.68rem;">3d Gain≤8% {gain3}</span>
+    <span style="font-size:0.68rem;">{gain3_label} {gain3_val}</span>
     <span style="font-size:0.68rem;">IV Range {iv_range}</span>
     <span style="font-size:0.68rem;">Above 5EMA {above_5ema}</span>
   </div>
+
 
   <!-- 7-Factor Score Bars -->
   <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;">
