@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Optional, Sequence
+from typing import Any, Optional, Sequence, List, Dict
 
 from groq import Groq
 
@@ -51,10 +51,10 @@ def classify_intent(query: str) -> str:
 
 def _build_weekly_messages(
     symbol: str,
-    scorecard: StockScorecard | None,
+    scorecard: Optional[StockScorecard],
     prediction: WeeklyPredictionResult,
-    news_summaries: Sequence[str] | None = None,
-) -> list[dict[str, Any]]:
+    news_summaries: Optional[Sequence[str]] = None,
+) -> List[Dict[str, Any]]:
     news_block = ""
     if news_summaries:
         joined = "\n".join(f"- {n}" for n in news_summaries)
@@ -101,9 +101,9 @@ def _build_weekly_messages(
 
 def explain_weekly_outlook(
     symbol: str,
-    scorecard: StockScorecard | None,
+    scorecard: Optional[StockScorecard],
     prediction: WeeklyPredictionResult,
-    news_summaries: Sequence[str] | None = None,
+    news_summaries: Optional[Sequence[str]] = None,
 ) -> str:
     cfg = get_app_config().groq
     if not cfg.api_key:
@@ -128,7 +128,7 @@ def explain_weekly_outlook(
 
 
 def _fallback_weekly_explanation(
-    scorecard: StockScorecard | None,
+    scorecard: Optional[StockScorecard],
     prediction: WeeklyPredictionResult,
 ) -> str:
     base = (
@@ -172,8 +172,8 @@ def explain_portfolio_advice(
     latest_price: float,
     recommendation_action: str,
     recommendation_reason: str,
-    scorecard: StockScorecard | None,
-    news_summaries: Sequence[str] | None = None,
+    scorecard: Optional[StockScorecard],
+    news_summaries: Optional[Sequence[str]] = None,
 ) -> Optional[str]:
     """Generate LLM-enhanced portfolio advice explanation."""
     cfg = get_app_config().groq

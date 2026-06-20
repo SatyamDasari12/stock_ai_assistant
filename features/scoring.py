@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+from typing import Optional
+
 import pandas as pd
 
 from models.types import StockScorecard
 
 
-def build_scorecard_from_history(df: pd.DataFrame) -> StockScorecard | None:
+def build_scorecard_from_history(df: pd.DataFrame) -> Optional[StockScorecard]:
     if df is None or df.empty:
         return None
 

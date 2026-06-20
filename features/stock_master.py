@@ -5,7 +5,7 @@ Falls back to a hardcoded list if network is unavailable.
 """
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import Dict, List, Optional
 from io import StringIO
 
 import re
@@ -83,7 +83,7 @@ def _load_nse() -> Dict[str, str]:
     return {}
 
 
-def _load_bse(nse_master: Dict[str, str] | None = None) -> Dict[str, str]:
+def _load_bse(nse_master: Optional[Dict[str, str]] = None) -> Dict[str, str]:
     """
     Return {ticker_symbol: 'Company Name'} for BSE-listed equities.
 

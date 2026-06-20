@@ -10,7 +10,7 @@ class WeeklyPredictionResult:
     probability: float
     expected_low: float
     expected_high: float
-    reasoning: str | None = None
+    reasoning: Optional[str] = None
 
 
 @dataclass

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Optional
+
 from models.types import PortfolioRecommendation, StockScorecard
 
 
@@ -8,8 +10,8 @@ def build_portfolio_recommendation(
     buy_price: float,
     quantity: int,
     latest_price: float,
-    scorecard: StockScorecard | None,
-    atr: float | None = None,
+    scorecard: Optional[StockScorecard],
+    atr: Optional[float] = None,
 ) -> PortfolioRecommendation:
     pnl_pct = (latest_price - buy_price) / buy_price * 100 if buy_price > 0 else 0.0
     total_score = scorecard.total_score if scorecard else 0

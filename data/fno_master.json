@@ -42,6 +42,12 @@
     "exchange": "NSE"
   },
   {
+    "symbol": "ADANIPOWER",
+    "name": "Adani Power Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
     "symbol": "ALKEM",
     "name": "Alkem Laboratories Ltd",
     "lot_size": 50,
@@ -264,6 +270,12 @@
     "exchange": "NSE"
   },
   {
+    "symbol": "COCHINSHIP",
+    "name": "Cochin Shipyard Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
     "symbol": "COFORGE",
     "name": "Coforge Ltd",
     "lot_size": 100,
@@ -366,6 +378,12 @@
     "exchange": "NSE"
   },
   {
+    "symbol": "FORCEMOT",
+    "name": "Force Motors Ltd-",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
     "symbol": "FORTIS",
     "name": "Fortis Healthcare Ltd",
     "lot_size": 2000,
@@ -390,6 +408,12 @@
     "exchange": "NSE"
   },
   {
+    "symbol": "GODFRYPHLP",
+    "name": "Godfrey Phillips India Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
     "symbol": "GODREJCP",
     "name": "Godrej Consumer Products Ltd",
     "lot_size": 500,
@@ -405,6 +429,12 @@
     "symbol": "GRASIM",
     "name": "Grasim Industries Ltd",
     "lot_size": 350,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "GVT&D",
+    "name": "GE Vernova T&D India Ltd",
+    "lot_size": 0,
     "exchange": "NSE"
   },
   {
@@ -474,9 +504,9 @@
     "exchange": "NSE"
   },
   {
-    "symbol": "HUDCO",
-    "name": "Housing & Urban Development Corporation Ltd",
-    "lot_size": 3250,
+    "symbol": "HYUNDAI",
+    "name": "Hyundai Motor India Ltd",
+    "lot_size": 0,
     "exchange": "NSE"
   },
   {
@@ -685,7 +715,7 @@
   },
   {
     "symbol": "LTM",
-    "name": "LTIMindtree Ltd",
+    "name": "LTM Ltd",
     "lot_size": 0,
     "exchange": "NSE"
   },
@@ -756,6 +786,12 @@
     "exchange": "NSE"
   },
   {
+    "symbol": "MOTILALOFS",
+    "name": "Motilal Oswal Financial Services Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
     "symbol": "MPHASIS",
     "name": "Mphasis Ltd",
     "lot_size": 175,
@@ -765,6 +801,12 @@
     "symbol": "MUTHOOTFIN",
     "name": "Muthoot Finance Ltd",
     "lot_size": 375,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "NAM-INDIA",
+    "name": "Nippon Life India Asset Management Ltd",
+    "lot_size": 0,
     "exchange": "NSE"
   },
   {
@@ -942,12 +984,6 @@
     "exchange": "NSE"
   },
   {
-    "symbol": "PPLPHARMA",
-    "name": "Piramal Pharma Ltd",
-    "lot_size": 0,
-    "exchange": "NSE"
-  },
-  {
     "symbol": "PREMIERENE",
     "name": "Premier Energies Ltd",
     "lot_size": 0,
@@ -956,6 +992,12 @@
   {
     "symbol": "PRESTIGE",
     "name": "Prestige Estates Projects Ltd",
+    "lot_size": 0,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "RADICO",
+    "name": "Radico Khaitan Ltd",
     "lot_size": 0,
     "exchange": "NSE"
   },
@@ -1074,12 +1116,6 @@
     "exchange": "NSE"
   },
   {
-    "symbol": "SYNGENE",
-    "name": "Syngene International Ltd",
-    "lot_size": 0,
-    "exchange": "NSE"
-  },
-  {
     "symbol": "TATACONSUM",
     "name": "Tata Consumer Products Ltd",
     "lot_size": 900,
@@ -1101,12 +1137,6 @@
     "symbol": "TATASTEEL",
     "name": "Tata Steel Ltd",
     "lot_size": 2850,
-    "exchange": "NSE"
-  },
-  {
-    "symbol": "TATATECH",
-    "name": "Tata Technologies Ltd",
-    "lot_size": 0,
     "exchange": "NSE"
   },
   {
@@ -1143,12 +1173,6 @@
     "symbol": "TORNTPHARM",
     "name": "Torrent Pharmaceuticals Ltd",
     "lot_size": 150,
-    "exchange": "NSE"
-  },
-  {
-    "symbol": "TORNTPOWER",
-    "name": "Torrent Power Ltd",
-    "lot_size": 0,
     "exchange": "NSE"
   },
   {
@@ -1203,6 +1227,12 @@
     "symbol": "VEDL",
     "name": "Vedanta Ltd",
     "lot_size": 1750,
+    "exchange": "NSE"
+  },
+  {
+    "symbol": "VMM",
+    "name": "Vishal Mega Mart Ltd",
+    "lot_size": 0,
     "exchange": "NSE"
   },
   {

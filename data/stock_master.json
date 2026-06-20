@@ -190,6 +190,11 @@
     "BSE"
   ],
   [
+    "3BBLACKBIO",
+    "3B Blackbio Dx Limited",
+    "NSE"
+  ],
+  [
     "3BFILMS",
     "3B Films Ltd",
     "BSE"
@@ -228,11 +233,6 @@
     "3PLAND",
     "3P Land Holdings Limited",
     "NSE"
-  ],
-  [
-    "4THGEN",
-    "Fourth Generation Information Systems Ltd",
-    "BSE"
   ],
   [
     "5PAISA",
@@ -318,11 +318,6 @@
     "AAKASH",
     "Aakash Exploration Services Limited",
     "NSE"
-  ],
-  [
-    "AANANDALAK",
-    "Aananda Lakshmi Spinning Mills Ltd",
-    "BSE"
   ],
   [
     "AANCHALISP",
@@ -455,19 +450,14 @@
     "BSE"
   ],
   [
-    "ABAN",
-    "Aban Offshore Ltd",
-    "BSE"
-  ],
-  [
-    "ABAN",
-    "Aban Offshore Limited",
-    "NSE"
-  ],
-  [
     "ABANSENT",
     "Abans Enterprises Ltd",
     "BSE"
+  ],
+  [
+    "ABANSENT",
+    "Abans Enterprises Limited",
+    "NSE"
   ],
   [
     "ABATEAS",
@@ -555,11 +545,6 @@
     "BSE"
   ],
   [
-    "ABHIJIT",
-    "Abhijit Trading Company Ltd",
-    "BSE"
-  ],
-  [
     "ABINFRA",
     "A B Infrabuild Ltd",
     "BSE"
@@ -595,6 +580,11 @@
     "BSE"
   ],
   [
+    "ABMKNO",
+    "ABM Knowledgeware Limited",
+    "NSE"
+  ],
+  [
     "ABREL",
     "Aditya Birla Real Estate Ltd",
     "BSE"
@@ -612,6 +602,11 @@
   [
     "ABRIL",
     "Abril Paper Tech Ltd",
+    "BSE"
+  ],
+  [
+    "ABSL10BANK",
+    "Aditya Birla Sun Life BSE Top 10 Banks ETF",
     "BSE"
   ],
   [
@@ -720,11 +715,6 @@
     "BSE"
   ],
   [
-    "ACEENGITEC",
-    "Ace Engitech Ltd",
-    "BSE"
-  ],
-  [
     "ACEINTEG",
     "Ace Integrated Solutions Limited",
     "NSE"
@@ -828,6 +818,11 @@
     "ACSTECH",
     "ACS Technologies Ltd",
     "BSE"
+  ],
+  [
+    "ACSTECH",
+    "ACS Technologies Limited",
+    "NSE"
   ],
   [
     "ACTIVE",
@@ -970,11 +965,6 @@
     "BSE"
   ],
   [
-    "ADJIA",
-    "Adjia Technologies Ltd",
-    "BSE"
-  ],
-  [
     "ADL",
     "Archidply Decor Ltd",
     "BSE"
@@ -1095,11 +1085,6 @@
     "BSE"
   ],
   [
-    "ADVIKLA",
-    "Advik Laboratories Ltd",
-    "BSE"
-  ],
-  [
     "ADVLIFE",
     "Advance Lifestyles Ltd",
     "BSE"
@@ -1153,6 +1138,11 @@
     "AEPL",
     "Artemis Electricals and Projects Ltd",
     "BSE"
+  ],
+  [
+    "AEPL",
+    "Artemis Electricals and Projects Limited",
+    "NSE"
   ],
   [
     "AEQUS",
@@ -1260,6 +1250,11 @@
     "NSE"
   ],
   [
+    "AFLTD",
+    "Autofurnish Ltd",
+    "BSE"
+  ],
+  [
     "AFSL",
     "Abans Financial Services Ltd",
     "BSE"
@@ -1345,16 +1340,6 @@
     "NSE"
   ],
   [
-    "AGSTRA",
-    "AGS Transact Technologies Ltd",
-    "BSE"
-  ],
-  [
-    "AGSTRA",
-    "AGS Transact Technologies Limited",
-    "NSE"
-  ],
-  [
     "AGVENTURES",
     "AG Ventures Ltd-",
     "BSE"
@@ -1397,6 +1382,16 @@
   [
     "AHLUCONT",
     "Ahluwalia Contracts India Limited",
+    "NSE"
+  ],
+  [
+    "AHLWEST",
+    "Asian Hotels West Ltd",
+    "BSE"
+  ],
+  [
+    "AHLWEST",
+    "Asian Hotels West Limited",
     "NSE"
   ],
   [
@@ -1462,11 +1457,6 @@
   [
     "AIRFLOA",
     "Airfloa Rail Technology Ltd",
-    "BSE"
-  ],
-  [
-    "AIRLTD",
-    "Avishkar Infra Realty Ltd",
     "BSE"
   ],
   [
@@ -1540,6 +1530,11 @@
     "BSE"
   ],
   [
+    "AKCAPIT",
+    "AK Capital Services Limited",
+    "NSE"
+  ],
+  [
     "AKG",
     "Akg Exim Limited",
     "NSE"
@@ -1595,16 +1590,6 @@
     "NSE"
   ],
   [
-    "AKZOINDIA",
-    "Akzo Nobel India Ltd",
-    "BSE"
-  ],
-  [
-    "AKZOINDIA",
-    "Akzo Nobel India Limited",
-    "NSE"
-  ],
-  [
     "ALANKIT",
     "Alankit Ltd",
     "BSE"
@@ -1628,11 +1613,6 @@
     "ALBERTDAVD",
     "Albert David Limited",
     "NSE"
-  ],
-  [
-    "ALCHCORP",
-    "Alchemist Corporation Ltd",
-    "BSE"
   ],
   [
     "ALEMBICLTD",
@@ -1703,11 +1683,6 @@
     "ALIVUS",
     "Alivus Life Sciences Limited",
     "NSE"
-  ],
-  [
-    "ALKA",
-    "Alka India Ltd",
-    "BSE"
   ],
   [
     "ALKALI",
@@ -1855,11 +1830,6 @@
     "BSE"
   ],
   [
-    "ALSTONE",
-    "Alstone Textiles India Ltd",
-    "BSE"
-  ],
-  [
     "ALUFLUOR",
     "Alufluoride Ltd",
     "BSE"
@@ -1918,6 +1888,11 @@
     "AMBALALSA",
     "Ambalal Sarabhai Enterprises Ltd",
     "BSE"
+  ],
+  [
+    "AMBALALSA",
+    "Ambalal Sarabhai Enterprises Limited",
+    "NSE"
   ],
   [
     "AMBARPIL",
@@ -2013,6 +1988,16 @@
     "AMINTAN",
     "Amin Tannery Ltd",
     "BSE"
+  ],
+  [
+    "AMIRCHAND",
+    "Amir Chand Jagdish Kumar Exports Ltd",
+    "BSE"
+  ],
+  [
+    "AMIRCHAND",
+    "Amir Chand Jagdish Kumar Exports Limited",
+    "NSE"
   ],
   [
     "AMITSEC",
@@ -2380,11 +2365,6 @@
     "NSE"
   ],
   [
-    "APIL",
-    "Avi Products India Ltd",
-    "BSE"
-  ],
-  [
     "APIS",
     "Apis India Ltd",
     "BSE"
@@ -2453,6 +2433,11 @@
     "APOLLOHOSP",
     "Apollo Hospitals Enterprise Limited",
     "NSE"
+  ],
+  [
+    "APOLLOIN",
+    "Apollo Ingredients Ltd",
+    "BSE"
   ],
   [
     "APOLLOPIPE",
@@ -2570,6 +2555,11 @@
     "BSE"
   ],
   [
+    "ARDIALL",
+    "Ardi Alliances Ltd",
+    "BSE"
+  ],
+  [
     "ARE&M",
     "Amara Raja Energy & Mobility Ltd",
     "BSE"
@@ -2625,6 +2615,11 @@
     "BSE"
   ],
   [
+    "ARIHANT",
+    "Arihant Foundations & Housing Limited",
+    "NSE"
+  ],
+  [
     "ARIHANTCAP",
     "Arihant Capital Markets Ltd",
     "BSE"
@@ -2657,11 +2652,6 @@
   [
     "ARISE",
     "Arihants Securities Ltd",
-    "BSE"
-  ],
-  [
-    "ARISINT",
-    "Aris International Ltd",
     "BSE"
   ],
   [
@@ -2740,6 +2730,11 @@
     "NSE"
   ],
   [
+    "ARSIFHDAD",
+    "Arudha Hybrid Long- Short Fund Direct Plan-Annual IDCW",
+    "BSE"
+  ],
+  [
     "ARSIFHDG",
     "Arudha Hybrid Long- Short Fund Direct Plan-Growth",
     "BSE"
@@ -2797,11 +2792,6 @@
   [
     "ARUNAHTEL",
     "Aruna Hotels Ltd",
-    "BSE"
-  ],
-  [
-    "ARUNIS",
-    "Arunis Abode Ltd",
     "BSE"
   ],
   [
@@ -2910,6 +2900,11 @@
     "BSE"
   ],
   [
+    "ASGARD",
+    "Asgard Alcobev Ltd",
+    "BSE"
+  ],
+  [
     "ASHAI",
     "Ashiana Agro Industries Ltd",
     "BSE"
@@ -2945,6 +2940,11 @@
     "BSE"
   ],
   [
+    "ASHIKA",
+    "Ashika Credit Capital Limited",
+    "NSE"
+  ],
+  [
     "ASHIMASYN",
     "Ashima Ltd",
     "BSE"
@@ -2953,11 +2953,6 @@
     "ASHIMASYN",
     "Ashima Limited",
     "NSE"
-  ],
-  [
-    "ASHIS",
-    "Ashiana Ispat Ltd",
-    "BSE"
   ],
   [
     "ASHISHPO",
@@ -3003,11 +2998,6 @@
     "ASHOKLEY",
     "Ashok Leyland Limited",
     "NSE"
-  ],
-  [
-    "ASHOKRE",
-    "Ashoka Refineries Ltd",
-    "BSE"
   ],
   [
     "ASHRAM",
@@ -3111,12 +3101,12 @@
   ],
   [
     "ASMS",
-    "Bartronics India Ltd",
+    "Avio Smart Market Stack Ltd",
     "BSE"
   ],
   [
     "ASMS",
-    "Bartronics India Limited",
+    "Avio Smart Market Stack Limited",
     "NSE"
   ],
   [
@@ -3163,6 +3153,11 @@
     "ASTAR",
     "Asian Star Company Ltd-",
     "BSE"
+  ],
+  [
+    "ASTAR",
+    "Asian Star Company Limited",
+    "NSE"
   ],
   [
     "ASTEC",
@@ -3237,11 +3232,6 @@
   [
     "ASUTENT",
     "Asutosh Enterprise Ltd",
-    "BSE"
-  ],
-  [
-    "ASYL",
-    "Advance Syntex Ltd",
     "BSE"
   ],
   [
@@ -3400,6 +3390,11 @@
     "NSE"
   ],
   [
+    "AUREATE",
+    "Aureate Tradde Ltd",
+    "BSE"
+  ],
+  [
     "AURIGROW",
     "Auri Grow India Limited",
     "NSE"
@@ -3490,11 +3485,6 @@
     "BSE"
   ],
   [
-    "AUTOPINS",
-    "Auto Pins India Ltd",
-    "BSE"
-  ],
-  [
     "AUTOPRD",
     "Automobile Products of India Ltd",
     "BSE"
@@ -3550,11 +3540,6 @@
     "NSE"
   ],
   [
-    "AVASARA",
-    "Avasara Finance Ltd",
-    "BSE"
-  ],
-  [
     "AVAX",
     "Avax Apparels and Ornaments Ltd",
     "BSE"
@@ -3573,16 +3558,6 @@
     "AVG",
     "AVG Logistics Limited",
     "NSE"
-  ],
-  [
-    "AVI",
-    "AVI Polymers Ltd",
-    "BSE"
-  ],
-  [
-    "AVI-RE",
-    "Avi Polymers Ltd",
-    "BSE"
   ],
   [
     "AVIVA",
@@ -3670,11 +3645,6 @@
     "BSE"
   ],
   [
-    "AXENTRA",
-    "Axentra Corp Ltd",
-    "BSE"
-  ],
-  [
     "AXISBANK",
     "AXIS Bank Ltd",
     "BSE"
@@ -3702,11 +3672,6 @@
   [
     "AXISHCETF",
     "Axis NIFTY Healthcare ETF",
-    "BSE"
-  ],
-  [
-    "AXISOL",
-    "Axis Solutions Ltd",
     "BSE"
   ],
   [
@@ -3925,6 +3890,11 @@
     "BSE"
   ],
   [
+    "BAJAJST",
+    "Bajaj Steel Industries Limited",
+    "NSE"
+  ],
+  [
     "BAJEL",
     "Bajel Projects Ltd",
     "BSE"
@@ -4125,8 +4095,8 @@
     "NSE"
   ],
   [
-    "BANGANGA",
-    "Banganga Paper Industries Ltd",
+    "BANK10ADD",
+    "DSP BSE Top 10 Banks ETF",
     "BSE"
   ],
   [
@@ -4235,11 +4205,6 @@
     "BSE"
   ],
   [
-    "BARONINF",
-    "Baron Infotech Ltd",
-    "BSE"
-  ],
-  [
     "BASANTGL",
     "Basant Agro Tech India Ltd-",
     "BSE"
@@ -4278,6 +4243,11 @@
     "BATLIBOI",
     "Batliboi Ltd-",
     "BSE"
+  ],
+  [
+    "BATLIBOI",
+    "Batliboi Limited",
+    "NSE"
   ],
   [
     "BAYERCROP",
@@ -4395,6 +4365,11 @@
     "BSE"
   ],
   [
+    "BCPL",
+    "BCPL Railway Infrastructure Limited",
+    "NSE"
+  ],
+  [
     "BDH",
     "BDH Industries Ltd",
     "BSE"
@@ -4445,6 +4420,11 @@
     "BSE"
   ],
   [
+    "BEEKAY",
+    "Beekay Steel Industries Limited",
+    "NSE"
+  ],
+  [
     "BEEYU",
     "Beeyu Overseas Ltd",
     "BSE"
@@ -4468,6 +4448,11 @@
     "BEL",
     "Bharat Electronics Limited",
     "NSE"
+  ],
+  [
+    "BELDING",
+    "Belding India Ltd",
+    "BSE"
   ],
   [
     "BELLACASA",
@@ -4523,6 +4508,11 @@
     "BENGALASM",
     "Bengal & Assam Company Ltd",
     "BSE"
+  ],
+  [
+    "BENGALASM",
+    "Bengal & Assam Company Limited",
+    "NSE"
   ],
   [
     "BENGALS",
@@ -4638,21 +4628,6 @@
     "BGIL",
     "BGIL Films & Technologies Ltd",
     "BSE"
-  ],
-  [
-    "BGJL",
-    "Bhakti Gems and Jewellery Ltd",
-    "BSE"
-  ],
-  [
-    "BGLOBAL",
-    "Bharatiya Global Infomedia Ltd",
-    "BSE"
-  ],
-  [
-    "BGLOBAL",
-    "Bharatiya Global Infomedia Limited",
-    "NSE"
   ],
   [
     "BGRENERGY",
@@ -4825,11 +4800,6 @@
     "BSE"
   ],
   [
-    "BHATEXT",
-    "Bharat Textiles & Proofing Industries Ltd",
-    "BSE"
-  ],
-  [
     "BHATIA",
     "Bhatia Communications & Retail India Ltd",
     "BSE"
@@ -4865,6 +4835,11 @@
     "BSE"
   ],
   [
+    "BI",
+    "Bilcare Limited",
+    "NSE"
+  ],
+  [
     "BIBCL",
     "Bharat Immunologicals & Biologicals Corporation Ltd-",
     "BSE"
@@ -4882,11 +4857,6 @@
   [
     "BIHSPONG",
     "Bihar Sponge Iron Ltd",
-    "BSE"
-  ],
-  [
-    "BIJHANS",
-    "Bijoy Hans Ltd",
     "BSE"
   ],
   [
@@ -4930,13 +4900,13 @@
     "BSE"
   ],
   [
-    "BINDALEXPO",
-    "Bindal Exports Ltd",
-    "BSE"
+    "BIMETAL",
+    "Bimetal Bearings Limited",
+    "NSE"
   ],
   [
-    "BINNYMILLS",
-    "Binny Mills Ltd",
+    "BINDALEXPO",
+    "Bindal Exports Ltd",
     "BSE"
   ],
   [
@@ -5010,6 +4980,11 @@
     "BSE"
   ],
   [
+    "BIRLAPREC",
+    "Birla Precision Technologies Limited",
+    "NSE"
+  ],
+  [
     "BITS",
     "Bits Ltd",
     "BSE"
@@ -5017,11 +4992,6 @@
   [
     "BIZOTIC",
     "Bizotic Commercial Ltd",
-    "BSE"
-  ],
-  [
-    "BJDUP",
-    "BJ Duplex Boards Ltd",
     "BSE"
   ],
   [
@@ -5043,6 +5013,11 @@
     "BLACKROSE",
     "Black Rose Industries Ltd",
     "BSE"
+  ],
+  [
+    "BLACKROSE",
+    "Black Rose Inds. Limited",
+    "NSE"
   ],
   [
     "BLAL",
@@ -5068,6 +5043,11 @@
     "BLIL",
     "Balmer Lawrie Investments Ltd",
     "BSE"
+  ],
+  [
+    "BLIL",
+    "Balmer Lawrie Investments Limited",
+    "NSE"
   ],
   [
     "BLISSGVS",
@@ -5125,16 +5105,6 @@
     "BSE"
   ],
   [
-    "BLUECHIP",
-    "Blue Chip India Ltd",
-    "BSE"
-  ],
-  [
-    "BLUECHIP",
-    "Blue Chip India Limited",
-    "NSE"
-  ],
-  [
     "BLUECHIPT",
     "Bluechip Tex Industries Ltd",
     "BSE"
@@ -5163,11 +5133,6 @@
     "BLUEDART",
     "Blue Dart Express Limited",
     "NSE"
-  ],
-  [
-    "BLUEGOD",
-    "Bluegod Entertainment Ltd",
-    "BSE"
   ],
   [
     "BLUEJET",
@@ -5215,6 +5180,11 @@
     "BSE"
   ],
   [
+    "BMBMUMG",
+    "BMB Music & Magnetics Ltd",
+    "BSE"
+  ],
+  [
     "BMW",
     "BMW Industries Ltd",
     "BSE"
@@ -5235,9 +5205,19 @@
     "BSE"
   ],
   [
+    "BNAGROCHEM",
+    "BN Agrochem Limited",
+    "NSE"
+  ],
+  [
     "BNALTD",
     "B & A Ltd",
     "BSE"
+  ],
+  [
+    "BNALTD",
+    "B & A Limited",
+    "NSE"
   ],
   [
     "BNRSEC",
@@ -5382,11 +5362,6 @@
   [
     "BPAGRI",
     "Blue Pearl Agriventures Ltd",
-    "BSE"
-  ],
-  [
-    "BPCAP",
-    "B. P. Capital Ltd",
     "BSE"
   ],
   [
@@ -5546,6 +5521,11 @@
   ],
   [
     "BSHSL",
+    "Bombay Super Hybrid Seeds Ltd",
+    "BSE"
+  ],
+  [
+    "BSHSL",
     "Bombay Super Hybrid Seeds Limited",
     "NSE"
   ],
@@ -5593,6 +5573,11 @@
     "BTTL",
     "Bhilwara Technical Textiles Ltd",
     "BSE"
+  ],
+  [
+    "BTTL",
+    "Bhilwara Technical Textiles Limited",
+    "NSE"
   ],
   [
     "BUILDPRO",
@@ -5745,11 +5730,6 @@
     "NSE"
   ],
   [
-    "CAPFIN",
-    "Capfin India Ltd",
-    "BSE"
-  ],
-  [
     "CAPILLARY",
     "Capillary Technologies India Ltd",
     "BSE"
@@ -5782,11 +5762,6 @@
   [
     "CAPPIPES",
     "Captain Pipes Ltd",
-    "BSE"
-  ],
-  [
-    "CAPRICORN",
-    "Capricorn Systems Global Solutions Ltd",
     "BSE"
   ],
   [
@@ -5837,11 +5812,6 @@
   [
     "CARGOTRANS",
     "Cargotrans Maritime Ltd",
-    "BSE"
-  ],
-  [
-    "CARNATIN",
-    "Carnation Industries Ltd",
     "BSE"
   ],
   [
@@ -5952,6 +5922,11 @@
   [
     "CCLINTER",
     "CCL International Ltd",
+    "BSE"
+  ],
+  [
+    "CCME",
+    "CCME Global Ltd",
     "BSE"
   ],
   [
@@ -6105,6 +6080,11 @@
     "NSE"
   ],
   [
+    "CENTUPLE",
+    "Centuple Global Ltd",
+    "BSE"
+  ],
+  [
     "CENTURYPLY",
     "Century Plyboards India Ltd-",
     "BSE"
@@ -6162,11 +6142,6 @@
   [
     "CFF",
     "CFF Fluid Control Ltd",
-    "BSE"
-  ],
-  [
-    "CFL",
-    "Classic Filaments Ltd",
     "BSE"
   ],
   [
@@ -6245,28 +6220,18 @@
     "BSE"
   ],
   [
-    "CHARMS",
-    "Charms Industries Ltd",
-    "BSE"
-  ],
-  [
-    "CHASBRT",
-    "Chase Bright Steel Ltd",
-    "BSE"
-  ],
-  [
     "CHATHA",
     "Chatha Foods Ltd",
     "BSE"
   ],
   [
-    "CHDCHEM",
-    "CHD Chemicals Ltd",
+    "CHCL",
+    "Cian Healthcare Ltd",
     "BSE"
   ],
   [
-    "CHECKPOINT",
-    "Checkpoint Trends Ltd",
+    "CHDCHEM",
+    "CHD Chemicals Ltd",
     "BSE"
   ],
   [
@@ -6480,21 +6445,6 @@
     "NSE"
   ],
   [
-    "CIGNITITEC",
-    "Cigniti Technologies Ltd",
-    "BSE"
-  ],
-  [
-    "CIGNITITEC",
-    "Cigniti Technologies Limited",
-    "NSE"
-  ],
-  [
-    "CIL",
-    "Citizen Infoline Ltd",
-    "BSE"
-  ],
-  [
     "CILSEC",
     "Cil Securities Ltd",
     "BSE"
@@ -6540,11 +6490,6 @@
     "NSE"
   ],
   [
-    "CISTRO",
-    "CISTRO Telelink Ltd",
-    "BSE"
-  ],
-  [
     "CITADEL",
     "Citadel Realty and Developers Ltd",
     "BSE"
@@ -6560,18 +6505,8 @@
     "BSE"
   ],
   [
-    "CITURGIA",
-    "Citurgia Biochemicals Ltd",
-    "BSE"
-  ],
-  [
     "CITYMAN",
     "Cityman Ltd",
-    "BSE"
-  ],
-  [
-    "CITYON",
-    "Cityon Systems India Ltd",
     "BSE"
   ],
   [
@@ -6598,16 +6533,6 @@
     "CLASELE",
     "Classic Electricals Ltd",
     "BSE"
-  ],
-  [
-    "CLCIND",
-    "CLC Industries Ltd",
-    "BSE"
-  ],
-  [
-    "CLCIND",
-    "CLC Industries Limited",
-    "NSE"
   ],
   [
     "CLEAN",
@@ -6640,11 +6565,6 @@
     "NSE"
   ],
   [
-    "CLENON",
-    "Clenon Enterprises Ltd",
-    "BSE"
-  ],
-  [
     "CLFL",
     "Classic Leasing & Finance Ltd",
     "BSE"
@@ -6675,19 +6595,29 @@
     "BSE"
   ],
   [
-    "CMICABLES",
-    "CMI Ltd",
-    "BSE"
-  ],
-  [
-    "CMICABLES",
-    "CMI Limited",
-    "NSE"
-  ],
-  [
     "CMMHOSP",
     "Chennai Meenakshi Multispeciality Hospital Ltd-",
     "BSE"
+  ],
+  [
+    "CMPDI",
+    "Central Mine Planning & Design Institute Ltd",
+    "BSE"
+  ],
+  [
+    "CMPDI",
+    "Central Mine Planning & Design Institute Limited",
+    "NSE"
+  ],
+  [
+    "CMRGREEN",
+    "CMR Green Technologies Ltd",
+    "BSE"
+  ],
+  [
+    "CMRGREEN",
+    "CMR Green Technologies Limited",
+    "NSE"
   ],
   [
     "CMSINFO",
@@ -6775,6 +6705,11 @@
     "BSE"
   ],
   [
+    "COCKERILL",
+    "John Cockerill India Limited",
+    "NSE"
+  ],
+  [
     "COFFEEDAY",
     "Coffee Day Enterprises Ltd",
     "BSE"
@@ -6803,11 +6738,6 @@
     "COHANCE",
     "Cohance Lifesciences Limited",
     "NSE"
-  ],
-  [
-    "COLAB",
-    "Colab Platforms Ltd",
-    "BSE"
   ],
   [
     "COLINZ",
@@ -6843,6 +6773,11 @@
     "COMFINTE",
     "Comfort Intech Ltd-",
     "BSE"
+  ],
+  [
+    "COMFINTE",
+    "Comfort Intech Limited",
+    "NSE"
   ],
   [
     "COMMAND",
@@ -7115,11 +7050,6 @@
     "BSE"
   ],
   [
-    "COVIDH",
-    "Covidh Technologies Ltd",
-    "BSE"
-  ],
-  [
     "CPCAP",
     "CP Capital Ltd",
     "BSE"
@@ -7162,6 +7092,11 @@
   [
     "CPSEETF",
     "CPSE ETF",
+    "BSE"
+  ],
+  [
+    "CRAFTROOT",
+    "Craftroot Retail Ltd",
     "BSE"
   ],
   [
@@ -7230,11 +7165,6 @@
     "NSE"
   ],
   [
-    "CRESANTO",
-    "Cresanto Global Ltd",
-    "BSE"
-  ],
-  [
     "CRESCENTIS",
     "Crescentis Capital Ltd",
     "BSE"
@@ -7256,12 +7186,12 @@
   ],
   [
     "CRISIL",
-    "CRISIL Ltd",
+    "Crisil Ltd",
     "BSE"
   ],
   [
     "CRISIL",
-    "CRISIL Limited",
+    "Crisil Limited",
     "NSE"
   ],
   [
@@ -7503,6 +7433,11 @@
     "DAICHI",
     "Dai-Ichi Karkaria Ltd-",
     "BSE"
+  ],
+  [
+    "DAICHI",
+    "Dai-Ichi Karkaria Limited",
+    "NSE"
   ],
   [
     "DAIKAFFI",
@@ -7810,11 +7745,6 @@
     "NSE"
   ],
   [
-    "DDIL",
-    "Deep Diamond India Ltd",
-    "BSE"
-  ],
-  [
     "DECCAN",
     "Deccan Health Care Ltd",
     "BSE"
@@ -7840,6 +7770,11 @@
     "BSE"
   ],
   [
+    "DECNGOLD",
+    "Deccan Gold Mines Limited",
+    "NSE"
+  ],
+  [
     "DECOMIC",
     "Deco Mica Ltd",
     "BSE"
@@ -7862,6 +7797,11 @@
   [
     "DEEP",
     "Deep Polymers Ltd",
+    "BSE"
+  ],
+  [
+    "DEEPAI",
+    "Deep Health AI India Ltd",
     "BSE"
   ],
   [
@@ -8007,6 +7947,11 @@
   [
     "DESHRAK",
     "Desh Rakshak Aushdhalaya Ltd",
+    "BSE"
+  ],
+  [
+    "DESIFARMS",
+    "Desi Farms India Ltd",
     "BSE"
   ],
   [
@@ -8245,11 +8190,6 @@
     "NSE"
   ],
   [
-    "DIAMANT",
-    "Diamant Infrastructure Ltd",
-    "BSE"
-  ],
-  [
     "DIAMINESQ",
     "Diamines & Chemicals Ltd-",
     "BSE"
@@ -8350,11 +8290,6 @@
     "BSE"
   ],
   [
-    "DIL",
-    "Debock Industries Limited",
-    "NSE"
-  ],
-  [
     "DILIGENT",
     "Diligent Industries Ltd",
     "BSE"
@@ -8363,6 +8298,11 @@
     "DISAQ",
     "Disa India Ltd",
     "BSE"
+  ],
+  [
+    "DISAQ",
+    "Disa India Limited",
+    "NSE"
   ],
   [
     "DISHTV",
@@ -8555,11 +8495,6 @@
     "NSE"
   ],
   [
-    "DOLPHMED",
-    "Dolphin Medical Services Ltd",
-    "BSE"
-  ],
-  [
     "DOMS",
     "DOMS Industries Ltd",
     "BSE"
@@ -8618,6 +8553,11 @@
     "DRAGARWQ",
     "Dr Agarwals Eye Hospital Ltd-",
     "BSE"
+  ],
+  [
+    "DRAGARWQ",
+    "Dr Agarwals Eye Hospital Limited",
+    "NSE"
   ],
   [
     "DRCSYSTEMS",
@@ -8806,6 +8746,11 @@
   ],
   [
     "E2E",
+    "E2E Networks Ltd",
+    "BSE"
+  ],
+  [
+    "E2E",
     "E2E Networks Limited",
     "NSE"
   ],
@@ -8915,11 +8860,6 @@
     "BSE"
   ],
   [
-    "ECOPP",
-    "ECO HOTELS AND RESORTS Ltd",
-    "BSE"
-  ],
-  [
     "ECORECO",
     "Eco Recycling Ltd",
     "BSE"
@@ -8952,16 +8892,6 @@
   [
     "EDELWEISS",
     "Edelweiss Financial Services Limited",
-    "NSE"
-  ],
-  [
-    "EDUCOMP",
-    "Educomp Solutions Ltd",
-    "BSE"
-  ],
-  [
-    "EDUCOMP",
-    "Educomp Solutions Limited",
     "NSE"
   ],
   [
@@ -9110,9 +9040,19 @@
     "BSE"
   ],
   [
+    "ELANTAS",
+    "Elantas Beck India Limited",
+    "NSE"
+  ],
+  [
     "ELCIDIN",
     "EL CID Investments Ltd",
     "BSE"
+  ],
+  [
+    "ELCIDIN",
+    "EL CID Investments Limited",
+    "NSE"
   ],
   [
     "ELDEHSG",
@@ -9165,6 +9105,11 @@
     "BSE"
   ],
   [
+    "ELFIN",
+    "Elfin Agro India Ltd",
+    "BSE"
+  ],
+  [
     "ELFORGE",
     "El Forge Ltd-",
     "BSE"
@@ -9200,6 +9145,11 @@
     "BSE"
   ],
   [
+    "ELITECON",
+    "Elitecon International Limited",
+    "NSE"
+  ],
+  [
     "ELIXIR",
     "Elixir Capital Ltd",
     "BSE"
@@ -9223,6 +9173,11 @@
     "ELPROINTL",
     "Elpro International Ltd",
     "BSE"
+  ],
+  [
+    "ELPROINTL",
+    "Elpro International Limited",
+    "NSE"
   ],
   [
     "EMAINDIA",
@@ -9295,6 +9250,11 @@
     "BSE"
   ],
   [
+    "EMIAC",
+    "Emiac Technologies Ltd",
+    "BSE"
+  ],
+  [
     "EMIL",
     "Electronics Mart India Ltd",
     "BSE"
@@ -9355,6 +9315,11 @@
     "BSE"
   ],
   [
+    "EMPOWER",
+    "Empower India Limited",
+    "NSE"
+  ],
+  [
     "EMROCK",
     "Emrock Corporation Ltd",
     "BSE"
@@ -9382,11 +9347,6 @@
   [
     "ENBETRD",
     "Enbee Trade & Finance Ltd",
-    "BSE"
-  ],
-  [
-    "ENCASH",
-    "Encash Entertainment Ltd",
     "BSE"
   ],
   [
@@ -9418,6 +9378,11 @@
     "ENERGYDEV",
     "Energy Development Company Limited",
     "NSE"
+  ],
+  [
+    "ENEXT50",
+    "Edelweiss Nifty Next 50 ETF",
+    "BSE"
   ],
   [
     "ENGINERSIN",
@@ -9830,16 +9795,6 @@
     "BSE"
   ],
   [
-    "EXCEL",
-    "Excel Realty N Infra Ltd",
-    "BSE"
-  ],
-  [
-    "EXCEL",
-    "Excel Realty N Infra Limited",
-    "NSE"
-  ],
-  [
     "EXCELINDUS",
     "Excel Industries Ltd",
     "BSE"
@@ -9995,16 +9950,6 @@
     "NSE"
   ],
   [
-    "FCONSUMER",
-    "Future Consumer Ltd",
-    "BSE"
-  ],
-  [
-    "FCONSUMER",
-    "Future Consumer Limited",
-    "NSE"
-  ],
-  [
     "FCSSOFT",
     "FCS Software Solutions Ltd",
     "BSE"
@@ -10028,6 +9973,11 @@
     "FEDDERSHOL",
     "Fedders Holding Ltd",
     "BSE"
+  ],
+  [
+    "FEDDERSHOL",
+    "Fedders Holding Limited",
+    "NSE"
   ],
   [
     "FEDERALBNK",
@@ -10073,6 +10023,11 @@
     "FERMENTA",
     "Fermenta Biotech Ltd",
     "BSE"
+  ],
+  [
+    "FERMENTA",
+    "Fermenta Biotech Limited",
+    "NSE"
   ],
   [
     "FERVENTSYN",
@@ -10142,11 +10097,6 @@
   [
     "FILTRA",
     "Filtra Consultants and Engineers Ltd",
-    "BSE"
-  ],
-  [
-    "FILTRON",
-    "Filtron Engineers Ltd",
     "BSE"
   ],
   [
@@ -10310,6 +10260,11 @@
     "NSE"
   ],
   [
+    "FMCGADD",
+    "DSP Nifty FMCG ETF",
+    "BSE"
+  ],
+  [
     "FMCGIETF",
     "ICICI Prudential Nifty FMCG ETF",
     "BSE"
@@ -10400,6 +10355,11 @@
     "BSE"
   ],
   [
+    "FOSECOC",
+    "Foseco Crucible India Ltd",
+    "BSE"
+  ],
+  [
     "FOSECOIND",
     "Foseco India Ltd",
     "BSE"
@@ -10463,6 +10423,11 @@
     "FRONTSP",
     "Frontier Springs Ltd",
     "BSE"
+  ],
+  [
+    "FRONTSP",
+    "Frontier Springs Limited",
+    "NSE"
   ],
   [
     "FRUTION",
@@ -10710,11 +10675,6 @@
     "NSE"
   ],
   [
-    "GANHOLD",
-    "Ganesh Holdings Ltd",
-    "BSE"
-  ],
-  [
     "GANONPRO",
     "Ganon Products Ltd",
     "BSE"
@@ -10777,6 +10737,11 @@
   [
     "GARWAMAR",
     "Garware Marine Industries Ltd",
+    "BSE"
+  ],
+  [
+    "GARWAOFFS",
+    "Garware Offshore Services Ltd-",
     "BSE"
   ],
   [
@@ -10865,11 +10830,6 @@
     "BSE"
   ],
   [
-    "GCKL",
-    "Galaxy Cloud Kitchens Ltd-",
-    "BSE"
-  ],
-  [
     "GCMCAPI",
     "GCM Capital Advisors Ltd",
     "BSE"
@@ -10900,6 +10860,11 @@
     "NSE"
   ],
   [
+    "GDIL",
+    "Global Defence Industries Ltd",
+    "BSE"
+  ],
+  [
     "GDLLEAS",
     "GDL Leasing & Finance Ltd",
     "BSE"
@@ -10923,11 +10888,6 @@
     "GEEKAYWIRE",
     "Geekay Wires Limited",
     "NSE"
-  ],
-  [
-    "GEETANJ",
-    "Geetanjali Credit and Capital Ltd",
-    "BSE"
   ],
   [
     "GEL",
@@ -10970,11 +10930,6 @@
     "NSE"
   ],
   [
-    "GENESIS",
-    "Genesis Ibrc India Ltd",
-    "BSE"
-  ],
-  [
     "GENESYS",
     "Genesys International Corporation Ltd",
     "BSE"
@@ -10993,16 +10948,6 @@
     "GENPHARMA",
     "Genpharmasec Ltd",
     "BSE"
-  ],
-  [
-    "GENSOL",
-    "Gensol Engineering Ltd",
-    "BSE"
-  ],
-  [
-    "GENSOL",
-    "Gensol Engineering Limited",
-    "NSE"
   ],
   [
     "GENUSPAPER",
@@ -11065,16 +11010,6 @@
     "NSE"
   ],
   [
-    "GFSTEELS",
-    "Grand Foundry Ltd",
-    "BSE"
-  ],
-  [
-    "GFSTEELS",
-    "Grand Foundry Limited",
-    "NSE"
-  ],
-  [
     "GGAUTO",
     "GG Automotive Gears Ltd",
     "BSE"
@@ -11082,11 +11017,6 @@
   [
     "GGDPROP",
     "G. G. Dandekar Properties Ltd",
-    "BSE"
-  ],
-  [
-    "GGENG",
-    "G G Engineering Ltd",
     "BSE"
   ],
   [
@@ -11235,6 +11165,11 @@
     "NSE"
   ],
   [
+    "GKL",
+    "Guru Krupa Gems and Jewellery Ltd",
+    "BSE"
+  ],
+  [
     "GKP",
     "G. K. P. Printing & Packaging Ltd",
     "BSE"
@@ -11375,11 +11310,6 @@
     "NSE"
   ],
   [
-    "GLOBOFFS",
-    "Global Offshore Services Ltd-",
-    "BSE"
-  ],
-  [
     "GLOBTIER",
     "Globtier Infotech Ltd",
     "BSE"
@@ -11418,6 +11348,11 @@
     "GLOTTIS",
     "Glottis Limited",
     "NSE"
+  ],
+  [
+    "GLPL",
+    "Goldline Pharmaceutical Ltd",
+    "BSE"
   ],
   [
     "GMBREW",
@@ -11498,6 +11433,11 @@
     "GNRL",
     "Gujarat Natural Resources Ltd",
     "BSE"
+  ],
+  [
+    "GNRL",
+    "Gujarat Natural Resources Limited",
+    "NSE"
   ],
   [
     "GOACARBON",
@@ -11660,11 +11600,6 @@
     "NSE"
   ],
   [
-    "GOLCA",
-    "Golden Carpets Ltd",
-    "BSE"
-  ],
-  [
     "GOLDENCREST",
     "Golden Crest Education & Services Ltd",
     "BSE"
@@ -11710,11 +11645,6 @@
     "BSE"
   ],
   [
-    "GOLKONDA",
-    "Golkonda Aluminium Extrusions Ltd-",
-    "BSE"
-  ],
-  [
     "GOLKUNDIA",
     "Golkunda Diamonds & Jewellery Ltd",
     "BSE"
@@ -11740,9 +11670,9 @@
     "BSE"
   ],
   [
-    "GOPAIST",
-    "Gopal Iron & Steels Company Gujarat Ltd",
-    "BSE"
+    "GOODYEAR",
+    "Goodyear India Limited",
+    "NSE"
   ],
   [
     "GOPAL",
@@ -11840,6 +11770,11 @@
     "NSE"
   ],
   [
+    "GRADIENTE",
+    "Gradiente Infotainment Limited",
+    "NSE"
+  ],
+  [
     "GRAMEVA",
     "Grameva Ltd",
     "BSE"
@@ -11853,6 +11788,11 @@
     "GRANDOAK",
     "Grand Oak Canyons Distillery Ltd",
     "BSE"
+  ],
+  [
+    "GRANDOAK",
+    "Grand Oak Canyons Distillery Limited",
+    "NSE"
   ],
   [
     "GRANULES",
@@ -11895,9 +11835,19 @@
     "BSE"
   ],
   [
+    "GRAUWEIL",
+    "Grauer & Weil India Limited",
+    "NSE"
+  ],
+  [
     "GRAVISSHO",
     "Graviss Hospitality Ltd",
     "BSE"
+  ],
+  [
+    "GRAVISSHO",
+    "Graviss Hospitality Limited",
+    "NSE"
   ],
   [
     "GRAVITA",
@@ -12035,8 +11985,23 @@
     "NSE"
   ],
   [
+    "GROWWDEFNC",
+    "Groww Nifty India Defence ETF",
+    "BSE"
+  ],
+  [
+    "GROWWHOSPI",
+    "Groww BSE Hospitals ETF",
+    "BSE"
+  ],
+  [
     "GROWWPOWER",
     "Groww BSE Power ETF",
+    "BSE"
+  ],
+  [
+    "GROWWRAIL",
+    "Groww Nifty India Railways PSU ETF",
     "BSE"
   ],
   [
@@ -12068,6 +12033,11 @@
     "GRWRHITECH",
     "Garware Hi-Tech Films Limited",
     "NSE"
+  ],
+  [
+    "GSAILPP",
+    "GS Auto International Ltd",
+    "BSE"
   ],
   [
     "GSAUTO",
@@ -12105,13 +12075,18 @@
     "NSE"
   ],
   [
-    "GSPL",
-    "Gujarat State Petronet Ltd",
+    "GSLTD",
+    "Galaxy Supermarket Ltd-",
     "BSE"
   ],
   [
-    "GSPL",
-    "Gujarat State Petronet Limited",
+    "GSPCROP",
+    "GSP Crop Science Ltd",
+    "BSE"
+  ],
+  [
+    "GSPCROP",
+    "GSP Crop Science Limited",
     "NSE"
   ],
   [
@@ -12133,11 +12108,6 @@
     "GTECJAINX",
     "G-TEC JAINX EDUCATION LIMITED",
     "NSE"
-  ],
-  [
-    "GTEIT",
-    "G-Tech Info-Training Ltd",
-    "BSE"
   ],
   [
     "GTIL",
@@ -12285,6 +12255,11 @@
     "BSE"
   ],
   [
+    "GUJJUBHAI",
+    "Gujjubhai Industries Ltd",
+    "BSE"
+  ],
+  [
     "GUJPETR",
     "Gujarat Petrosynthese Ltd",
     "BSE"
@@ -12396,17 +12371,22 @@
   ],
   [
     "GVT&D",
-    "GE Vernova T&D India Limited",
-    "NSE"
-  ],
-  [
-    "GVTD",
     "GE Vernova T&D India Ltd",
     "BSE"
   ],
   [
+    "GVT&D",
+    "GE Vernova T&D India Limited",
+    "NSE"
+  ],
+  [
     "GYANDEV",
     "Gyan Developers & Builders Ltd",
+    "BSE"
+  ],
+  [
+    "GYFTR",
+    "Gyftr Ltd",
     "BSE"
   ],
   [
@@ -12433,6 +12413,11 @@
     "HALDYNGL",
     "Haldyn Glass Ltd-",
     "BSE"
+  ],
+  [
+    "HALDYNGL",
+    "Haldyn Glass Limited",
+    "NSE"
   ],
   [
     "HALEOSLABS",
@@ -12495,11 +12480,6 @@
     "BSE"
   ],
   [
-    "HARCR",
-    "Harig Crankshafts Ltd",
-    "BSE"
-  ],
-  [
     "HARDCAS",
     "Hardcastle & Waud Manufacturing Company Ltd",
     "BSE"
@@ -12525,8 +12505,8 @@
     "BSE"
   ],
   [
-    "HARIGOV",
-    "Hari Govind International Ltd",
+    "HARIKANTA",
+    "Harikanta Overseas Ltd",
     "BSE"
   ],
   [
@@ -12650,6 +12630,11 @@
     "BSE"
   ],
   [
+    "HAWKINCOOK",
+    "Hawkins Cookers Limited",
+    "NSE"
+  ],
+  [
     "HAZOOR",
     "Hazoor Multi Projects Ltd-",
     "BSE"
@@ -12662,6 +12647,16 @@
   [
     "HBESD",
     "HB Estate Developers Ltd",
+    "BSE"
+  ],
+  [
+    "HBESD",
+    "HB Estate Developers Limited",
+    "NSE"
+  ],
+  [
+    "HBGHOTELS",
+    "HBG Hotels Ltd",
     "BSE"
   ],
   [
@@ -12905,6 +12900,16 @@
     "BSE"
   ],
   [
+    "HEALTHX",
+    "Health X Platform Ltd",
+    "BSE"
+  ],
+  [
+    "HEALTHX",
+    "Health X Platform Limited",
+    "NSE"
+  ],
+  [
     "HEALTHY",
     "Aditya Birla Sun Life Nifty Healthcare ETF",
     "BSE"
@@ -12970,11 +12975,6 @@
     "NSE"
   ],
   [
-    "HEMORGANIC",
-    "Hemo Organic Ltd",
-    "BSE"
-  ],
-  [
     "HERANBA",
     "Heranba Industries Ltd",
     "BSE"
@@ -13017,6 +13017,16 @@
   [
     "HESTERBIO",
     "Hester Biosciences Limited",
+    "NSE"
+  ],
+  [
+    "HEXAGON",
+    "Hexagon Nutrition Ltd",
+    "BSE"
+  ],
+  [
+    "HEXAGON",
+    "Hexagon Nutrition Limited",
     "NSE"
   ],
   [
@@ -13087,6 +13097,11 @@
   [
     "HIGHENE",
     "High Energy Batteries India Ltd",
+    "BSE"
+  ],
+  [
+    "HIGHNESS",
+    "Highness Microelectronics Ltd",
     "BSE"
   ],
   [
@@ -13425,6 +13440,11 @@
     "BSE"
   ],
   [
+    "HOM",
+    "HOMRE Ltd",
+    "BSE"
+  ],
+  [
     "HOMEFIRST",
     "Home First Finance Company India Ltd",
     "BSE"
@@ -13463,6 +13483,11 @@
     "HONDAPOWER",
     "Honda India Power Products Limited",
     "NSE"
+  ],
+  [
+    "HORIZON",
+    "Horizon Reclaim India Ltd",
+    "BSE"
   ],
   [
     "HOTLSILV",
@@ -13513,11 +13538,6 @@
     "HPL",
     "HPL Electric & Power Limited",
     "NSE"
-  ],
-  [
-    "HRMNYCP",
-    "Harmony Capital Service Ltd",
-    "BSE"
   ],
   [
     "HRS",
@@ -13583,11 +13603,6 @@
     "HUHTAMAKI",
     "Huhtamaki India Limited",
     "NSE"
-  ],
-  [
-    "HUIL",
-    "Hindusthan Urban Infrastructure Ltd",
-    "BSE"
   ],
   [
     "HVL",
@@ -13795,6 +13810,11 @@
     "BSE"
   ],
   [
+    "IDREAM",
+    "IDream Film Infrastructure Company Ltd",
+    "BSE"
+  ],
+  [
     "IECEDU",
     "IEC Education Ltd",
     "BSE"
@@ -13891,12 +13911,12 @@
   ],
   [
     "IGIL",
-    "International Gemmological Institute India Ltd",
+    "International Gemological Institute Ltd",
     "BSE"
   ],
   [
     "IGIL",
-    "International Gemmological Institute India Limited",
+    "International Gemological Institute Limited",
     "NSE"
   ],
   [
@@ -13943,11 +13963,6 @@
     "IIFLCAPS",
     "IIFL Capital Services Limited",
     "NSE"
-  ],
-  [
-    "IIL",
-    "Integrated Industries Ltd",
-    "BSE"
   ],
   [
     "IIRM",
@@ -14055,19 +14070,14 @@
     "NSE"
   ],
   [
-    "IMPEXFERRO",
-    "Impex Ferro Tech Ltd",
-    "BSE"
-  ],
-  [
-    "IMPEXFERRO",
-    "Impex Ferro Tech Limited",
-    "NSE"
-  ],
-  [
     "INA",
     "Insolation Energy Ltd",
     "BSE"
+  ],
+  [
+    "INA",
+    "Insolation Energy Limited",
+    "NSE"
   ],
   [
     "INANI",
@@ -14445,6 +14455,11 @@
     "BSE"
   ],
   [
+    "INDPRUD",
+    "Industrial & Prudential Investment Company Limited",
+    "NSE"
+  ],
+  [
     "INDRAMEDCO",
     "Indraprastha Medical Corporation Ltd",
     "BSE"
@@ -14467,11 +14482,6 @@
   [
     "INDSILHYD",
     "Indsil Hydro Power and Manganese Ltd-",
-    "BSE"
-  ],
-  [
-    "INDSOYA",
-    "Indsoya Ltd",
     "BSE"
   ],
   [
@@ -14625,11 +14635,6 @@
     "BSE"
   ],
   [
-    "INNOCORP",
-    "Innocorp Ltd",
-    "BSE"
-  ],
-  [
     "INNOKAIZ",
     "Innokaiz India Ltd",
     "BSE"
@@ -14663,6 +14668,16 @@
     "INNOVATORS",
     "Innovators Facade Systems Ltd",
     "BSE"
+  ],
+  [
+    "INNOVISION",
+    "Innovision Ltd",
+    "BSE"
+  ],
+  [
+    "INNOVISION",
+    "Innovision Limited",
+    "NSE"
   ],
   [
     "INNOVTEC",
@@ -14703,11 +14718,6 @@
     "INOXWIND",
     "Inox Wind Limited",
     "NSE"
-  ],
-  [
-    "INRADIA",
-    "India Radiators Ltd",
-    "BSE"
   ],
   [
     "INSECTICID",
@@ -14755,11 +14765,6 @@
     "BSE"
   ],
   [
-    "INTEGSW",
-    "Integra Switchgear Ltd",
-    "BSE"
-  ],
-  [
     "INTELLECT",
     "Intellect Design Arena Ltd",
     "BSE"
@@ -14788,11 +14793,6 @@
     "INTERARCH",
     "Interarch Building Solutions Limited",
     "NSE"
-  ],
-  [
-    "INTERDIGI",
-    "Interworld Digital Ltd-",
-    "BSE"
   ],
   [
     "INTERNET",
@@ -14848,6 +14848,11 @@
     "INVPRECQ",
     "Investment & Precision Castings Ltd",
     "BSE"
+  ],
+  [
+    "INVPRECQ",
+    "Investment & Precision Castings Limited",
+    "NSE"
   ],
   [
     "IOB",
@@ -14908,11 +14913,6 @@
     "IPL",
     "India Pesticides Limited",
     "NSE"
-  ],
-  [
-    "IPOWER",
-    "I-Power Solutions India Ltd",
-    "BSE"
   ],
   [
     "IPRINGLTD",
@@ -15000,6 +15000,11 @@
     "BSE"
   ],
   [
+    "ISERA",
+    "iSERA Lifesciences Ltd",
+    "BSE"
+  ],
+  [
     "ISFL",
     "ISF Ltd",
     "BSE"
@@ -15042,6 +15047,16 @@
   [
     "ISHWATR",
     "Ishwarshakti Holdings & Traders Ltd",
+    "BSE"
+  ],
+  [
+    "ISIFAAFDG",
+    "iSIF Active Asset Allocator Long-Short Fund - Direct Plan - Growth",
+    "BSE"
+  ],
+  [
+    "ISIFAAFG",
+    "iSIF Active Asset Allocator Long-Short Fund - Growth",
     "BSE"
   ],
   [
@@ -15185,6 +15200,11 @@
     "BSE"
   ],
   [
+    "IWP",
+    "The Indian Wood Products Company Limited",
+    "NSE"
+  ],
+  [
     "IXIGO",
     "Le Travenues Technology Ltd",
     "BSE"
@@ -15193,11 +15213,6 @@
     "IXIGO",
     "Le Travenues Technology Limited",
     "NSE"
-  ],
-  [
-    "IYKOTHITE",
-    "Iykot Hitech Toolroom Ltd",
-    "BSE"
   ],
   [
     "IZMO",
@@ -15290,8 +15305,8 @@
     "NSE"
   ],
   [
-    "JAIHINDS",
-    "Jaihind Synthetics Ltd",
+    "JAIHIND",
+    "Jaihind Industries Ltd",
     "BSE"
   ],
   [
@@ -15475,11 +15490,6 @@
     "BSE"
   ],
   [
-    "JAYTEX",
-    "Jaybharat Textiles and Real Estate Ltd",
-    "BSE"
-  ],
-  [
     "JAYUSH",
     "Jay Ushin Ltd",
     "BSE"
@@ -15507,16 +15517,6 @@
   [
     "JDCABLES",
     "JD Cables Ltd",
-    "BSE"
-  ],
-  [
-    "JDL",
-    "Jaisukh Dealers Ltd",
-    "BSE"
-  ],
-  [
-    "JEL",
-    "Jyotirgamya Enterprises Ltd",
     "BSE"
   ],
   [
@@ -15780,11 +15780,6 @@
     "NSE"
   ],
   [
-    "JLL",
-    "Jindal Leasefin Ltd",
-    "BSE"
-  ],
-  [
     "JMA",
     "Jullundur Motor Agency Delhi Limited",
     "NSE"
@@ -15803,11 +15798,6 @@
     "JMFINANCIL",
     "JM Financial Limited",
     "NSE"
-  ],
-  [
-    "JMGCORP",
-    "JMG Corporation Ltd",
-    "BSE"
   ],
   [
     "JMJFIN",
@@ -15845,6 +15835,11 @@
     "BSE"
   ],
   [
+    "JOJO",
+    "JOJO Ltd",
+    "BSE"
+  ],
+  [
     "JOLYPLS",
     "Jolly Plastic Industries Ltd",
     "BSE"
@@ -15858,16 +15853,6 @@
     "JOSTS",
     "Josts Engineering Company Ltd",
     "BSE"
-  ],
-  [
-    "JPASSOCIAT",
-    "Jaiprakash Associates Ltd",
-    "BSE"
-  ],
-  [
-    "JPASSOCIAT",
-    "Jaiprakash Associates Limited",
-    "NSE"
   ],
   [
     "JPOLYINVST",
@@ -15892,11 +15877,6 @@
   [
     "JPTRLES",
     "Jupiter Industries & Leasing Ltd",
-    "BSE"
-  ],
-  [
-    "JPTSEC",
-    "JPT Securities Ltd",
     "BSE"
   ],
   [
@@ -15952,6 +15932,16 @@
   [
     "JSWCEMENT",
     "JSW Cement Limited",
+    "NSE"
+  ],
+  [
+    "JSWDULUX",
+    "JSW Dulux Ltd",
+    "BSE"
+  ],
+  [
+    "JSWDULUX",
+    "JSW Dulux Limited",
     "NSE"
   ],
   [
@@ -16265,6 +16255,11 @@
     "NSE"
   ],
   [
+    "KALIND",
+    "Kalind Ltd",
+    "BSE"
+  ],
+  [
     "KALLAM",
     "Kallam Textiles Ltd-",
     "BSE"
@@ -16330,6 +16325,11 @@
     "BSE"
   ],
   [
+    "KAMAHOLD",
+    "Kama Holdings Limited",
+    "NSE"
+  ],
+  [
     "KAMANWALA",
     "Kamanwala Housing Construction Ltd",
     "BSE"
@@ -16385,6 +16385,11 @@
     "BSE"
   ],
   [
+    "KANCHI",
+    "Kanchi Karpooram Limited",
+    "NSE"
+  ],
+  [
     "KANCOTEA",
     "Kanco Tea & Industries Ltd",
     "BSE"
@@ -16392,11 +16397,6 @@
   [
     "KANDAGIRI",
     "Kandagiri Spinning Mills Ltd-",
-    "BSE"
-  ],
-  [
-    "KANELIND",
-    "Kanel Industries Ltd",
     "BSE"
   ],
   [
@@ -16498,11 +16498,6 @@
     "KARURVYSYA",
     "Karur Vysya Bank Limited",
     "NSE"
-  ],
-  [
-    "KASHYAP",
-    "Kashyap Tele-Medicines Ltd",
-    "BSE"
   ],
   [
     "KASTURI",
@@ -16725,6 +16720,11 @@
     "BSE"
   ],
   [
+    "KENNAMET",
+    "Kennametal India Limited",
+    "NSE"
+  ],
+  [
     "KENRIK",
     "Kenrik Industries Ltd",
     "BSE"
@@ -16875,11 +16875,6 @@
     "BSE"
   ],
   [
-    "KHYATI",
-    "Khyati Multimedia Entertainment Ltd",
-    "BSE"
-  ],
-  [
     "KIAASA",
     "Kiaasa Retail Ltd",
     "BSE"
@@ -16965,11 +16960,6 @@
     "NSE"
   ],
   [
-    "KIRANPR",
-    "Kiran Print Pack Ltd",
-    "BSE"
-  ],
-  [
     "KIRANSY-B",
     "Kiran Syntex Ltd",
     "BSE"
@@ -16978,6 +16968,11 @@
     "KIRANVYPAR",
     "Kiran Vyapar Ltd",
     "BSE"
+  ],
+  [
+    "KIRANVYPAR",
+    "Kiran Vyapar Limited",
+    "NSE"
   ],
   [
     "KIRIINDUS",
@@ -16993,6 +16988,11 @@
     "KIRLFER",
     "Kirloskar Ferrous Industries Ltd",
     "BSE"
+  ],
+  [
+    "KIRLFER",
+    "Kirloskar Ferrous Industries Limited",
+    "NSE"
   ],
   [
     "KIRLOSBROS",
@@ -17043,6 +17043,16 @@
     "KISAN",
     "Kisan Mouldings Ltd-",
     "BSE"
+  ],
+  [
+    "KISSHT",
+    "OnEMI Technology Solutions Ltd",
+    "BSE"
+  ],
+  [
+    "KISSHT",
+    "OnEMI Technology Solutions Limited",
+    "NSE"
   ],
   [
     "KITEX",
@@ -17105,14 +17115,9 @@
     "BSE"
   ],
   [
-    "KLGCAP",
-    "KLG Capital Services Ltd",
-    "BSE"
-  ],
-  [
-    "KLIFESTYL",
-    "K-Lifestyle & Industries Ltd",
-    "BSE"
+    "KLBRENG-B",
+    "Kilburn Engineering Limited",
+    "NSE"
   ],
   [
     "KLRFM",
@@ -17210,11 +17215,6 @@
     "NSE"
   ],
   [
-    "KONARKSY",
-    "Konark Synthetic Ltd",
-    "BSE"
-  ],
-  [
     "KONNDOR",
     "Konndor Industries Ltd",
     "BSE"
@@ -17265,6 +17265,21 @@
     "BSE"
   ],
   [
+    "KOTIC",
+    "Kothari Industrial Corporation Limited",
+    "NSE"
+  ],
+  [
+    "KOTYARK",
+    "Kotyark Industries Ltd",
+    "BSE"
+  ],
+  [
+    "KOTYARK",
+    "Kotyark Industries Limited",
+    "NSE"
+  ],
+  [
     "KOURA",
     "Koura Fine Diamond Jewelry Ltd",
     "BSE"
@@ -17273,6 +17288,11 @@
     "KOVAI",
     "Kovai Medical Center & Hospital Ltd",
     "BSE"
+  ],
+  [
+    "KOVAI",
+    "Kovai Medical Center & Hospital Limited",
+    "NSE"
   ],
   [
     "KPEL",
@@ -17323,6 +17343,11 @@
     "KPL",
     "Kwality Pharmaceuticals Ltd",
     "BSE"
+  ],
+  [
+    "KPL",
+    "Kwality Pharmaceuticals Limited",
+    "NSE"
   ],
   [
     "KPRMILL",
@@ -17407,11 +17432,6 @@
   [
     "KRISHNA",
     "Krishna Ventures Ltd",
-    "BSE"
-  ],
-  [
-    "KRISHNACAP",
-    "Krishna Capital and Securities Ltd",
     "BSE"
   ],
   [
@@ -17548,11 +17568,6 @@
     "KSHINTL",
     "KSH International Limited",
     "NSE"
-  ],
-  [
-    "KSHITIJ",
-    "Kshitij Investments Ltd",
-    "BSE"
   ],
   [
     "KSHITIJPOL",
@@ -17700,11 +17715,6 @@
     "BSE"
   ],
   [
-    "LADIAMO",
-    "Laser Diamonds Ltd",
-    "BSE"
-  ],
-  [
     "LAFFANSQ",
     "Laffans Petrochemicals Ltd-",
     "BSE"
@@ -17723,6 +17733,11 @@
     "LAHOTIOV",
     "Lahoti Overseas Ltd-",
     "BSE"
+  ],
+  [
+    "LAHOTIOV",
+    "Lahoti Overseas Limited",
+    "NSE"
   ],
   [
     "LAKESHORE",
@@ -17817,6 +17832,16 @@
   [
     "LANDMARK",
     "Landmark Cars Limited",
+    "NSE"
+  ],
+  [
+    "LANDSMILL",
+    "Landsmill Green Ltd",
+    "BSE"
+  ],
+  [
+    "LANDSMILL",
+    "Landsmill Green Limited",
     "NSE"
   ],
   [
@@ -17972,6 +17997,11 @@
   [
     "LEX",
     "Lex Nimble Solutions Ltd",
+    "BSE"
+  ],
+  [
+    "LEXGLOBAL",
+    "Lexora Global Ltd",
     "BSE"
   ],
   [
@@ -18162,11 +18192,6 @@
   [
     "LKMEHTA",
     "L.K.Mehta Polymers Ltd",
-    "BSE"
-  ],
-  [
-    "LKPFIN",
-    "LKP Finance Ltd",
     "BSE"
   ],
   [
@@ -18381,12 +18406,12 @@
   ],
   [
     "LTM",
-    "LTIMindtree Ltd",
+    "LTM Ltd",
     "BSE"
   ],
   [
     "LTM",
-    "LTIMindtree Limited",
+    "LTM Limited",
     "NSE"
   ],
   [
@@ -18480,11 +18505,6 @@
     "BSE"
   ],
   [
-    "LYNMC",
-    "Lynx Machinery & Commercials Ltd",
-    "BSE"
-  ],
-  [
     "LYONSCO",
     "Lyons Corporate Market Ltd",
     "BSE"
@@ -18535,6 +18555,11 @@
     "BSE"
   ],
   [
+    "MACHLTD",
+    "Mach Travel Solutions Ltd",
+    "BSE"
+  ],
+  [
     "MACIND",
     "Machhar Industries Ltd",
     "BSE"
@@ -18548,6 +18573,11 @@
     "MACPOWER",
     "Macpower CNC Machines Limited",
     "NSE"
+  ],
+  [
+    "MADALA",
+    "Madala Holdings Ltd",
+    "BSE"
   ],
   [
     "MADHAV",
@@ -18565,6 +18595,11 @@
     "BSE"
   ],
   [
+    "MADHAVIPL",
+    "Madhav Infra Projects Limited",
+    "NSE"
+  ],
+  [
     "MADHUCON",
     "Madhucon Projects Ltd-",
     "BSE"
@@ -18580,18 +18615,8 @@
     "BSE"
   ],
   [
-    "MADHURIND",
-    "Madhur Industries Ltd",
-    "BSE"
-  ],
-  [
     "MADHUSE",
     "Madhusudan Securities Ltd",
-    "BSE"
-  ],
-  [
-    "MADHUVEER",
-    "Madhuveer Com 18 Network Ltd",
     "BSE"
   ],
   [
@@ -18613,6 +18638,11 @@
     "MAFATIND",
     "Mafatlal Industries Ltd-",
     "BSE"
+  ],
+  [
+    "MAFATIND",
+    "Mafatlal Industries Limited",
+    "NSE"
   ],
   [
     "MAFIA",
@@ -18685,11 +18715,6 @@
     "BSE"
   ],
   [
-    "MAHANIN",
-    "Mahan Industries Ltd",
-    "BSE"
-  ],
-  [
     "MAHAPEXLTD",
     "Maha Rashtra Apex Corporation Ltd",
     "BSE"
@@ -18708,11 +18733,6 @@
     "MAHASTEEL",
     "Mahamaya Steel Industries Limited",
     "NSE"
-  ],
-  [
-    "MAHAVEER",
-    "Mahaveer Infoway Ltd",
-    "BSE"
   ],
   [
     "MAHEPC",
@@ -18810,6 +18830,11 @@
     "BSE"
   ],
   [
+    "MAJESAUT",
+    "Majestic Auto Limited",
+    "NSE"
+  ],
+  [
     "MAKEINDIA",
     "Mirae Asset Nifty India Manufacturing ETF",
     "BSE"
@@ -18837,6 +18862,11 @@
   [
     "MALPANI",
     "Malpani Pipes And Fittings Ltd",
+    "BSE"
+  ],
+  [
+    "MALTLAND",
+    "Malt Land Distilleries Ltd",
     "BSE"
   ],
   [
@@ -18970,6 +19000,11 @@
     "BSE"
   ],
   [
+    "MANGLAM",
+    "Manglam Global Corporations Ltd",
+    "BSE"
+  ],
+  [
     "MANGLMCEM",
     "Mangalam Cement Ltd",
     "BSE"
@@ -18998,6 +19033,11 @@
     "MANINFRA",
     "Man Infraconstruction Limited",
     "NSE"
+  ],
+  [
+    "MANIVENI",
+    "M.R.Maniveni Foods Ltd",
+    "BSE"
   ],
   [
     "MANKIND",
@@ -19185,6 +19225,11 @@
     "BSE"
   ],
   [
+    "MARSONS",
+    "Marsons Limited",
+    "NSE"
+  ],
+  [
     "MARUTI",
     "Maruti Suzuki India Ltd",
     "BSE"
@@ -19193,11 +19238,6 @@
     "MARUTI",
     "Maruti Suzuki India Limited",
     "NSE"
-  ],
-  [
-    "MASCH",
-    "Master Chemicals Ltd",
-    "BSE"
   ],
   [
     "MASFIN",
@@ -19240,11 +19280,6 @@
     "NSE"
   ],
   [
-    "MATHEWE",
-    "Mathew Easow Research Securities Ltd",
-    "BSE"
-  ],
-  [
     "MATRIMONY",
     "Matrimony.com Ltd",
     "BSE"
@@ -19273,11 +19308,6 @@
     "MAXESTATES",
     "Max Estates Limited",
     "NSE"
-  ],
-  [
-    "MAXGROW",
-    "Maxgrow India Ltd",
-    "BSE"
   ],
   [
     "MAXHEALTH",
@@ -19380,9 +19410,9 @@
     "BSE"
   ],
   [
-    "MCEL",
-    "Mach Conferences And Events Ltd",
-    "BSE"
+    "MCCHRLS-B",
+    "Mac Charles India Limited",
+    "NSE"
   ],
   [
     "MCFL",
@@ -19391,7 +19421,7 @@
   ],
   [
     "MCL",
-    "Madhav Copper Limited",
+    "M TEK COPPER LIMITED",
     "NSE"
   ],
   [
@@ -19540,6 +19570,11 @@
     "BSE"
   ],
   [
+    "MEGAMONT",
+    "Megamont Ltd",
+    "BSE"
+  ],
+  [
     "MEGASTAR",
     "Megastar Foods Ltd",
     "BSE"
@@ -19595,6 +19630,11 @@
     "BSE"
   ],
   [
+    "MENNPIS",
+    "Menon Pistons Limited",
+    "NSE"
+  ],
+  [
     "MENONBE",
     "Menon Bearings Ltd-",
     "BSE"
@@ -19620,6 +19660,11 @@
     "BSE"
   ],
   [
+    "MERCANTILE",
+    "Mercantile Ventures Limited",
+    "NSE"
+  ],
+  [
     "MERCTRD",
     "Mercury Trade Links Ltd",
     "BSE"
@@ -19628,6 +19673,11 @@
     "MERCURYEV",
     "Mercury Ev-Tech Ltd",
     "BSE"
+  ],
+  [
+    "MERCURYEV",
+    "Mercury Ev-Tech Limited",
+    "NSE"
   ],
   [
     "MERCURYLAB",
@@ -19678,6 +19728,11 @@
     "METROGLOBL",
     "Metroglobal Ltd",
     "BSE"
+  ],
+  [
+    "METROGLOBL",
+    "Metroglobal Limited",
+    "NSE"
   ],
   [
     "METROPOLIS",
@@ -19975,21 +20030,6 @@
     "BSE"
   ],
   [
-    "MINOLTAF",
-    "Minolta Finance Ltd",
-    "BSE"
-  ],
-  [
-    "MIRCELECTR",
-    "Mirc Electronics Ltd",
-    "BSE"
-  ],
-  [
-    "MIRCELECTR",
-    "MIRC Electronics Limited",
-    "NSE"
-  ],
-  [
     "MIRZAINT",
     "Mirza International Ltd",
     "BSE"
@@ -20133,6 +20173,11 @@
     "MMWL",
     "Media Matrix Worldwide Ltd",
     "BSE"
+  ],
+  [
+    "MMWL",
+    "Media Matrix Worldwide Limited",
+    "NSE"
   ],
   [
     "MNFL",
@@ -20465,11 +20510,6 @@
     "BSE"
   ],
   [
-    "MORGANITE",
-    "Morganite Crucible India Ltd",
-    "BSE"
-  ],
-  [
     "MOSCHIP",
     "Moschip Technologies Ltd",
     "BSE"
@@ -20540,18 +20580,13 @@
     "BSE"
   ],
   [
-    "MPCOSEMB",
-    "Mipco Seamless Rings Gujarat Ltd",
-    "BSE"
-  ],
-  [
     "MPDL",
     "MPDL Ltd",
     "BSE"
   ],
   [
     "MPFSL",
-    "Mather and Platt Fire Systems Ltd",
+    "MPF Systems Ltd",
     "BSE"
   ],
   [
@@ -20620,6 +20655,11 @@
     "NSE"
   ],
   [
+    "MRTX",
+    "Merritronix Ltd",
+    "BSE"
+  ],
+  [
     "MRUTR",
     "Mrugesh Trading Ltd",
     "BSE"
@@ -20627,6 +20667,11 @@
   [
     "MSAFE",
     "Msafe Equipments Ltd",
+    "BSE"
+  ],
+  [
+    "MSCI360",
+    "360 ONE MSCI India ETF",
     "BSE"
   ],
   [
@@ -20658,11 +20703,6 @@
     "MSPL",
     "MSP Steel & Power Limited",
     "NSE"
-  ],
-  [
-    "MSRINDIA",
-    "MSR India Ltd",
-    "BSE"
   ],
   [
     "MSTCLTD",
@@ -20705,6 +20745,11 @@
     "NSE"
   ],
   [
+    "MTL",
+    "Mehul Telecom Ltd",
+    "BSE"
+  ],
+  [
     "MTNL",
     "Mahanagar Telephone Nigam Ltd",
     "BSE"
@@ -20722,11 +20767,6 @@
   [
     "MUDRA",
     "Mudra Financial Services Ltd",
-    "BSE"
-  ],
-  [
-    "MUDUNURU",
-    "Mudunuru Ltd",
     "BSE"
   ],
   [
@@ -20850,11 +20890,6 @@
     "BSE"
   ],
   [
-    "MURAE",
-    "Murae Organisor Ltd",
-    "BSE"
-  ],
-  [
     "MURUDCERA",
     "Murudeshwar Ceramics Ltd",
     "BSE"
@@ -20906,6 +20941,11 @@
   ],
   [
     "MWL",
+    "Mangalam Worldwide Ltd",
+    "BSE"
+  ],
+  [
+    "MWL",
     "Mangalam Worldwide Limited",
     "NSE"
   ],
@@ -20940,16 +20980,6 @@
     "NSE"
   ],
   [
-    "NAGAFERT",
-    "Nagarjuna Fertilizers and Chemicals Ltd",
-    "BSE"
-  ],
-  [
-    "NAGAFERT",
-    "Nagarjuna Fertilizers and Chemicals Limited",
-    "NSE"
-  ],
-  [
     "NAGPI",
     "Nagpur Power & Industries Ltd",
     "BSE"
@@ -20973,11 +21003,6 @@
     "NAGREEKEXP",
     "Nagreeka Exports Limited",
     "NSE"
-  ],
-  [
-    "NAGTECH",
-    "Nagarjuna Agri Tech Ltd",
-    "BSE"
   ],
   [
     "NAHARCAP",
@@ -21148,6 +21173,11 @@
     "NATIONSTD",
     "National Standard India Ltd",
     "BSE"
+  ],
+  [
+    "NATIONSTD",
+    "National Standard India Limited",
+    "NSE"
   ],
   [
     "NATPLAS",
@@ -21340,11 +21370,6 @@
     "NSE"
   ],
   [
-    "NDMETAL",
-    "ND Metal Industries Ltd",
-    "BSE"
-  ],
-  [
     "NDRAUTO",
     "NDR Auto Components Ltd",
     "BSE"
@@ -21368,6 +21393,11 @@
     "NEAGI",
     "Neelamalai Agro Industries Ltd",
     "BSE"
+  ],
+  [
+    "NEAGI",
+    "Neelamalai Agro Industries Limited",
+    "NSE"
   ],
   [
     "NECCLTD",
@@ -21485,6 +21515,11 @@
     "NSE"
   ],
   [
+    "NETF",
+    "Tata Nifty 50 Exchange Traded Fund",
+    "BSE"
+  ],
+  [
     "NETLINK",
     "Netlink Solutions India Ltd",
     "BSE"
@@ -21520,16 +21555,6 @@
     "NSE"
   ],
   [
-    "NEUEON",
-    "Neueon Corporation Ltd",
-    "BSE"
-  ],
-  [
-    "NEUEON",
-    "Neueon Corporation Limited",
-    "NSE"
-  ],
-  [
     "NEULANDLAB",
     "Neuland Laboratories Ltd",
     "BSE"
@@ -21560,8 +21585,8 @@
     "BSE"
   ],
   [
-    "NEWMKTADV",
-    "New Markets Advisory Ltd",
+    "NEWMKTAVE",
+    "New Markets Avenue Ltd",
     "BSE"
   ],
   [
@@ -21705,11 +21730,6 @@
     "NSE"
   ],
   [
-    "NIBEORD",
-    "Nibe Ordnance and Maritime Ltd",
-    "BSE"
-  ],
-  [
     "NIBL",
     "NRB Industrial Bearings Ltd",
     "BSE"
@@ -21815,11 +21835,6 @@
     "BSE"
   ],
   [
-    "NIKKIGL",
-    "Nikki Global Finance Ltd",
-    "BSE"
-  ],
-  [
     "NIKSTECH",
     "Niks Technology Ltd",
     "BSE"
@@ -21855,6 +21870,11 @@
     "BSE"
   ],
   [
+    "NILE",
+    "Nile Limited",
+    "NSE"
+  ],
+  [
     "NILKAMAL",
     "Nilkamal Ltd",
     "BSE"
@@ -21868,6 +21888,11 @@
     "NIMBSPROJ",
     "Nimbus Projects Ltd",
     "BSE"
+  ],
+  [
+    "NIMBSPROJ",
+    "Nimbus Projects Limited",
+    "NSE"
   ],
   [
     "NINSYS",
@@ -21910,14 +21935,14 @@
     "BSE"
   ],
   [
-    "NIRBHAYIND",
-    "Nirbhay Colours India Ltd",
+    "NIRLON",
+    "Nirlon Ltd",
     "BSE"
   ],
   [
     "NIRLON",
-    "Nirlon Ltd",
-    "BSE"
+    "Nirlon Limited",
+    "NSE"
   ],
   [
     "NIRMITEE",
@@ -21968,6 +21993,11 @@
     "NITTAGELA",
     "Nitta Gelatin India Ltd-",
     "BSE"
+  ],
+  [
+    "NITTAGELA",
+    "Nitta Gelatin India Limited",
+    "NSE"
   ],
   [
     "NIVABUPA",
@@ -22027,11 +22057,6 @@
   [
     "NMSGLOBAL",
     "NMS Global Ltd",
-    "BSE"
-  ],
-  [
-    "NNTL",
-    "N2N Technologies Ltd",
     "BSE"
   ],
   [
@@ -22115,6 +22140,11 @@
     "BSE"
   ],
   [
+    "NOVARTIND",
+    "Novartis India Limited",
+    "NSE"
+  ],
+  [
     "NOVATEOR",
     "Novateor Research Laboratories Ltd",
     "BSE"
@@ -22127,6 +22157,11 @@
   [
     "NOVIS",
     "Nova Iron & Steel Ltd",
+    "BSE"
+  ],
+  [
+    "NOVUS",
+    "Novus Loyalty Ltd",
     "BSE"
   ],
   [
@@ -22270,11 +22305,6 @@
     "BSE"
   ],
   [
-    "NUTRICIRCLE",
-    "Nutricircle Ltd",
-    "BSE"
-  ],
-  [
     "NUVAMA",
     "Nuvama Wealth Management Ltd",
     "BSE"
@@ -22302,6 +22332,11 @@
   [
     "NVENTURES",
     "Nanavati Ventures Ltd",
+    "BSE"
+  ],
+  [
+    "NWIL",
+    "Nurture Well Industries Ltd",
     "BSE"
   ],
   [
@@ -22490,18 +22525,8 @@
     "BSE"
   ],
   [
-    "OLYMTFI",
-    "Olympic Management & Financial Services Ltd",
-    "BSE"
-  ],
-  [
     "OLYOI",
     "Olympic Oil Industries Ltd",
-    "BSE"
-  ],
-  [
-    "OMANSH",
-    "Omansh Enterprises Ltd",
     "BSE"
   ],
   [
@@ -22530,11 +22555,6 @@
     "BSE"
   ],
   [
-    "OMEGAIN",
-    "Omega Interactive Technologies Ltd",
-    "BSE"
-  ],
-  [
     "OMFREIGHT",
     "Om Freight Forwarders Ltd",
     "BSE"
@@ -22555,21 +22575,6 @@
     "NSE"
   ],
   [
-    "OMKAR",
-    "Omkar Overseas Ltd",
-    "BSE"
-  ],
-  [
-    "OMKARCHEM",
-    "Omkar Speciality Chemicals Ltd",
-    "BSE"
-  ],
-  [
-    "OMKARCHEM",
-    "Omkar Speciality Chemicals Limited",
-    "NSE"
-  ],
-  [
     "OMKARPH",
     "Omkar Pharmachem Ltd",
     "BSE"
@@ -22578,6 +22583,16 @@
     "OML",
     "Om Metallogic Ltd",
     "BSE"
+  ],
+  [
+    "OMNI",
+    "Omnitech Engineering Ltd",
+    "BSE"
+  ],
+  [
+    "OMNI",
+    "Omnitech Engineering Limited",
+    "NSE"
   ],
   [
     "OMNIAX",
@@ -22595,13 +22610,13 @@
     "BSE"
   ],
   [
-    "ONECAP-RE",
-    "Onelife Capital Advisors Ltd",
+    "OMPOWER",
+    "Om Power Transmission Ltd",
     "BSE"
   ],
   [
-    "ONECAP-RE",
-    "Onelife Capital Advisors Limited-RE",
+    "OMPOWER",
+    "Om Power Transmission Limited",
     "NSE"
   ],
   [
@@ -22618,6 +22633,11 @@
     "ONELIFECAP",
     "Onelife Capital Advisors Limited",
     "NSE"
+  ],
+  [
+    "ONEPOINT",
+    "One Point One Solutions Ltd",
+    "BSE"
   ],
   [
     "ONEPOINT",
@@ -22645,9 +22665,14 @@
     "NSE"
   ],
   [
-    "ONIX-RE",
-    "ONIX SOLAR ENERGY Ltd",
+    "ONIDA",
+    "Onida Electronics Ltd",
     "BSE"
+  ],
+  [
+    "ONIDA",
+    "Onida Electronics Limited",
+    "NSE"
   ],
   [
     "ONIXSOLAR",
@@ -22905,11 +22930,6 @@
     "NSE"
   ],
   [
-    "OSCARGLO",
-    "Oscar Global Ltd",
-    "BSE"
-  ],
-  [
     "OSEASPR",
     "Oseaspre Consultants Ltd",
     "BSE"
@@ -22935,11 +22955,6 @@
     "NSE"
   ],
   [
-    "OSWALEA",
-    "Oswal Leasing Ltd",
-    "BSE"
-  ],
-  [
     "OSWALGREEN",
     "Oswal Greentech Ltd",
     "BSE"
@@ -22948,11 +22963,6 @@
     "OSWALGREEN",
     "Oswal Greentech Limited",
     "NSE"
-  ],
-  [
-    "OSWALOR",
-    "Oswal Overseas Ltd",
-    "BSE"
   ],
   [
     "OSWALPUMPS",
@@ -22968,11 +22978,6 @@
     "OSWALSEEDS",
     "ShreeOswal Seeds And Chemicals Limited",
     "NSE"
-  ],
-  [
-    "OSWAYRN",
-    "Oswal Yarns Ltd",
-    "BSE"
   ],
   [
     "OTCO",
@@ -23025,11 +23030,6 @@
     "BSE"
   ],
   [
-    "PADAM-RE",
-    "Padam Cotton Yarns Ltd",
-    "BSE"
-  ],
-  [
     "PADAMCO",
     "Padam Cotton Yarns Ltd",
     "BSE"
@@ -23042,11 +23042,6 @@
   [
     "PADMALAYAT",
     "Padmalaya Telefilms Ltd",
-    "BSE"
-  ],
-  [
-    "PAEL",
-    "PAE Ltd",
     "BSE"
   ],
   [
@@ -23220,11 +23215,6 @@
     "BSE"
   ],
   [
-    "PAOS",
-    "Paos Industries Ltd",
-    "BSE"
-  ],
-  [
     "PAR",
     "Par Drugs And Chemicals Limited",
     "NSE"
@@ -23380,11 +23370,6 @@
     "NSE"
   ],
   [
-    "PASUFIN",
-    "Pasupati Fincap Ltd",
-    "BSE"
-  ],
-  [
     "PASUPTAC",
     "Pasupati Acrylon Ltd",
     "BSE"
@@ -23397,11 +23382,6 @@
   [
     "PASUSPG",
     "Pasupati Spinning & Weaving Mills Ltd",
-    "BSE"
-  ],
-  [
-    "PATANGPP",
-    "KATI PATANG LIFESTYLE Ltd",
     "BSE"
   ],
   [
@@ -23620,11 +23600,6 @@
     "NSE"
   ],
   [
-    "PEOPLIN",
-    "Peoples Investments Ltd",
-    "BSE"
-  ],
-  [
     "PERFEPA",
     "Perfectpac Ltd",
     "BSE"
@@ -23785,6 +23760,36 @@
     "BSE"
   ],
   [
+    "PHLSDDI",
+    "Platinum Hybrid Long-Short Fund \u2013 Direct Plan IDCW reinvestments",
+    "BSE"
+  ],
+  [
+    "PHLSDDP",
+    "Platinum Hybrid Long-Short Fund \u2013 Direct Plan IDCW payout",
+    "BSE"
+  ],
+  [
+    "PHLSDG",
+    "Platinum Hybrid Long-Short Fund \u2013 Direct Plan growth",
+    "BSE"
+  ],
+  [
+    "PHLSRDI",
+    "Platinum Hybrid Long-Short Fund- Regular plan IDCW reinvestments",
+    "BSE"
+  ],
+  [
+    "PHLSRDP",
+    "Platinum Hybrid Long-Short Fund \u2013 Regular plan IDCW payout",
+    "BSE"
+  ],
+  [
+    "PHLSRG",
+    "Platinum Hybrid Long-Short Fund- Regular plan growth",
+    "BSE"
+  ],
+  [
     "PHOENIXLTD",
     "The Phoenix Mills Ltd",
     "BSE"
@@ -23795,11 +23800,6 @@
     "NSE"
   ],
   [
-    "PHOENIXTN",
-    "Phoenix Township Ltd",
-    "BSE"
-  ],
-  [
     "PHOENXINTL",
     "Phoenix International Ltd",
     "BSE"
@@ -23807,11 +23807,6 @@
   [
     "PHOSPHATE",
     "The Phosphate Company Ltd",
-    "BSE"
-  ],
-  [
-    "PHOTON",
-    "Photon Capital Advisors Ltd",
     "BSE"
   ],
   [
@@ -23910,11 +23905,6 @@
     "NSE"
   ],
   [
-    "PIONAGR",
-    "Pioneer Agro Extracts Ltd",
-    "BSE"
-  ],
-  [
     "PIONEEREMB",
     "Pioneer Embroideries Ltd-",
     "BSE"
@@ -23930,6 +23920,11 @@
     "BSE"
   ],
   [
+    "PIONRINV",
+    "Pioneer Investcorp Limited",
+    "NSE"
+  ],
+  [
     "PIOTEX",
     "Piotex Industries Ltd",
     "BSE"
@@ -23943,11 +23938,6 @@
     "PIRAMALFIN",
     "Piramal Finance Limited",
     "NSE"
-  ],
-  [
-    "PITHP",
-    "Pithampur Poly Products Ltd",
-    "BSE"
   ],
   [
     "PITTIENG",
@@ -24020,9 +24010,9 @@
     "BSE"
   ],
   [
-    "PMTELELIN",
-    "P.M. Telelinnks Ltd",
-    "BSE"
+    "PML",
+    "Paul Merchants Limited",
+    "NSE"
   ],
   [
     "PNB",
@@ -24082,6 +24072,16 @@
   [
     "PNGJL",
     "P N Gadgil Jewellers Limited",
+    "NSE"
+  ],
+  [
+    "PNGSREVA",
+    "PNGS Reva Diamond Jewellery Ltd",
+    "BSE"
+  ],
+  [
+    "PNGSREVA",
+    "PNGS Reva Diamond Jewellery Limited",
     "NSE"
   ],
   [
@@ -24205,11 +24205,6 @@
     "BSE"
   ],
   [
-    "POLYTEX",
-    "Polytex India Ltd",
-    "BSE"
-  ],
-  [
     "PONNIERODE",
     "Ponni Sugars Erode Ltd",
     "BSE"
@@ -24246,7 +24241,7 @@
   ],
   [
     "POPEES",
-    "Popees Cares Ltd",
+    "Popees Baby Care India Ltd",
     "BSE"
   ],
   [
@@ -24267,6 +24262,16 @@
   [
     "POWERGRID",
     "Power Grid Corporation of India Limited",
+    "NSE"
+  ],
+  [
+    "POWERICA",
+    "Powerica Ltd",
+    "BSE"
+  ],
+  [
+    "POWERICA",
+    "Powerica Limited",
     "NSE"
   ],
   [
@@ -24345,14 +24350,14 @@
     "BSE"
   ],
   [
-    "PRADHIN",
-    "Pradhin Ltd",
+    "PRADPME",
+    "Pradeep Metals Ltd",
     "BSE"
   ],
   [
     "PRADPME",
-    "Pradeep Metals Ltd",
-    "BSE"
+    "Pradeep Metals Limited",
+    "NSE"
   ],
   [
     "PRAENG",
@@ -24420,6 +24425,11 @@
     "BSE"
   ],
   [
+    "PRAVEG",
+    "Praveg Limited",
+    "NSE"
+  ],
+  [
     "PRAXIS",
     "Praxis Home Retail Ltd",
     "BSE"
@@ -24465,14 +24475,14 @@
     "BSE"
   ],
   [
-    "PREMCAPM",
-    "Premium Capital Market & Investments Ltd",
+    "PREMCO",
+    "Premco Global Ltd-",
     "BSE"
   ],
   [
     "PREMCO",
-    "Premco Global Ltd-",
-    "BSE"
+    "Premco Global Limited",
+    "NSE"
   ],
   [
     "PREMEXPLN",
@@ -24522,11 +24532,6 @@
   [
     "PRERINFRA",
     "Prerna Infrabuild Ltd",
-    "BSE"
-  ],
-  [
-    "PRESSURS",
-    "Pressure Sensitive Systems India Ltd",
     "BSE"
   ],
   [
@@ -24687,11 +24692,6 @@
   [
     "PROFINC",
     "Pro Fin Capital Services Ltd",
-    "BSE"
-  ],
-  [
-    "PROGREXV",
-    "Progrex Ventures Ltd",
     "BSE"
   ],
   [
@@ -24961,16 +24961,11 @@
   ],
   [
     "PVTBANKADD",
-    "DSP Private Bank ETF",
+    "DSP Nifty Private Bank ETF",
     "BSE"
   ],
   [
     "PVVINFRA",
-    "PVV Infra Ltd",
-    "BSE"
-  ],
-  [
-    "PVVIPP",
     "PVV Infra Ltd",
     "BSE"
   ],
@@ -25013,6 +25008,11 @@
     "QLL",
     "Qualitek Labs Ltd",
     "BSE"
+  ],
+  [
+    "QMSMEDI",
+    "QMS Medical Allied Services Limited",
+    "NSE"
   ],
   [
     "QNIFTY",
@@ -25095,13 +25095,8 @@
     "BSE"
   ],
   [
-    "QUINTEGRA",
-    "Quintegra Solutions Ltd",
-    "BSE"
-  ],
-  [
-    "QUINTEGRA",
-    "Quintegra Solutions Limited",
+    "QUINT",
+    "Quint Digital Limited",
     "NSE"
   ],
   [
@@ -25325,6 +25320,11 @@
     "BSE"
   ],
   [
+    "RAJPALAYAM",
+    "Rajapalayam Mills Limited",
+    "NSE"
+  ],
+  [
     "RAJPUTANA",
     "Rajputana Investment and Finance Ltd",
     "BSE"
@@ -25390,16 +25390,6 @@
     "BSE"
   ],
   [
-    "RAJVIR",
-    "Rajvir Industries Ltd",
-    "BSE"
-  ],
-  [
-    "RAJVIR",
-    "Rajvir Industries Limited",
-    "NSE"
-  ],
-  [
     "RAL",
     "Resourceful Automobile Ltd",
     "BSE"
@@ -25430,11 +25420,6 @@
     "NSE"
   ],
   [
-    "RAMAPETRO",
-    "Rama Petrochemicals Ltd",
-    "BSE"
-  ],
-  [
     "RAMAPHO",
     "Rama Phosphates Ltd",
     "BSE"
@@ -25447,11 +25432,6 @@
   [
     "RAMAPPR-B",
     "Rama Paper Mills Ltd",
-    "BSE"
-  ],
-  [
-    "RAMASIGNS",
-    "Ramasigns Industries Ltd",
     "BSE"
   ],
   [
@@ -25605,11 +25585,6 @@
     "BSE"
   ],
   [
-    "RASSIREF",
-    "Raasi Refractories Ltd-",
-    "BSE"
-  ],
-  [
     "RATEGAIN",
     "RateGain Travel Technologies Ltd",
     "BSE"
@@ -25745,11 +25720,6 @@
     "BSE"
   ],
   [
-    "RCCEMEN",
-    "RCC Cements Ltd",
-    "BSE"
-  ],
-  [
     "RCCL",
     "Rajasthan Cylinders & Containers Ltd",
     "BSE"
@@ -25815,6 +25785,11 @@
     "NSE"
   ],
   [
+    "RECODE",
+    "Recode Studios Ltd",
+    "BSE"
+  ],
+  [
     "REDINGTON",
     "Redington Ltd",
     "BSE"
@@ -25848,11 +25823,6 @@
     "REFEX",
     "Refex Industries Limited",
     "NSE"
-  ],
-  [
-    "REFEXRENEW",
-    "Refex Renewables & Infrastructure Ltd",
-    "BSE"
   ],
   [
     "REGAAL",
@@ -25965,16 +25935,6 @@
     "NSE"
   ],
   [
-    "RELINFRA",
-    "Reliance Infrastructure Ltd",
-    "BSE"
-  ],
-  [
-    "RELINFRA",
-    "Reliance Infrastructure Limited",
-    "NSE"
-  ],
-  [
     "RELTD",
     "Ravindra Energy Ltd",
     "BSE"
@@ -25982,6 +25942,16 @@
   [
     "RELTD",
     "Ravindra Energy Limited",
+    "NSE"
+  ],
+  [
+    "RELTD-RE",
+    "RAVINDRA ENERGY Ltd",
+    "BSE"
+  ],
+  [
+    "RELTD-RE",
+    "Ravindra Energy Ltd-RE",
     "NSE"
   ],
   [
@@ -26102,6 +26072,11 @@
   [
     "REXSEAL",
     "Rex Sealing and Packing Industries Ltd",
+    "BSE"
+  ],
+  [
+    "RFIL",
+    "Rajnandini Fashion India Ltd",
     "BSE"
   ],
   [
@@ -26375,6 +26350,11 @@
     "BSE"
   ],
   [
+    "RMC",
+    "RMC Switchgears Limited",
+    "NSE"
+  ],
+  [
     "RMDRIP",
     "R M Drip and Sprinklers Systems Ltd",
     "BSE"
@@ -26645,6 +26625,11 @@
     "BSE"
   ],
   [
+    "RRIL",
+    "RRIL Limited",
+    "NSE"
+  ],
+  [
     "RRKABEL",
     "R R Kabel Ltd",
     "BSE"
@@ -26657,16 +26642,6 @@
   [
     "RRMETAL",
     "RR MetalMakers India Ltd",
-    "BSE"
-  ],
-  [
-    "RRP",
-    "RRP Semiconductor Ltd",
-    "BSE"
-  ],
-  [
-    "RRPDEFENSE",
-    "RRP Defense Ltd",
     "BSE"
   ],
   [
@@ -26683,6 +26658,21 @@
     "RSDFIN",
     "RSD Finance Ltd",
     "BSE"
+  ],
+  [
+    "RSDFIN",
+    "RSD Finance Limited",
+    "NSE"
+  ],
+  [
+    "RSL",
+    "Rajputana Stainless Ltd",
+    "BSE"
+  ],
+  [
+    "RSL",
+    "Rajputana Stainless Limited",
+    "NSE"
   ],
   [
     "RSSOFTWARE",
@@ -26950,16 +26940,6 @@
     "NSE"
   ],
   [
-    "SADHNA-RE",
-    "Sadhana Nitrochem Ltd",
-    "BSE"
-  ],
-  [
-    "SADHNA-RE",
-    "Sadhana Nitrochem Limited-RE",
-    "NSE"
-  ],
-  [
     "SADHNANIQ",
     "Sadhana Nitro Chem Ltd",
     "BSE"
@@ -26968,11 +26948,6 @@
     "SADHNANIQ",
     "Sadhana Nitrochem Limited",
     "NSE"
-  ],
-  [
-    "SAENTER",
-    "South Asian Enterprises Ltd",
-    "BSE"
   ],
   [
     "SAFARI",
@@ -27045,6 +27020,11 @@
     "BSE"
   ],
   [
+    "SAHLIBHFI",
+    "Shalibhadra Finance Limited",
+    "NSE"
+  ],
+  [
     "SAHYADRI",
     "Sahyadri Industries Ltd",
     "BSE"
@@ -27093,6 +27073,16 @@
     "SAINIK",
     "Sainik Finance & Industries Ltd",
     "BSE"
+  ],
+  [
+    "SAIPARENT",
+    "Sai Parenterals Ltd",
+    "BSE"
+  ],
+  [
+    "SAIPARENT",
+    "Sai Parenterals Limited",
+    "NSE"
   ],
   [
     "SAKAR",
@@ -27330,11 +27320,6 @@
     "BSE"
   ],
   [
-    "SANCO",
-    "Sanco Industries Limited",
-    "NSE"
-  ],
-  [
     "SANCODE",
     "Sancode Technologies Ltd",
     "BSE"
@@ -27392,16 +27377,6 @@
   [
     "SANGAMIND",
     "Sangam India Limited",
-    "NSE"
-  ],
-  [
-    "SANGHIIND",
-    "Sanghi Industries Ltd",
-    "BSE"
-  ],
-  [
-    "SANGHIIND",
-    "Sanghi Industries Limited",
     "NSE"
   ],
   [
@@ -27515,6 +27490,11 @@
     "BSE"
   ],
   [
+    "SAPPL",
+    "Shree Ajit Pulp & Paper Limited",
+    "NSE"
+  ],
+  [
     "SARDAEN",
     "Sarda Energy & Minerals Ltd-",
     "BSE"
@@ -27575,11 +27555,6 @@
     "BSE"
   ],
   [
-    "SASHWAT",
-    "Sashwat Technocrats Ltd",
-    "BSE"
-  ],
-  [
     "SASKEN",
     "Sasken Technologies Ltd",
     "BSE"
@@ -27588,21 +27563,6 @@
     "SASKEN",
     "Sasken Technologies Limited",
     "NSE"
-  ],
-  [
-    "SASTASUNDR",
-    "Sastasundar Ventures Ltd",
-    "BSE"
-  ],
-  [
-    "SASTASUNDR",
-    "Sastasundar Ventures Limited",
-    "NSE"
-  ],
-  [
-    "SATANIBRG",
-    "Satani Bearings Ltd",
-    "BSE"
   ],
   [
     "SATCH",
@@ -27668,6 +27628,11 @@
     "SAYAJIHOTL",
     "Sayaji Hotels Ltd",
     "BSE"
+  ],
+  [
+    "SAYAJIHOTL",
+    "Sayaji Hotels Limited",
+    "NSE"
   ],
   [
     "SAYAJIIND",
@@ -27755,6 +27720,11 @@
     "NSE"
   ],
   [
+    "SBIMIDMOM",
+    "SBI Nifty Midcap 150 Momentum 50 ETF",
+    "BSE"
+  ],
+  [
     "SBIN",
     "State Bank of India",
     "BSE"
@@ -27770,13 +27740,23 @@
     "BSE"
   ],
   [
+    "SBINMID150",
+    "SBI Nifty Midcap 150 ETF",
+    "BSE"
+  ],
+  [
     "SBISENSEX",
     "SBI Mutual Fund - SBI Sensex ETF",
     "BSE"
   ],
   [
-    "SBL",
-    "Shivamshree Businesses Ltd",
+    "SBISMLETF",
+    "SBI Nifty Smallcap 250 ETF",
+    "BSE"
+  ],
+  [
+    "SBIVALETF",
+    "SBI Nifty200 Value 30 ETF",
     "BSE"
   ],
   [
@@ -27810,6 +27790,11 @@
     "BSE"
   ],
   [
+    "SCANSTL",
+    "Scan Steels Limited",
+    "NSE"
+  ],
+  [
     "SCARNOSE",
     "Scarnose International Ltd",
     "BSE"
@@ -27822,6 +27807,11 @@
   [
     "SCC",
     "Scintilla Commercial & Credit Ltd",
+    "BSE"
+  ],
+  [
+    "SCDL",
+    "Safety Controls & Devices Ltd",
     "BSE"
   ],
   [
@@ -27875,11 +27865,6 @@
     "NSE"
   ],
   [
-    "SCL",
-    "Sunshine Capital Ltd",
-    "BSE"
-  ],
-  [
     "SCODATUBES",
     "Scoda Tubes Ltd",
     "BSE"
@@ -27922,11 +27907,6 @@
   [
     "SDC",
     "SDC Techmedia Ltd",
-    "BSE"
-  ],
-  [
-    "SDL",
-    "Span Divergent Ltd-",
     "BSE"
   ],
   [
@@ -27975,9 +27955,24 @@
     "NSE"
   ],
   [
+    "SEDEMAC",
+    "Sedemac Mechatronics Ltd",
+    "BSE"
+  ],
+  [
+    "SEDEMAC",
+    "SEDEMAC Mechatronics Limited",
+    "NSE"
+  ],
+  [
     "SEIL",
     "Shanti Educational Initiatives Ltd",
     "BSE"
+  ],
+  [
+    "SEIL",
+    "Shanti Educational Initiatives Limited",
+    "NSE"
   ],
   [
     "SEJALLTD",
@@ -28005,8 +28000,8 @@
     "BSE"
   ],
   [
-    "SELLWIN",
-    "Sellwin Traders Ltd",
+    "SELECTRIC",
+    "Schneider Electric President Systems Ltd",
     "BSE"
   ],
   [
@@ -28043,11 +28038,6 @@
     "SENCO",
     "Senco Gold Limited",
     "NSE"
-  ],
-  [
-    "SENINFO",
-    "Senthil Infotek Ltd",
-    "BSE"
   ],
   [
     "SENORES",
@@ -28105,19 +28095,9 @@
     "BSE"
   ],
   [
-    "SERIND",
-    "SER Industries Ltd",
-    "BSE"
-  ],
-  [
     "SERVOTECH",
     "Servotech Renewable Power System Limited",
     "NSE"
-  ],
-  [
-    "SESHACHAL",
-    "Seshachal Technologies Ltd",
-    "BSE"
   ],
   [
     "SESHAPAPER",
@@ -28300,6 +28280,16 @@
     "NSE"
   ],
   [
+    "SHAH-RE1",
+    "SHAH METACORP Ltd",
+    "BSE"
+  ],
+  [
+    "SHAH-RE1",
+    "Shah Metacorp Ltd-RE",
+    "NSE"
+  ],
+  [
     "SHAHALLOYS",
     "Shah Alloys Ltd",
     "BSE"
@@ -28312,11 +28302,6 @@
   [
     "SHAHCON",
     "Shah Construction Company Ltd",
-    "BSE"
-  ],
-  [
-    "SHAHFOOD",
-    "Shah Foods Ltd",
     "BSE"
   ],
   [
@@ -28385,11 +28370,6 @@
     "BSE"
   ],
   [
-    "SHAMROIN",
-    "Shamrock Industrial Company Ltd",
-    "BSE"
-  ],
-  [
     "SHANGAR",
     "Shangar Decor Ltd",
     "BSE"
@@ -28407,11 +28387,6 @@
   [
     "SHANMUGA",
     "Shanmuga Hospital Ltd",
-    "BSE"
-  ],
-  [
-    "SHANTAI",
-    "Shantai Industries Ltd",
     "BSE"
   ],
   [
@@ -28480,6 +28455,11 @@
     "BSE"
   ],
   [
+    "SHARDUL",
+    "Shardul Securities Limited",
+    "NSE"
+  ],
+  [
     "SHAREINDIA",
     "Share India Securities Ltd",
     "BSE"
@@ -28502,11 +28482,6 @@
   [
     "SHARMEH",
     "Sharma East India Hospitals & Medical Research Ltd",
-    "BSE"
-  ],
-  [
-    "SHARP",
-    "Sharp India Ltd",
     "BSE"
   ],
   [
@@ -28548,6 +28523,11 @@
     "SHBAJRG",
     "Shri Bajrang Alliance Ltd",
     "BSE"
+  ],
+  [
+    "SHBAJRG",
+    "Shri Bajrang Alliance Limited",
+    "NSE"
   ],
   [
     "SHEKHAWATI",
@@ -28648,6 +28628,11 @@
     "SHINDL",
     "Sharat Industries Ltd",
     "BSE"
+  ],
+  [
+    "SHINDL",
+    "Sharat Industries Limited",
+    "NSE"
   ],
   [
     "SHINEFASH",
@@ -28960,6 +28945,11 @@
     "BSE"
   ],
   [
+    "SHRIKRISH",
+    "Shri Krishna Devcon Limited",
+    "NSE"
+  ],
+  [
     "SHRINGARMS",
     "Shringar House of Mangalsutra Ltd",
     "BSE"
@@ -28968,11 +28958,6 @@
     "SHRINGARMS",
     "Shringar House of Mangalsutra Limited",
     "NSE"
-  ],
-  [
-    "SHRINIWAS",
-    "Shri Niwas Leasing And Finance Ltd",
-    "BSE"
   ],
   [
     "SHRIPISTON",
@@ -29110,13 +29095,8 @@
     "BSE"
   ],
   [
-    "SICAL-RE",
-    "Sical Logistics Ltd",
-    "BSE"
-  ],
-  [
-    "SICAL-RE",
-    "Sical Logistics Ltd-RE",
+    "SICAGEN",
+    "Sicagen India Limited",
     "NSE"
   ],
   [
@@ -29250,6 +29230,11 @@
     "BSE"
   ],
   [
+    "SIKA",
+    "Sika Interplant Systems Limited",
+    "NSE"
+  ],
+  [
     "SIKKO",
     "Sikko Industries Limited",
     "NSE"
@@ -29275,11 +29260,6 @@
     "NSE"
   ],
   [
-    "SILICON",
-    "Silicon Valley Infotech Ltd",
-    "BSE"
-  ],
-  [
     "SILINV",
     "SIL Investments Ltd",
     "BSE"
@@ -29293,11 +29273,6 @@
     "SILLYMONKS",
     "Silly Monks Entertainment Limited",
     "NSE"
-  ],
-  [
-    "SILVERLINE",
-    "Silverline Technologies Ltd",
-    "BSE"
   ],
   [
     "SILVERO",
@@ -29400,9 +29375,14 @@
     "NSE"
   ],
   [
-    "SINGER",
+    "SINGERIND",
     "Singer India Ltd",
     "BSE"
+  ],
+  [
+    "SINGERIND",
+    "Singer India Limited",
+    "NSE"
   ],
   [
     "SINNAR",
@@ -29417,11 +29397,6 @@
   [
     "SIPL",
     "Shelter Infra Projects Ltd-",
-    "BSE"
-  ],
-  [
-    "SIPTL",
-    "Sharanam Infraproject and Trading Ltd",
     "BSE"
   ],
   [
@@ -29490,11 +29465,6 @@
     "BSE"
   ],
   [
-    "SJCORP",
-    "SJ Corporation Ltd",
-    "BSE"
-  ],
-  [
     "SJS",
     "S.J.S. Enterprises Ltd",
     "BSE"
@@ -29547,21 +29517,6 @@
   [
     "SKIFL",
     "Shree Krishna Infrastructure Ltd",
-    "BSE"
-  ],
-  [
-    "SKIL",
-    "SKIL Infrastructure Ltd",
-    "BSE"
-  ],
-  [
-    "SKIL",
-    "SKIL Infrastructure Limited",
-    "NSE"
-  ],
-  [
-    "SKILVEN",
-    "Skyline Ventures India Ltd",
     "BSE"
   ],
   [
@@ -29750,6 +29705,11 @@
     "NSE"
   ],
   [
+    "SMR",
+    "SMR Jewels Ltd",
+    "BSE"
+  ],
+  [
     "SMRUTHIORG",
     "Smruthi Organics Ltd",
     "BSE"
@@ -29777,11 +29737,6 @@
   [
     "SNL",
     "SNL Bearings Ltd",
-    "BSE"
-  ],
-  [
-    "SNLFPP",
-    "Shri Niwas Leasing and Finance Ltd",
     "BSE"
   ],
   [
@@ -29835,18 +29790,8 @@
     "BSE"
   ],
   [
-    "SOFTBPO",
-    "Softbpo Global Services Ltd",
-    "BSE"
-  ],
-  [
     "SOFTRAKV",
     "Softrak Venture Investment Ltd",
-    "BSE"
-  ],
-  [
-    "SOFTSOL",
-    "Softsol India Ltd",
     "BSE"
   ],
   [
@@ -29868,11 +29813,6 @@
     "SOLARA",
     "Solara Active Pharma Sciences Limited",
     "NSE"
-  ],
-  [
-    "SOLARAPP1",
-    "SOLARA ACTIVE PHARMA SCIENCES Ltd",
-    "BSE"
   ],
   [
     "SOLARINDS",
@@ -29963,6 +29903,11 @@
     "SONAL",
     "Sonal Mercantile Ltd",
     "BSE"
+  ],
+  [
+    "SONAL",
+    "Sonal Mercantile Limited",
+    "NSE"
   ],
   [
     "SONALAD",
@@ -30220,6 +30165,11 @@
     "NSE"
   ],
   [
+    "SPML",
+    "Speciality Medicines Ltd",
+    "BSE"
+  ],
+  [
     "SPMLINFRA",
     "SPML Infra Ltd",
     "BSE"
@@ -30278,11 +30228,6 @@
     "SRD",
     "Shankar Lal Rampal Dye-Chem Limited",
     "NSE"
-  ],
-  [
-    "SRDAPRT",
-    "Sarda Proteins Ltd",
-    "BSE"
   ],
   [
     "SRECR",
@@ -30375,16 +30320,6 @@
     "BSE"
   ],
   [
-    "SRMENERGY",
-    "SRM Energy Ltd",
-    "BSE"
-  ],
-  [
-    "SRPL",
-    "Shree Ram Proteins Limited",
-    "NSE"
-  ],
-  [
     "SRSOLTD",
     "Silicon Rental Solutions Ltd",
     "BSE"
@@ -30422,11 +30357,6 @@
   [
     "SSL",
     "Share Samadhan Ltd",
-    "BSE"
-  ],
-  [
-    "SSLEL",
-    "Sir Shadi Lal Enterprises Ltd",
     "BSE"
   ],
   [
@@ -30640,11 +30570,6 @@
     "NSE"
   ],
   [
-    "STEELCO",
-    "Steelco Gujarat Ltd",
-    "BSE"
-  ],
-  [
     "STEELXIND",
     "Steel Exchange India Ltd",
     "BSE"
@@ -30773,11 +30698,6 @@
     "STUDDS",
     "Studds Accessories Limited",
     "NSE"
-  ],
-  [
-    "STURDY",
-    "Sturdy Industries Ltd",
-    "BSE"
   ],
   [
     "STYL",
@@ -30950,6 +30870,11 @@
     "BSE"
   ],
   [
+    "SUMEET-RE",
+    "Sumeet Industries Limited-RE",
+    "NSE"
+  ],
+  [
     "SUMEETINDS",
     "Sumeet Industries Ltd-",
     "BSE"
@@ -30988,11 +30913,6 @@
     "SUMMITSEC",
     "Summit Securities Limited",
     "NSE"
-  ],
-  [
-    "SUMUKA",
-    "Sumuka Agro Industries Ltd",
-    "BSE"
   ],
   [
     "SUNCITYSY",
@@ -31295,6 +31215,11 @@
     "NSE"
   ],
   [
+    "SURAJINDPP",
+    "Suraj Industries Ltd",
+    "BSE"
+  ],
+  [
     "SURAJLTD",
     "Suraj Ltd-",
     "BSE"
@@ -31350,11 +31275,6 @@
     "BSE"
   ],
   [
-    "SURFI-RE",
-    "Suryo Foods & Industries Ltd",
-    "BSE"
-  ],
-  [
     "SURJIND",
     "Suraj Industries Ltd",
     "BSE"
@@ -31373,6 +31293,11 @@
     "SURYALA",
     "Suryalata Spinning Mills Ltd-",
     "BSE"
+  ],
+  [
+    "SURYALA",
+    "Suryalata Spinning Mills Limited",
+    "NSE"
   ],
   [
     "SURYALAXMI",
@@ -31405,8 +31330,8 @@
     "NSE"
   ],
   [
-    "SURYVANSP",
-    "Suryavanshi Spinning Mills Ltd-",
+    "SUSAN",
+    "Susan Electricals India Ltd",
     "BSE"
   ],
   [
@@ -31418,11 +31343,6 @@
     "SUTLEJTEX",
     "Sutlej Textiles and Industries Limited",
     "NSE"
-  ],
-  [
-    "SUUMAYA",
-    "Suumaya Corporation Ltd",
-    "BSE"
   ],
   [
     "SUVEN",
@@ -31517,11 +31437,6 @@
   [
     "SVS",
     "SVS Ventures Ltd",
-    "BSE"
-  ],
-  [
-    "SW1",
-    "SW Investments Ltd",
     "BSE"
   ],
   [
@@ -31660,11 +31575,6 @@
     "NSE"
   ],
   [
-    "SYBLY",
-    "Sybly Industries Ltd-",
-    "BSE"
-  ],
-  [
     "SYLPH",
     "Sylph Industries Ltd",
     "BSE"
@@ -31703,11 +31613,6 @@
     "SYNGENE",
     "Syngene International Limited",
     "NSE"
-  ],
-  [
-    "SYNTHFO",
-    "Synthiko Foils Ltd",
-    "BSE"
   ],
   [
     "SYRMA",
@@ -31750,9 +31655,9 @@
     "BSE"
   ],
   [
-    "TACENT",
-    "Tacent Projects Ltd",
-    "BSE"
+    "TAALTECH",
+    "Taal Tech Limited",
+    "NSE"
   ],
   [
     "TAHMARENT",
@@ -31820,8 +31725,18 @@
     "BSE"
   ],
   [
+    "TAMBOLIIN",
+    "Tamboli Industries Limited",
+    "NSE"
+  ],
+  [
     "TANAA",
     "Taneja Aerospace & Aviation Ltd-",
+    "BSE"
+  ],
+  [
+    "TANDHANIN",
+    "Tandhan Industries Ltd",
     "BSE"
   ],
   [
@@ -32220,6 +32135,11 @@
     "BSE"
   ],
   [
+    "TECHNVISN",
+    "TechNVision Ventures Limited",
+    "NSE"
+  ],
+  [
     "TECILCHEM",
     "Tecil Chemicals & Hydro Power Ltd",
     "BSE"
@@ -32410,9 +32330,19 @@
     "BSE"
   ],
   [
+    "THACKER",
+    "Thacker & Company Limited",
+    "NSE"
+  ],
+  [
     "THAKDEV",
     "Thakkers Developers Ltd",
     "BSE"
+  ],
+  [
+    "THAKDEV",
+    "Thakkers Developers Limited",
+    "NSE"
   ],
   [
     "THAKKERS",
@@ -32535,11 +32465,6 @@
     "NSE"
   ],
   [
-    "TIAANC",
-    "Tiaan Consumer Ltd",
-    "BSE"
-  ],
-  [
     "TICL",
     "Twamev Construction And Infrastructure Ltd",
     "BSE"
@@ -32640,6 +32565,11 @@
     "BSE"
   ],
   [
+    "TIMEX",
+    "Timex Group India Limited",
+    "NSE"
+  ],
+  [
     "TIMKEN",
     "Timken India Ltd",
     "BSE"
@@ -32658,6 +32588,11 @@
     "TINNARUBR",
     "Tinna Rubber and Infrastructure Limited",
     "NSE"
+  ],
+  [
+    "TIPCO",
+    "Tipco Engineering India Ltd",
+    "BSE"
   ],
   [
     "TIPSFILMS",
@@ -32795,11 +32730,6 @@
     "NSE"
   ],
   [
-    "TMTIND-B1",
-    "TMT India Ltd",
-    "BSE"
-  ],
-  [
     "TNPETRO",
     "Tamilnadu Petroproducts Ltd",
     "BSE"
@@ -32818,11 +32748,6 @@
     "TNPL",
     "Tamil Nadu Newsprint & Papers Limited",
     "NSE"
-  ],
-  [
-    "TNSTLTU",
-    "Tamilnadu Steel Tubes Ltd",
-    "BSE"
   ],
   [
     "TNTELE",
@@ -33015,6 +32940,11 @@
     "BSE"
   ],
   [
+    "TRANSPEK",
+    "Transpek Industry Limited",
+    "NSE"
+  ],
+  [
     "TRANSRAILL",
     "Transrail Lighting Ltd",
     "BSE"
@@ -33057,11 +32987,6 @@
   [
     "TRAVELS",
     "Travels & Rentals Ltd",
-    "BSE"
-  ],
-  [
-    "TRAVELS-RE",
-    "Travels & rentals Ltd",
     "BSE"
   ],
   [
@@ -33170,11 +33095,6 @@
     "BSE"
   ],
   [
-    "TRITON",
-    "Triton Corp Ltd",
-    "BSE"
-  ],
-  [
     "TRITONV",
     "Triton Valves Ltd",
     "BSE"
@@ -33252,11 +33172,6 @@
   [
     "TRUSTEDGE",
     "Trustedge Capital Ltd",
-    "BSE"
-  ],
-  [
-    "TRUSTWAVE",
-    "Trustwave Securities Ltd",
     "BSE"
   ],
   [
@@ -33475,6 +33390,11 @@
     "BSE"
   ],
   [
+    "TYPHOON",
+    "Typhoon Holdings Ltd",
+    "BSE"
+  ],
+  [
     "TYROON",
     "Tyroon Tea Company Ltd",
     "BSE"
@@ -33595,6 +33515,11 @@
     "NSE"
   ],
   [
+    "UHMVL",
+    "UHM Vacation Ltd",
+    "BSE"
+  ],
+  [
     "UHZAVERI",
     "U. H. Zaveri Ltd",
     "BSE"
@@ -33628,6 +33553,11 @@
     "ULTRAMAR",
     "Ultramarine & Pigments Ltd-",
     "BSE"
+  ],
+  [
+    "ULTRAMAR",
+    "Ultramarine & Pigments Limited",
+    "NSE"
   ],
   [
     "UMAEXPORTS",
@@ -33750,11 +33680,6 @@
     "NSE"
   ],
   [
-    "UNIOFFICE",
-    "Universal Office Automation Ltd",
-    "BSE"
-  ],
-  [
     "UNIONBANK",
     "Union Bank of India",
     "BSE"
@@ -33831,13 +33756,13 @@
   ],
   [
     "UNITEDPOLY",
-    "United Polyfab Gujarat Limited",
-    "NSE"
+    "United Polyfab Gujarat Ltd",
+    "BSE"
   ],
   [
-    "UNITEDTE",
-    "United Textiles Ltd",
-    "BSE"
+    "UNITEDPOLY",
+    "United Polyfab Gujarat Limited",
+    "NSE"
   ],
   [
     "UNITEDTEA",
@@ -33848,16 +33773,6 @@
     "UNITINT",
     "Unitech International Ltd",
     "BSE"
-  ],
-  [
-    "UNIVAFOODS",
-    "Univa Foods Ltd",
-    "BSE"
-  ],
-  [
-    "UNIVAFOODS",
-    "Univa Foods Limited",
-    "NSE"
   ],
   [
     "UNIVARTS",
@@ -33913,11 +33828,6 @@
     "UNOMINDA",
     "UNO Minda Limited",
     "NSE"
-  ],
-  [
-    "UNQTYMI",
-    "Union Quality Plastics Ltd",
-    "BSE"
   ],
   [
     "UNRYLMA",
@@ -34120,6 +34030,11 @@
     "BSE"
   ],
   [
+    "VAHH",
+    "Vahh Chemicals Ltd",
+    "BSE"
+  ],
+  [
     "VAIBHAVGBL",
     "Vaibhav Global Ltd",
     "BSE"
@@ -34210,9 +34125,24 @@
     "BSE"
   ],
   [
+    "VALUE",
+    "Mirae Asset Nifty 500 Value 50 ETF",
+    "BSE"
+  ],
+  [
     "VAMA",
     "Vama Industries Ltd",
     "BSE"
+  ],
+  [
+    "VAML",
+    "Vedanta Aluminium Metal Ltd",
+    "BSE"
+  ],
+  [
+    "VAML",
+    "Vedanta Aluminium Metal Limited",
+    "NSE"
   ],
   [
     "VAMSHIRU",
@@ -34252,11 +34182,6 @@
   [
     "VARDHANCFL",
     "Vardhan Capital & Finance Ltd",
-    "BSE"
-  ],
-  [
-    "VARDHMAN",
-    "Vardhman Concrete Ltd",
     "BSE"
   ],
   [
@@ -34307,16 +34232,6 @@
   [
     "VASHISHTHA",
     "Vashishtha Luxury Fashion Ltd",
-    "BSE"
-  ],
-  [
-    "VASINFRA",
-    "Vas Infrastructure Ltd",
-    "BSE"
-  ],
-  [
-    "VASUDHAGAM",
-    "Vasudhagama Enterprises Ltd",
     "BSE"
   ],
   [
@@ -34385,6 +34300,16 @@
     "NSE"
   ],
   [
+    "VEDPOWER",
+    "Vedanta Power Ltd",
+    "BSE"
+  ],
+  [
+    "VEDPOWER",
+    "Vedanta Power Limited",
+    "NSE"
+  ],
+  [
     "VEEDOL",
     "Veedol Corporation Ltd",
     "BSE"
@@ -34433,6 +34358,11 @@
     "VELJAN",
     "Veljan Denison Ltd",
     "BSE"
+  ],
+  [
+    "VELJAN",
+    "Veljan Denison Limited",
+    "NSE"
   ],
   [
     "VELOX",
@@ -34511,6 +34441,11 @@
   ],
   [
     "VERTEX",
+    "Vertex Securities Ltd",
+    "BSE"
+  ],
+  [
+    "VERTEXPP",
     "Vertex Securities Ltd",
     "BSE"
   ],
@@ -34625,11 +34560,6 @@
     "NSE"
   ],
   [
-    "VIJAYTX",
-    "Vijay Textiles Ltd",
-    "BSE"
-  ],
-  [
     "VIJIFIN",
     "Viji Finance Ltd",
     "BSE"
@@ -34708,6 +34638,11 @@
     "VIKRAN",
     "Vikran Engineering Limited",
     "NSE"
+  ],
+  [
+    "VIKSHEN",
+    "Viksit Engineering Ltd",
+    "BSE"
   ],
   [
     "VIMTALABS",
@@ -34880,6 +34815,16 @@
     "BSE"
   ],
   [
+    "VISACHROME",
+    "VISA Chrome Ltd",
+    "BSE"
+  ],
+  [
+    "VISACHROME",
+    "VISA Chrome Limited",
+    "NSE"
+  ],
+  [
     "VISAGAR",
     "Visagar Financial Services Ltd",
     "BSE"
@@ -34892,16 +34837,6 @@
   [
     "VISAKAIND",
     "Visaka Industries Limited",
-    "NSE"
-  ],
-  [
-    "VISASTEEL",
-    "Visa Steel Ltd",
-    "BSE"
-  ],
-  [
-    "VISASTEEL",
-    "Visa Steel Limited",
     "NSE"
   ],
   [
@@ -34945,6 +34880,16 @@
     "BSE"
   ],
   [
+    "VISL",
+    "Vedanta Iron And Steel Ltd",
+    "BSE"
+  ],
+  [
+    "VISL",
+    "Vedanta Iron and Steel Limited",
+    "NSE"
+  ],
+  [
     "VISTAPH",
     "Vista Pharmaceuticals Ltd",
     "BSE"
@@ -34960,6 +34905,11 @@
     "BSE"
   ],
   [
+    "VITAL",
+    "Vital Chemtech Limited",
+    "NSE"
+  ],
+  [
     "VIVAA",
     "Vivaa Tradecom Ltd",
     "BSE"
@@ -34973,6 +34923,11 @@
     "VIVANZA",
     "Vivanza Biosciences Ltd",
     "BSE"
+  ],
+  [
+    "VIVIANA",
+    "Viviana Power Tech Limited",
+    "NSE"
   ],
   [
     "VIVIDHA",
@@ -35032,11 +34987,6 @@
   [
     "VKAL",
     "Vantage Knowledge Academy Ltd",
-    "BSE"
-  ],
-  [
-    "VKGLOBAL",
-    "VK Global Industries Ltd",
     "BSE"
   ],
   [
@@ -35105,6 +35055,16 @@
     "BSE"
   ],
   [
+    "VOGL",
+    "Vedanta Oil and Gas Ltd",
+    "BSE"
+  ],
+  [
+    "VOGL",
+    "Vedanta Oil and Gas Limited",
+    "NSE"
+  ],
+  [
     "VOITHPAPR",
     "Voith Paper Fabrics India Ltd-",
     "BSE"
@@ -35138,6 +35098,11 @@
     "VOLTAS",
     "Voltas Limited",
     "NSE"
+  ],
+  [
+    "VPAL",
+    "Vegorama Punjabi Angithi Ltd",
+    "BSE"
   ],
   [
     "VPL",
@@ -35187,11 +35152,6 @@
   [
     "VRUDDHI",
     "Vruddhi Engineering Works Ltd",
-    "BSE"
-  ],
-  [
-    "VRWODAR",
-    "VR Woodart Ltd",
     "BSE"
   ],
   [
@@ -35490,6 +35450,11 @@
     "BSE"
   ],
   [
+    "WELSPLSOL",
+    "Welspun Specialty Solutions Limited",
+    "NSE"
+  ],
+  [
     "WELSPUNLIV",
     "Welspun Living Ltd",
     "BSE"
@@ -35605,11 +35570,6 @@
     "BSE"
   ],
   [
-    "WIMPLAST",
-    "Wim Plast Ltd-",
-    "BSE"
-  ],
-  [
     "WINDLAS",
     "Windlas Biotech Ltd",
     "BSE"
@@ -35710,11 +35670,6 @@
     "NSE"
   ],
   [
-    "WOODSVILA",
-    "Woodsvilla Ltd",
-    "BSE"
-  ],
-  [
     "WORKMATES",
     "Workmates Core2Cloud Solution Ltd",
     "BSE"
@@ -35743,6 +35698,11 @@
     "WPIL",
     "WPIL Ltd",
     "BSE"
+  ],
+  [
+    "WPIL",
+    "WPIL Limited",
+    "NSE"
   ],
   [
     "WSFX",
@@ -35820,6 +35780,11 @@
     "BSE"
   ],
   [
+    "YAASHVI",
+    "Yaashvi Jewellers Ltd",
+    "BSE"
+  ],
+  [
     "YAJUR",
     "Yajur Fibres Ltd",
     "BSE"
@@ -35827,11 +35792,6 @@
   [
     "YAMNINV",
     "Yamini Investments Company Ltd",
-    "BSE"
-  ],
-  [
-    "YARNPP",
-    "Yarn Syndicate Ltd",
     "BSE"
   ],
   [
@@ -35877,11 +35837,6 @@
   [
     "YASHRAJC",
     "Yashraj Containeurs Ltd",
-    "BSE"
-  ],
-  [
-    "YASTF",
-    "Yash Trading & Finance Ltd",
     "BSE"
   ],
   [
@@ -35955,6 +35910,11 @@
     "BSE"
   ],
   [
+    "YURANUS",
+    "Yuranus Infrastructure Ltd",
+    "BSE"
+  ],
+  [
     "YUVRAAJHPL",
     "Yuvraaj Hygiene Products Ltd",
     "BSE"
@@ -35977,11 +35937,6 @@
   [
     "ZARCOLEA",
     "Arco Leasing Ltd",
-    "BSE"
-  ],
-  [
-    "ZARDIINV",
-    "Ardi Investments & Trading Company Ltd",
     "BSE"
   ],
   [
@@ -36110,6 +36065,11 @@
     "BSE"
   ],
   [
+    "ZFSTEERING",
+    "ZF Steering Gear India Limited",
+    "NSE"
+  ],
+  [
     "ZGAEKWAR",
     "Gaekwar Mills Ltd",
     "BSE"
@@ -36235,14 +36195,14 @@
     "BSE"
   ],
   [
-    "ZSANMCOM",
-    "Sanmitra Commercial Ltd",
+    "ZSARACOM",
+    "Saraswati Commercial India Ltd",
     "BSE"
   ],
   [
     "ZSARACOM",
-    "Saraswati Commercial India Ltd",
-    "BSE"
+    "Saraswati Commercial India Limited",
+    "NSE"
   ],
   [
     "ZSARVAMA",

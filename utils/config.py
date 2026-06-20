@@ -1,5 +1,6 @@
 import os
 from dataclasses import dataclass, field
+from typing import Optional
 
 from dotenv import load_dotenv
 
@@ -9,7 +10,7 @@ load_dotenv()
 
 @dataclass
 class GroqConfig:
-    api_key: str | None = os.getenv("GROQ_API_KEY")
+    api_key: Optional[str] = os.getenv("GROQ_API_KEY")
     # llama3-8b-8192 was decommissioned Aug 2025. Current production replacements:
     #   llama-3.3-70b-versatile  (best quality, recommended)
     #   llama-3.1-8b-instant     (fastest, lower cost)
@@ -19,7 +20,7 @@ class GroqConfig:
 
 @dataclass
 class NewsConfig:
-    api_key: str | None = os.getenv("NEWS_API_KEY")
+    api_key: Optional[str] = os.getenv("NEWS_API_KEY")
     provider: str = os.getenv("NEWS_PROVIDER", "newsapi")  # or rss
 
 

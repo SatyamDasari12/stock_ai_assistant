@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Union
+
 import numpy as np
 import pandas as pd
 from ta.momentum import RSIIndicator
@@ -23,7 +25,7 @@ def add_indicators_to_ohlc(df: pd.DataFrame) -> pd.DataFrame:
     MIN_ROWS_MACD = 26
     MIN_ROWS_BB = 20
 
-    def _ensure_series(x: pd.Series | pd.DataFrame) -> pd.Series:
+    def _ensure_series(x: Union[pd.Series, pd.DataFrame]) -> pd.Series:
         if isinstance(x, pd.DataFrame):
             return x.iloc[:, 0]
         return x

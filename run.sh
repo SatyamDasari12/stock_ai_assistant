@@ -55,4 +55,4 @@ echo "✔ Cache database refresh complete."
 
 # 5. Launch Streamlit Web UI
 echo "🚀 Launching AI Stock Assistant dashboard..."
-streamlit run app.py
+python -m streamlit run app.py
